@@ -26,3 +26,32 @@ E:\sistem informasi akt\SIA-ALWIDAJAYA\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.f
 E:\sistem informasi akt\SIA-ALWIDAJAYA\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmCetakNeracaLajur.resources
 E:\sistem informasi akt\SIA-ALWIDAJAYA\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmCetakPerubahanModal.resources
 E:\sistem informasi akt\SIA-ALWIDAJAYA\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmCetakRugiLaba.resources
+F:\Git\kopi-panas\sia-aja\SIA-ALWIDAJAYA\bin\Debug\SIA-ALWIDAJAYA.exe.config
+F:\Git\kopi-panas\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA-ALWIDAJAYA.exe
+F:\Git\kopi-panas\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA-ALWIDAJAYA.xml
+F:\Git\kopi-panas\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA-ALWIDAJAYA.pdb
+F:\Git\kopi-panas\sia-aja\SIA-ALWIDAJAYA\bin\Debug\SIA-ALWIDAJAYA.exe
+F:\Git\kopi-panas\sia-aja\SIA-ALWIDAJAYA\bin\Debug\SIA-ALWIDAJAYA.pdb
+F:\Git\kopi-panas\sia-aja\SIA-ALWIDAJAYA\bin\Debug\SIA-ALWIDAJAYA.xml
+F:\Git\kopi-panas\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmAktivaTetap.resources
+F:\Git\kopi-panas\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmCetakJurnal.resources
+F:\Git\kopi-panas\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmCetakNeraca.resources
+F:\Git\kopi-panas\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmCetakNeracaLajur.resources
+F:\Git\kopi-panas\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmCetakPerubahanModal.resources
+F:\Git\kopi-panas\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmCetakRugiLaba.resources
+F:\Git\kopi-panas\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmJurnalPenyesuaian.resources
+F:\Git\kopi-panas\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmJurnalUmum.resources
+F:\Git\kopi-panas\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.FormMenuUtama.resources
+F:\Git\kopi-panas\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmMasterUser.resources
+F:\Git\kopi-panas\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmMasterPeriode.resources
+F:\Git\kopi-panas\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmPerkiraan.resources
+F:\Git\kopi-panas\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmPosting.resources
+F:\Git\kopi-panas\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmTransaksiSaloBlnLalu.resources
+F:\Git\kopi-panas\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmSubJurnalAJP.resources
+F:\Git\kopi-panas\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmSubNoPerkiraanAJP.resources
+F:\Git\kopi-panas\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmSubNoPerkiraanJurnalUmum.resources
+F:\Git\kopi-panas\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmSubNoPerkiraan_SaloAwal.resources
+F:\Git\kopi-panas\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmSubJurnalUmum.resources
+F:\Git\kopi-panas\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.Resources.resources
+F:\Git\kopi-panas\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA-ALWIDAJAYA.vbproj.GenerateResource.Cache
+F:\Git\kopi-panas\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA-ALWIDAJAYA.vbprojResolveAssemblyReference.cache

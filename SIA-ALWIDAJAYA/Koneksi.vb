@@ -14,7 +14,7 @@ Module Koneksi
     Public LokasiData As String
 
     Public Sub KoneksiKeAccess()
-        LokasiData = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\db_akuntansia.accdb;"
+        LokasiData = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\db_akuntansia.mdb;"
         CONN = New OleDbConnection(LokasiData)
         'CONN.Open()
         If CONN.State = ConnectionState.Closed Then CONN.Open()
