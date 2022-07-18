@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{100D3395-33E0-4456-BD6E-6E8F9837280C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>SIA_ALWIDAJAYA.My.MyApplication</StartupObject>
+    <RootNamespace>SIA_ALWIDAJAYA</RootNamespace>
+    <AssemblyName>SIA-ALWIDAJAYA</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SIA-ALWIDAJAYA.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SIA-ALWIDAJAYA.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clsAktiva.vb" />
+    <Compile Include="clsJurnalPenyesuaian.vb" />
+    <Compile Include="clsJurnalUmum.vb" />
+    <Compile Include="clsPosting.vb" />
+    <Compile Include="clsSaldoBlnLalu.vb" />
+    <Compile Include="frmAktivaTetap.Designer.vb">
+      <DependentUpon>frmAktivaTetap.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAktivaTetap.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCetakJurnal.Designer.vb">
+      <DependentUpon>frmCetakJurnal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCetakJurnal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCetakJurnalAJP.Designer.vb">
+      <DependentUpon>frmCetakJurnalAJP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCetakJurnalAJP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCetakNeraca.Designer.vb">
+      <DependentUpon>frmCetakNeraca.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCetakNeraca.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCetakNeracaLajur.Designer.vb">
+      <DependentUpon>frmCetakNeracaLajur.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCetakNeracaLajur.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCetakPerubahanModal.Designer.vb">
+      <DependentUpon>frmCetakPerubahanModal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCetakPerubahanModal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCetakRugiLaba.Designer.vb">
+      <DependentUpon>frmCetakRugiLaba.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCetakRugiLaba.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmJurnalPenyesuaian.Designer.vb">
+      <DependentUpon>frmJurnalPenyesuaian.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmJurnalPenyesuaian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmJurnalUmum.Designer.vb">
+      <DependentUpon>frmJurnalUmum.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmJurnalUmum.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuUtama.Designer.vb">
+      <DependentUpon>FormMenuUtama.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenuUtama.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMasterUser.Designer.vb">
+      <DependentUpon>frmMasterUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMasterUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMasterPeriode.Designer.vb">
+      <DependentUpon>frmMasterPeriode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMasterPeriode.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPerkiraan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPerkiraan.Designer.vb">
+      <DependentUpon>frmPerkiraan.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPosting.Designer.vb">
+      <DependentUpon>frmPosting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPosting.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTransaksiSaloBlnLalu.Designer.vb">
+      <DependentUpon>frmTransaksiSaloBlnLalu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTransaksiSaloBlnLalu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSubJurnalAJP.Designer.vb">
+      <DependentUpon>frmSubJurnalAJP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSubJurnalAJP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSubNoPerkiraanAJP.Designer.vb">
+      <DependentUpon>frmSubNoPerkiraanAJP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSubNoPerkiraanAJP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSubNoPerkiraanJurnalUmum.Designer.vb">
+      <DependentUpon>frmSubNoPerkiraanJurnalUmum.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSubNoPerkiraanJurnalUmum.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSubNoPerkiraan_SaloAwal.Designer.vb">
+      <DependentUpon>frmSubNoPerkiraan_SaloAwal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSubNoPerkiraan_SaloAwal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSubJurnalUmum.Designer.vb">
+      <DependentUpon>frmSubJurnalUmum.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSubJurnalUmum.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Koneksi.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmAktivaTetap.resx">
+      <DependentUpon>frmAktivaTetap.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCetakJurnal.resx">
+      <DependentUpon>frmCetakJurnal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCetakNeraca.resx">
+      <DependentUpon>frmCetakNeraca.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCetakNeracaLajur.resx">
+      <DependentUpon>frmCetakNeracaLajur.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCetakPerubahanModal.resx">
+      <DependentUpon>frmCetakPerubahanModal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCetakRugiLaba.resx">
+      <DependentUpon>frmCetakRugiLaba.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmJurnalPenyesuaian.resx">
+      <DependentUpon>frmJurnalPenyesuaian.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmJurnalUmum.resx">
+      <DependentUpon>frmJurnalUmum.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuUtama.resx">
+      <DependentUpon>FormMenuUtama.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMasterUser.resx">
+      <DependentUpon>frmMasterUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMasterPeriode.resx">
+      <DependentUpon>frmMasterPeriode.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPerkiraan.resx">
+      <DependentUpon>frmPerkiraan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPosting.resx">
+      <DependentUpon>frmPosting.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransaksiSaloBlnLalu.resx">
+      <DependentUpon>frmTransaksiSaloBlnLalu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSubJurnalAJP.resx">
+      <DependentUpon>frmSubJurnalAJP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSubNoPerkiraanAJP.resx">
+      <DependentUpon>frmSubNoPerkiraanAJP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSubNoPerkiraanJurnalUmum.resx">
+      <DependentUpon>frmSubNoPerkiraanJurnalUmum.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSubNoPerkiraan_SaloAwal.resx">
+      <DependentUpon>frmSubNoPerkiraan_SaloAwal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSubJurnalUmum.resx">
+      <DependentUpon>frmSubJurnalUmum.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
