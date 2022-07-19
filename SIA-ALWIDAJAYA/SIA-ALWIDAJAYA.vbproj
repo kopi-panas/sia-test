@@ -166,6 +166,12 @@
     <Compile Include="FormMenuUtama.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmMasterUser.Designer.vb">
       <DependentUpon>frmMasterUser.vb</DependentUpon>
     </Compile>
@@ -267,6 +273,9 @@
     <EmbeddedResource Include="frmCetakJurnal.resx">
       <DependentUpon>frmCetakJurnal.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCetakJurnalAJP.resx">
+      <DependentUpon>frmCetakJurnalAJP.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCetakNeraca.resx">
       <DependentUpon>frmCetakNeraca.vb</DependentUpon>
     </EmbeddedResource>
@@ -287,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenuUtama.resx">
       <DependentUpon>FormMenuUtama.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMasterUser.resx">
       <DependentUpon>frmMasterUser.vb</DependentUpon>

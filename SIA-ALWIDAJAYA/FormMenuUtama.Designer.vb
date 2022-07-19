@@ -57,9 +57,9 @@ Partial Class FormMenuUtama
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KeluarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HapusToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SetupToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SetUpSaldoAwalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HapusToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox9.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -480,6 +480,12 @@ Partial Class FormMenuUtama
         Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.KeluarToolStripMenuItem.Text = "Keluar"
         '
+        'HapusToolStripMenuItem
+        '
+        Me.HapusToolStripMenuItem.Name = "HapusToolStripMenuItem"
+        Me.HapusToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.HapusToolStripMenuItem.Text = "Hapus"
+        '
         'SetupToolStripMenuItem
         '
         Me.SetupToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SetUpSaldoAwalToolStripMenuItem})
@@ -493,12 +499,6 @@ Partial Class FormMenuUtama
         Me.SetUpSaldoAwalToolStripMenuItem.Name = "SetUpSaldoAwalToolStripMenuItem"
         Me.SetUpSaldoAwalToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
         Me.SetUpSaldoAwalToolStripMenuItem.Text = "Set Up Saldo Awal"
-        '
-        'HapusToolStripMenuItem
-        '
-        Me.HapusToolStripMenuItem.Name = "HapusToolStripMenuItem"
-        Me.HapusToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.HapusToolStripMenuItem.Text = "Hapus"
         '
         'FormMenuUtama
         '

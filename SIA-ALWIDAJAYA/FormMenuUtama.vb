@@ -269,4 +269,20 @@ Public Class FormMenuUtama
         End Try
     End Sub
 
+    Private Sub btnLapJU_Click(sender As Object, e As EventArgs) Handles btnLapJU.Click
+        frmCetakJurnal.Show()
+    End Sub
+
+    Private Sub btnLapAJP_Click(sender As Object, e As EventArgs) Handles btnLapAJP.Click
+        frmCetakJurnalAJP.Show()
+    End Sub
+
+    Private Sub LogoutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogoutToolStripMenuItem.Click
+        frmLogin.Show()
+    End Sub
+
+    Private Sub FormMenuUtama_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Hide()
+        frmLogin.ShowDialog()
+    End Sub
 End Class
