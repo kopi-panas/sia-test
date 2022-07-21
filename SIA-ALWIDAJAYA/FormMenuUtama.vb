@@ -278,6 +278,7 @@ Public Class FormMenuUtama
     End Sub
 
     Private Sub LogoutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogoutToolStripMenuItem.Click
+        Me.Hide()
         frmLogin.Show()
     End Sub
 

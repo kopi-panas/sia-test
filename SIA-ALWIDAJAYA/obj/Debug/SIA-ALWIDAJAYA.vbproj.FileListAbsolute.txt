@@ -81,3 +81,9 @@ E:\Git\sia-aja\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmSubNoPerkiraan
 E:\Git\sia-aja\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmSubJurnalUmum.resources
 E:\Git\sia-aja\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.Resources.resources
 E:\Git\sia-aja\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA-ALWIDAJAYA.vbproj.GenerateResource.Cache
+E:\Git\sia-aja\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmCetakJurnalAJP.resources
+E:\Git\sia-aja\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmLogin.resources
+E:\Git\sia-aja\sia-aja\SIA-ALWIDAJAYA\bin\Debug\SIA-ALWIDAJAYA.exe
+E:\Git\sia-aja\sia-aja\SIA-ALWIDAJAYA\bin\Debug\SIA-ALWIDAJAYA.pdb
+E:\Git\sia-aja\sia-aja\SIA-ALWIDAJAYA\bin\Debug\SIA-ALWIDAJAYA.xml
+E:\Git\sia-aja\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.CetakJurnalUmumRpt.resources

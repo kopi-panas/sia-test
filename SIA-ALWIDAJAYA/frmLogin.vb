@@ -17,51 +17,13 @@ Public Class frmLogin
                 Rd = Command.ExecuteReader
                 Rd.Read()
                 If Rd.HasRows Then
-                    Me.Close()
+                    Me.Hide()
                     FormMenuUtama.Show()
-                    'FormMenuJualBeli.lblAdminJ.Text = Rd.Item("NamaPengguna")
-                    'FormMenuJualBeli.lblAdminT.Text = Rd.Item("NamaPengguna")
                     FormMenuUtama.txtName.Text = Rd.Item("NamaUser")
-                    'FormMenuUtama.status = Rd.Item("level")
-                    'If FormMenuUtama.status = "ADMIN" Then
-                    '    FormMenuUtama.btnPengguna.Enabled = True
-                    '    FormMenuUtama.btnCoA.Enabled = True
-                    '    FormMenuUtama.btnPeriode.Enabled = True
-                    'FormMenuUtama.btnBarang.Enabled = True
-                    'FormMenuUtama.btnSupplier.Enabled = True
-                    'FormMenuUtama.btnJualBeli.Enabled = True
-                    'FormMenuUtama.btnJurnalUmum.Enabled = True
-                    'FormMenuUtama.btnAJP.Enabled = True
-                    'FormMenuUtama.btnProses.Enabled = True
-                    'FormMenuUtama.btnLapAkun.Enabled = True
-                    'FormMenuUtama.btnLapJU.Enabled = True
-                    'FormMenuUtama.btnLapAJP.Enabled = True
-                    'FormMenuUtama.btnLapNL.Enabled = True
-                    'FormMenuUtama.btnLapPM.Enabled = True
-                    'FormMenuUtama.btnLapRL.Enabled = True
-                    'FormMenuUtama.btnLapNeraca.Enabled = True
                 Else
-                    'FormMenuUtama.btnPengguna.Enabled = False
-                    'FormMenuUtama.btnCoA.Enabled = False
-                    'FormMenuUtama.btnPeriode.Enabled = False
-                    'FormMenuUtama.btnJurnalUmum.Enabled = False
-                    'FormMenuUtama.btnAJP.Enabled = False
-                    'FormMenuUtama.btnProses.Enabled = False
-                    'FormMenuUtama.btnLapAkun.Enabled = False
-                    'FormMenuUtama.btnLapJU.Enabled = False
-                    'FormMenuUtama.btnLapAJP.Enabled = False
-                    'FormMenuUtama.btnLapNL.Enabled = False
-                    'FormMenuUtama.btnLapPM.Enabled = False
-                    'FormMenuUtama.btnLapRL.Enabled = False
-                    'FormMenuUtama.btnLapNeraca.Enabled = False
-                    'FormMenuUtama.btnJualBeli.Enabled = True
-                    'FormMenuUtama.btnBarang.Enabled = True
-                    'FormMenuUtama.btnSupplier.Enabled = True
+                    MsgBox("Kode Admin atau Password Salah!", MsgBoxStyle.Information, "")
                 End If
-                'Else
-                MsgBox("Kode Admin atau Password Salah!", MsgBoxStyle.Information, "")
             End If
-            'End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -71,5 +33,10 @@ Public Class frmLogin
         If e.KeyChar = Chr(13) Then
             txtSandi.Focus()
         End If
+    End Sub
+
+    Private Sub cmdKeluar_Click(sender As Object, e As EventArgs) Handles cmdKeluar.Click
+        FormMenuUtama.Close()
+        Me.Close()
     End Sub
 End Class
