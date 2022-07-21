@@ -34,7 +34,18 @@ Public Class frmCetakPerubahanModal
     End Sub
 
     Private Sub cmdCetak_Click(sender As Object, e As EventArgs) Handles cmdCetak.Click
-
+        If Len(cboPeriode.Text) = 0 Then
+            MsgBox("Pilih periode yang akan dicetak", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Pesan")
+            cboPeriode.Focus()
+        Else
+            Try
+                frmRptPerubahanModal.CrystalReportViewer1.SelectionFormula = "{tblPerubahanModal.Periode} = '" & Mid(cboPeriode.Text, 1, 6) & "'"
+                frmRptPerubahanModal.CrystalReportViewer1.Dock = DockStyle.Fill
+                frmRptPerubahanModal.CrystalReportViewer1.RefreshReport()
+                frmRptPerubahanModal.ShowDialog()
+            Catch ex As Exception
+            End Try
+        End If
     End Sub
 
     Private Sub cmdKeluar_Click(sender As Object, e As EventArgs) Handles cmdKeluar.Click

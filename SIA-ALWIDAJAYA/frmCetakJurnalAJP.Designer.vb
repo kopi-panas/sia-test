@@ -110,7 +110,7 @@ Partial Class frmCetakJurnalAJP
         Me.cmdKeluar.Font = New System.Drawing.Font("Microsoft Tai Le", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdKeluar.Image = CType(resources.GetObject("cmdKeluar.Image"), System.Drawing.Image)
         Me.cmdKeluar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdKeluar.Location = New System.Drawing.Point(29, 161)
+        Me.cmdKeluar.Location = New System.Drawing.Point(31, 151)
         Me.cmdKeluar.Name = "cmdKeluar"
         Me.cmdKeluar.Size = New System.Drawing.Size(74, 32)
         Me.cmdKeluar.TabIndex = 121
@@ -324,6 +324,7 @@ Partial Class frmCetakJurnalAJP
         Me.Controls.Add(Me.neracasaldo)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "frmCetakJurnalAJP"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmCetakJurnalAJP"
         Me.Panel1.ResumeLayout(False)
         Me.neracasaldo.ResumeLayout(False)

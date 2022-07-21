@@ -1,5 +1,5 @@
 ﻿Imports System.Data.OleDb
-Module Koneksi
+Module BukaKoneksi
     Public CONN As OleDbConnection
     Public daData As OleDbDataAdapter
     Public dsData As DataSet

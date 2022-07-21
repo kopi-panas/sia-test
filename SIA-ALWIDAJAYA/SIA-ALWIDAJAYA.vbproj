@@ -81,34 +81,82 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CetakBukuBesar.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CetakBukuBesar.rpt</DependentUpon>
-      <SubType>Component</SubType>
+    <Compile Include="frmRptBukuBesar.Designer.vb">
+      <DependentUpon>frmRptBukuBesar.vb</DependentUpon>
     </Compile>
-    <Compile Include="CetakJurnalUmum.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CetakJurnalUmum.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CetakJurnalUmumm.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CetakJurnalUmumm.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CetakJurnalUmumRpt.Designer.vb">
-      <DependentUpon>CetakJurnalUmumRpt.vb</DependentUpon>
-    </Compile>
-    <Compile Include="CetakJurnalUmumRpt.vb">
+    <Compile Include="frmRptBukuBesar.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CetakNeracaSaldo.vb">
+    <Compile Include="frmRptNeraca.Designer.vb">
+      <DependentUpon>frmRptNeraca.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRptNeraca.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRptNeracaLajur.Designer.vb">
+      <DependentUpon>frmRptNeracaLajur.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRptNeracaLajur.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRptJurnalUmum.Designer.vb">
+      <DependentUpon>frmRptJurnalUmum.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRptJurnalUmum.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRptNeracaSaldo.Designer.vb">
+      <DependentUpon>frmRptNeracaSaldo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRptNeracaSaldo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRptPerubahanModal.Designer.vb">
+      <DependentUpon>frmRptPerubahanModal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRptPerubahanModal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRptRugiLaba.Designer.vb">
+      <DependentUpon>frmRptRugiLaba.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRptRugiLaba.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RptBukuBesar.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CetakNeracaSaldo.rpt</DependentUpon>
+      <DependentUpon>RptBukuBesar.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="JurnalUmum.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JurnalUmum.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptNeraca.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptNeraca.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptNeracaSaldo.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptNeracaSaldo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptPerubahanModal.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptPerubahanModal.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptRugiLaba.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptRugiLaba.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="clsAktiva.vb" />
@@ -243,7 +291,7 @@
     <Compile Include="frmSubJurnalUmum.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Koneksi.vb" />
+    <Compile Include="BukaKoneksi.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -259,26 +307,58 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="RptNeracaLajur.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptNeracaLajur.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CetakBukuBesar.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CetakBukuBesar.vb</LastGenOutput>
+    <EmbeddedResource Include="frmRptBukuBesar.resx">
+      <DependentUpon>frmRptBukuBesar.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CetakJurnalUmum.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CetakJurnalUmum.vb</LastGenOutput>
+    <EmbeddedResource Include="frmRptNeraca.resx">
+      <DependentUpon>frmRptNeraca.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CetakJurnalUmumm.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CetakJurnalUmumm.vb</LastGenOutput>
+    <EmbeddedResource Include="frmRptNeracaLajur.resx">
+      <DependentUpon>frmRptNeracaLajur.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CetakJurnalUmumRpt.resx">
-      <DependentUpon>CetakJurnalUmumRpt.vb</DependentUpon>
+    <EmbeddedResource Include="frmRptJurnalUmum.resx">
+      <DependentUpon>frmRptJurnalUmum.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CetakNeracaSaldo.rpt">
+    <EmbeddedResource Include="frmRptNeracaSaldo.resx">
+      <DependentUpon>frmRptNeracaSaldo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRptPerubahanModal.resx">
+      <DependentUpon>frmRptPerubahanModal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRptRugiLaba.resx">
+      <DependentUpon>frmRptRugiLaba.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptBukuBesar.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CetakNeracaSaldo.vb</LastGenOutput>
+      <LastGenOutput>RptBukuBesar.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JurnalUmum.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>JurnalUmum.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptNeraca.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptNeraca.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptNeracaSaldo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptNeracaSaldo.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptPerubahanModal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptPerubahanModal.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptRugiLaba.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptRugiLaba.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAktivaTetap.resx">
       <DependentUpon>frmAktivaTetap.vb</DependentUpon>
@@ -348,6 +428,10 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptNeracaLajur.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptNeracaLajur.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

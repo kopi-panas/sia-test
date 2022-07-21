@@ -84,4 +84,49 @@ Public Class frmCetakJurnal
         Catch ex As Exception
         End Try
     End Sub
+
+    Private Sub cmdCetakJU_Click(sender As Object, e As EventArgs) Handles cmdCetakJU.Click
+        If Len(cboPeriodeJU.Text) = 0 Then
+            MsgBox("Pilih periode yang akan dicetak", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Pesan")
+            cboPeriodeJU.Focus()
+        Else
+            Try
+                frmRptJurnalUmum.CrystalReportViewer1.SelectionFormula = "{hJurnal.Periode} = '" & Mid(cboPeriodeJU.Text, 1, 6) & "'"
+                frmRptJurnalUmum.CrystalReportViewer1.Dock = DockStyle.Fill
+                frmRptJurnalUmum.CrystalReportViewer1.RefreshReport()
+                frmRptJurnalUmum.ShowDialog()
+            Catch ex As Exception
+            End Try
+        End If
+    End Sub
+
+    Private Sub cmdCetakNS_Click(sender As Object, e As EventArgs) Handles cmdCetakNS.Click
+        If Len(cboPeriodeNS.Text) = 0 Then
+            MsgBox("Pilih periode yang akan dicetak", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Pesan")
+            cboPeriodeNS.Focus()
+        Else
+            Try
+                frmRptNeracaSaldo.CrystalReportViewer1.SelectionFormula = "{NeracaSaldo.Periode} = '" & Mid(cboPeriodeNS.Text, 1, 6) & "'"
+                frmRptNeracaSaldo.CrystalReportViewer1.Dock = DockStyle.Fill
+                frmRptNeracaSaldo.CrystalReportViewer1.RefreshReport()
+                frmRptNeracaSaldo.ShowDialog()
+            Catch ex As Exception
+            End Try
+        End If
+    End Sub
+
+    Private Sub cmdCetakBB_Click(sender As Object, e As EventArgs) Handles cmdCetakBB.Click
+        If Len(cboPeriodeBB.Text) = 0 Then
+            MsgBox("Pilih periode yang akan dicetak", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Pesan")
+            cboPeriodeBB.Focus()
+        Else
+            Try
+                frmRptBukuBesar.CrystalReportViewer1.SelectionFormula = "{BukuBesar.Periode} = '" & Mid(cboPeriodeBB.Text, 1, 6) & "'"
+                frmRptBukuBesar.CrystalReportViewer1.Dock = DockStyle.Fill
+                frmRptBukuBesar.CrystalReportViewer1.RefreshReport()
+                frmRptBukuBesar.ShowDialog()
+            Catch ex As Exception
+            End Try
+        End If
+    End Sub
 End Class

@@ -37,6 +37,17 @@ Public Class frmCetakRugiLaba
     End Sub
 
     Private Sub cmdCetak_Click(sender As Object, e As EventArgs) Handles cmdCetak.Click
-
+        If Len(cboPeriode.Text) = 0 Then
+            MsgBox("Pilih periode yang akan dicetak", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Pesan")
+            cboPeriode.Focus()
+        Else
+            Try
+                frmRptRugiLaba.CrystalReportViewer1.SelectionFormula = "{tblRugiLaba.Periode} = '" & Mid(cboPeriode.Text, 1, 6) & "'"
+                frmRptRugiLaba.CrystalReportViewer1.Dock = DockStyle.Fill
+                frmRptRugiLaba.CrystalReportViewer1.RefreshReport()
+                frmRptRugiLaba.ShowDialog()
+            Catch ex As Exception
+            End Try
+        End If
     End Sub
 End Class

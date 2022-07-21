@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class CetakJurnalUmumRpt
+Partial Class frmRptBukuBesar
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -23,7 +23,7 @@ Partial Class CetakJurnalUmumRpt
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
-        Me.CetakJurnalUmumm1 = New SIA_ALWIDAJAYA.CetakJurnalUmumm()
+        Me.RptBukuBesar1 = New SIA_ALWIDAJAYA.RptBukuBesar()
         Me.SuspendLayout()
         '
         'CrystalReportViewer1
@@ -34,21 +34,22 @@ Partial Class CetakJurnalUmumRpt
         Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.ReportSource = Me.CetakJurnalUmumm1
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(747, 533)
+        Me.CrystalReportViewer1.ReportSource = Me.RptBukuBesar1
+        Me.CrystalReportViewer1.Size = New System.Drawing.Size(818, 491)
         Me.CrystalReportViewer1.TabIndex = 0
         '
-        'CetakJurnalUmumRpt
+        'frmRptBukuBesar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(747, 533)
+        Me.ClientSize = New System.Drawing.Size(818, 491)
         Me.Controls.Add(Me.CrystalReportViewer1)
-        Me.Name = "CetakJurnalUmumRpt"
-        Me.Text = "CetakJurnalUmumRpt"
+        Me.Name = "frmRptBukuBesar"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Laporan Buku Besar"
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
-    Friend WithEvents CetakJurnalUmumm1 As SIA_ALWIDAJAYA.CetakJurnalUmumm
+    Friend WithEvents RptBukuBesar1 As SIA_ALWIDAJAYA.RptBukuBesar
 End Class

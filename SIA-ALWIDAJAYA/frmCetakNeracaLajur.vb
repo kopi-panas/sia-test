@@ -37,6 +37,17 @@ Public Class frmCetakNeracaLajur
     End Sub
 
     Private Sub cmdCetak_Click(sender As Object, e As EventArgs) Handles cmdCetak.Click
-
+        If Len(cboPeriode.Text) = 0 Then
+            MsgBox("Pilih periode yang akan dicetak", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Pesan")
+            cboPeriode.Focus()
+        Else
+            Try
+                frmRptNeracaLajur.CrystalReportViewer1.SelectionFormula = "{NeracaLajur.Periode} = '" & Mid(cboPeriode.Text, 1, 6) & "'"
+                frmRptNeracaLajur.CrystalReportViewer1.Dock = DockStyle.Fill
+                frmRptNeracaLajur.CrystalReportViewer1.RefreshReport()
+                frmRptNeracaLajur.ShowDialog()
+            Catch ex As Exception
+            End Try
+        End If
     End Sub
 End Class

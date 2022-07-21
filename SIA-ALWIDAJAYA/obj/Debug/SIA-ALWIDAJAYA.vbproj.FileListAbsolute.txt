@@ -86,4 +86,10 @@ E:\Git\sia-aja\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmLogin.resource
 E:\Git\sia-aja\sia-aja\SIA-ALWIDAJAYA\bin\Debug\SIA-ALWIDAJAYA.exe
 E:\Git\sia-aja\sia-aja\SIA-ALWIDAJAYA\bin\Debug\SIA-ALWIDAJAYA.pdb
 E:\Git\sia-aja\sia-aja\SIA-ALWIDAJAYA\bin\Debug\SIA-ALWIDAJAYA.xml
-E:\Git\sia-aja\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.CetakJurnalUmumRpt.resources
+E:\Git\sia-aja\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmRptNeracaLajur.resources
+E:\Git\sia-aja\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmRptJurnalUmum.resources
+E:\Git\sia-aja\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmRptNeraca.resources
+E:\Git\sia-aja\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmRptPerubahanModal.resources
+E:\Git\sia-aja\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmRptRugiLaba.resources
+E:\Git\sia-aja\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmRptBukuBesar.resources
+E:\Git\sia-aja\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmRptNeracaSaldo.resources

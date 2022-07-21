@@ -244,7 +244,7 @@ Partial Class frmCetakJurnal
         Me.cmdKeluar.Font = New System.Drawing.Font("Microsoft Tai Le", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdKeluar.Image = CType(resources.GetObject("cmdKeluar.Image"), System.Drawing.Image)
         Me.cmdKeluar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdKeluar.Location = New System.Drawing.Point(29, 161)
+        Me.cmdKeluar.Location = New System.Drawing.Point(37, 152)
         Me.cmdKeluar.Name = "cmdKeluar"
         Me.cmdKeluar.Size = New System.Drawing.Size(74, 32)
         Me.cmdKeluar.TabIndex = 121
@@ -320,9 +320,9 @@ Partial Class frmCetakJurnal
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(441, 196)
         Me.ControlBox = False
-        Me.Controls.Add(Me.jurnalumum)
         Me.Controls.Add(Me.bukubesar)
         Me.Controls.Add(Me.neracasaldo)
+        Me.Controls.Add(Me.jurnalumum)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "frmCetakJurnal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
