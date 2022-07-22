@@ -81,10 +81,22 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmRptAJP.Designer.vb">
+      <DependentUpon>frmRptAJP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRptAJP.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmRptBukuBesar.Designer.vb">
       <DependentUpon>frmRptBukuBesar.vb</DependentUpon>
     </Compile>
     <Compile Include="frmRptBukuBesar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRptBukubesarAJP.Designer.vb">
+      <DependentUpon>frmRptBukubesarAJP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRptBukubesarAJP.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmRptNeraca.Designer.vb">
@@ -111,6 +123,12 @@
     <Compile Include="frmRptNeracaSaldo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmRptNeracaSaldoAJP.Designer.vb">
+      <DependentUpon>frmRptNeracaSaldoAJP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRptNeracaSaldoAJP.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmRptPerubahanModal.Designer.vb">
       <DependentUpon>frmRptPerubahanModal.vb</DependentUpon>
     </Compile>
@@ -122,6 +140,12 @@
     </Compile>
     <Compile Include="frmRptRugiLaba.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RptAJP.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptAJP.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="RptBukuBesar.vb">
       <AutoGen>True</AutoGen>
@@ -135,6 +159,12 @@
       <DependentUpon>JurnalUmum.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="RptBukubesarAJP.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptBukubesarAJP.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="RptNeraca.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -145,6 +175,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RptNeracaSaldo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptNeracaSaldoAJP.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptNeracaSaldoAJP.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="RptPerubahanModal.vb">
@@ -315,8 +351,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmRptAJP.resx">
+      <DependentUpon>frmRptAJP.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRptBukuBesar.resx">
       <DependentUpon>frmRptBukuBesar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRptBukubesarAJP.resx">
+      <DependentUpon>frmRptBukubesarAJP.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRptNeraca.resx">
       <DependentUpon>frmRptNeraca.vb</DependentUpon>
@@ -330,11 +372,18 @@
     <EmbeddedResource Include="frmRptNeracaSaldo.resx">
       <DependentUpon>frmRptNeracaSaldo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRptNeracaSaldoAJP.resx">
+      <DependentUpon>frmRptNeracaSaldoAJP.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRptPerubahanModal.resx">
       <DependentUpon>frmRptPerubahanModal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRptRugiLaba.resx">
       <DependentUpon>frmRptRugiLaba.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptAJP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptAJP.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="RptBukuBesar.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -344,6 +393,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>JurnalUmum.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="RptBukubesarAJP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptBukubesarAJP.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="RptNeraca.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RptNeraca.vb</LastGenOutput>
@@ -351,6 +404,10 @@
     <EmbeddedResource Include="RptNeracaSaldo.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RptNeracaSaldo.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptNeracaSaldoAJP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptNeracaSaldoAJP.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="RptPerubahanModal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

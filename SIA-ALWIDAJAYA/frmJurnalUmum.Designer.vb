@@ -136,7 +136,7 @@ Partial Class frmJurnalUmum
         'ListView
         '
         Me.ListView.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ListView.ForeColor = System.Drawing.Color.Blue
+        Me.ListView.ForeColor = System.Drawing.Color.Black
         Me.ListView.FullRowSelect = True
         Me.ListView.GridLines = True
         Me.ListView.Location = New System.Drawing.Point(60, 206)
@@ -198,7 +198,7 @@ Partial Class frmJurnalUmum
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(788, 126)
+        Me.GroupBox1.Size = New System.Drawing.Size(784, 126)
         Me.GroupBox1.TabIndex = 161
         Me.GroupBox1.TabStop = False
         '
@@ -332,7 +332,7 @@ Partial Class frmJurnalUmum
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(788, 502)
+        Me.ClientSize = New System.Drawing.Size(784, 498)
         Me.ControlBox = False
         Me.Controls.Add(Me.txtKredit)
         Me.Controls.Add(Me.Label6)

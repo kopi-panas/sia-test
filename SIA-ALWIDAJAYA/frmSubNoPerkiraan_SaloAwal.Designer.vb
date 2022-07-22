@@ -59,7 +59,7 @@ Partial Class frmSubNoPerkiraan_SaloAwal
         'ListView
         '
         Me.ListView.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ListView.ForeColor = System.Drawing.Color.Blue
+        Me.ListView.ForeColor = System.Drawing.Color.Black
         Me.ListView.FullRowSelect = True
         Me.ListView.GridLines = True
         Me.ListView.Location = New System.Drawing.Point(2, 2)

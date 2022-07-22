@@ -3,8 +3,8 @@ Public Class frmSubNoPerkiraanJurnalUmum
 
     Private Sub PosisiList()
         With ListView.Columns
-            .Add("No.Perkiraan", 100)
-            .Add("Nama Perkiraan", 405)
+            .Add("No.Akun", 100)
+            .Add("Nama Akun", 405)
         End With
     End Sub
 

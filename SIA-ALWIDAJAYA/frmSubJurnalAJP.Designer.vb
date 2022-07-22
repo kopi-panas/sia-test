@@ -99,7 +99,7 @@ Partial Class frmSubJurnalAJP
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(618, 122)
+        Me.GroupBox1.Size = New System.Drawing.Size(614, 122)
         Me.GroupBox1.TabIndex = 121
         Me.GroupBox1.TabStop = False
         '
@@ -115,7 +115,7 @@ Partial Class frmSubJurnalAJP
         'ListView
         '
         Me.ListView.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ListView.ForeColor = System.Drawing.Color.Blue
+        Me.ListView.ForeColor = System.Drawing.Color.Black
         Me.ListView.FullRowSelect = True
         Me.ListView.GridLines = True
         Me.ListView.Location = New System.Drawing.Point(35, 139)
@@ -130,7 +130,7 @@ Partial Class frmSubJurnalAJP
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(618, 437)
+        Me.ClientSize = New System.Drawing.Size(614, 433)
         Me.ControlBox = False
         Me.Controls.Add(Me.cmdKeluar)
         Me.Controls.Add(Me.cmdYa)

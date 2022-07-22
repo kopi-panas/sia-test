@@ -18,7 +18,7 @@ Public Class frmJurnalUmum
         txtKredit.Text = "0"
         lblDebet.Text = "0"
         lblKredit.Text = "0"
-        ListView.Clear()
+        ListView.Items.Clear()
 
         CariPeriode()
 
@@ -39,7 +39,7 @@ Public Class frmJurnalUmum
         With ListView.Columns
             .Add("NO.Transaksi", 0)
             .Add("No.Rek", 68)
-            .Add("Nama Perkiraan", 360)
+            .Add("Nama Akun", 360)
             .Add("DK", 0)
             .Add("Debet", 125, HorizontalAlignment.Right)
             .Add("Kredit", 125, HorizontalAlignment.Right)
@@ -63,9 +63,9 @@ Public Class frmJurnalUmum
                     .Items(a).SubItems.Add(Format(dsData.Tables(0).Rows(a).Item(4), "###,###"))
                     .Items(a).SubItems.Add(Format(dsData.Tables(0).Rows(a).Item(5), "###,###"))
                     If (a Mod 2 = 0) Then
-                        .Items(a).BackColor = Color.LightSteelBlue
+                        .Items(a).BackColor = Color.White
                     Else
-                        .Items(a).BackColor = Color.LightBlue
+                        .Items(a).BackColor = Color.Transparent
                     End If
                 End With
             Next
@@ -305,7 +305,7 @@ Public Class frmJurnalUmum
     End Sub
 
     Sub Buka()
-        txtNoPerkiraan.Enabled = True
+        txtNoTransaksi.Enabled = True
         txtTgl.Enabled = True
         txtKeterangan.Enabled = True
         txtNoPerkiraan.Enabled = True
@@ -314,7 +314,7 @@ Public Class frmJurnalUmum
     End Sub
 
     Sub Tutup()
-        txtNoPerkiraan.Enabled = False
+        txtNoTransaksi.Enabled = True
         txtTgl.Enabled = False
         txtKeterangan.Enabled = False
         txtNoPerkiraan.Enabled = False
@@ -383,7 +383,7 @@ Public Class frmJurnalUmum
                 If cmdTambah.Text = "&New Item" Then
                     Try
                         If txtNoPerkiraan.Text = "" Then
-                            MessageBox.Show("No.Perkiraan masih kosong", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                            MessageBox.Show("No.Akun masih kosong", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                             txtNoPerkiraan.Focus()
                         Else
                             If cmdEdit.Text = "&Edit" Then
@@ -423,7 +423,7 @@ Public Class frmJurnalUmum
                     If mPosted = "UnPosted" Then
                         Try
                             If txtNoPerkiraan.Text = "" Then
-                                MessageBox.Show("No.Perkiraan masih kosong", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                                MessageBox.Show("No.Akun masih kosong", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                                 txtNoPerkiraan.Focus()
                             Else
                                 If cmdEdit.Text = "&Edit" Then
@@ -735,4 +735,5 @@ Public Class frmJurnalUmum
         cmdSimpan.Enabled = False
         'End If
     End Sub
+
 End Class

@@ -320,9 +320,9 @@ Partial Class frmCetakJurnal
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(441, 196)
         Me.ControlBox = False
+        Me.Controls.Add(Me.jurnalumum)
         Me.Controls.Add(Me.bukubesar)
         Me.Controls.Add(Me.neracasaldo)
-        Me.Controls.Add(Me.jurnalumum)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "frmCetakJurnal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

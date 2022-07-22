@@ -45,14 +45,14 @@ Partial Class frmCetakJurnalAJP
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cmdCetakJP = New System.Windows.Forms.Button()
         Me.Group = New System.Windows.Forms.GroupBox()
-        Me.jurnalumum = New System.Windows.Forms.Panel()
+        Me.jurnalpenyesuaian = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.neracasaldo.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.bukubesar.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.Group.SuspendLayout()
-        Me.jurnalumum.SuspendLayout()
+        Me.jurnalpenyesuaian.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -302,16 +302,16 @@ Partial Class frmCetakJurnalAJP
         Me.Group.TabIndex = 120
         Me.Group.TabStop = False
         '
-        'jurnalumum
+        'jurnalpenyesuaian
         '
-        Me.jurnalumum.Controls.Add(Me.Label3)
-        Me.jurnalumum.Controls.Add(Me.cmdCetakJP)
-        Me.jurnalumum.Controls.Add(Me.Group)
-        Me.jurnalumum.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.jurnalumum.Location = New System.Drawing.Point(142, 0)
-        Me.jurnalumum.Name = "jurnalumum"
-        Me.jurnalumum.Size = New System.Drawing.Size(297, 204)
-        Me.jurnalumum.TabIndex = 131
+        Me.jurnalpenyesuaian.Controls.Add(Me.Label3)
+        Me.jurnalpenyesuaian.Controls.Add(Me.cmdCetakJP)
+        Me.jurnalpenyesuaian.Controls.Add(Me.Group)
+        Me.jurnalpenyesuaian.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.jurnalpenyesuaian.Location = New System.Drawing.Point(142, 0)
+        Me.jurnalpenyesuaian.Name = "jurnalpenyesuaian"
+        Me.jurnalpenyesuaian.Size = New System.Drawing.Size(297, 204)
+        Me.jurnalpenyesuaian.TabIndex = 131
         '
         'frmCetakJurnalAJP
         '
@@ -319,13 +319,13 @@ Partial Class frmCetakJurnalAJP
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(439, 204)
         Me.ControlBox = False
-        Me.Controls.Add(Me.jurnalumum)
+        Me.Controls.Add(Me.jurnalpenyesuaian)
         Me.Controls.Add(Me.bukubesar)
         Me.Controls.Add(Me.neracasaldo)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "frmCetakJurnalAJP"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmCetakJurnalAJP"
+        Me.Text = "Cetak Jurnal Penyesuaian"
         Me.Panel1.ResumeLayout(False)
         Me.neracasaldo.ResumeLayout(False)
         Me.neracasaldo.PerformLayout()
@@ -337,8 +337,8 @@ Partial Class frmCetakJurnalAJP
         Me.GroupBox1.PerformLayout()
         Me.Group.ResumeLayout(False)
         Me.Group.PerformLayout()
-        Me.jurnalumum.ResumeLayout(False)
-        Me.jurnalumum.PerformLayout()
+        Me.jurnalpenyesuaian.ResumeLayout(False)
+        Me.jurnalpenyesuaian.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -364,5 +364,5 @@ Partial Class frmCetakJurnalAJP
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents cmdCetakJP As System.Windows.Forms.Button
     Friend WithEvents Group As System.Windows.Forms.GroupBox
-    Friend WithEvents jurnalumum As System.Windows.Forms.Panel
+    Friend WithEvents jurnalpenyesuaian As System.Windows.Forms.Panel
 End Class

@@ -93,3 +93,6 @@ E:\Git\sia-aja\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmRptPerubahanMo
 E:\Git\sia-aja\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmRptRugiLaba.resources
 E:\Git\sia-aja\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmRptBukuBesar.resources
 E:\Git\sia-aja\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmRptNeracaSaldo.resources
+E:\Git\sia-aja\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmRptAJP.resources
+E:\Git\sia-aja\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmRptBukubesarAJP.resources
+E:\Git\sia-aja\sia-aja\SIA-ALWIDAJAYA\obj\Debug\SIA_ALWIDAJAYA.frmRptNeracaSaldoAJP.resources

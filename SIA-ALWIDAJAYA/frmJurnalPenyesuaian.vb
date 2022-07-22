@@ -10,11 +10,54 @@ Public Class frmJurnalPenyesuaian
     Dim mNoTransaksi As String
     Dim mJumlah As Long 'mengetahui ada tidaknya transaksi
 
+    Sub KondisiAwal()
+        Tutup()
+
+        txtKeterangan.Text = ""
+        txtTgl.Text = Now
+        txtDebet.Text = "0"
+        txtKredit.Text = "0"
+        lblDebet.Text = "0"
+        lblKredit.Text = "0"
+        ListView.Items.Clear()
+
+        CariPeriode()
+
+        PosisiListGrid()
+        IsiListGridDJurnal()
+        NoTransaksi()
+
+        cmdTambah.Text = "&New Item"
+        cmdKeluar.Text = "&Keluar"
+        cmdTambah.Enabled = True
+        cmdSimpan.Enabled = False
+        cmdEdit.Enabled = False
+        cmdHapus.Enabled = False
+    End Sub
+
+    Sub Buka()
+        txtNoTransaksi.Enabled = True
+        txtTgl.Enabled = True
+        txtKeterangan.Enabled = True
+        txtNoPerkiraan.Enabled = True
+        txtDebet.Enabled = True
+        txtKredit.Enabled = True
+    End Sub
+
+    Sub Tutup()
+        txtNoTransaksi.Enabled = True
+        txtTgl.Enabled = False
+        txtKeterangan.Enabled = False
+        txtNoPerkiraan.Enabled = False
+        txtDebet.Enabled = False
+        txtKredit.Enabled = False
+    End Sub
+
     Public Sub PosisiListGrid()
         With ListView.Columns
             .Add("NO.Transaksi", 0)
             .Add("No.Rek", 68)
-            .Add("Nama Perkiraan", 360)
+            .Add("Nama Akun", 360)
             .Add("DK", 0)
             .Add("Debet", 125, HorizontalAlignment.Right)
             .Add("Kredit", 125, HorizontalAlignment.Right)
@@ -38,9 +81,9 @@ Public Class frmJurnalPenyesuaian
                     .Items(a).SubItems.Add(Format(dsData.Tables(0).Rows(a).Item(4), "###,###"))
                     .Items(a).SubItems.Add(Format(dsData.Tables(0).Rows(a).Item(5), "###,###"))
                     If (a Mod 2 = 0) Then
-                        .Items(a).BackColor = Color.LightSteelBlue
+                        .Items(a).BackColor = Color.White
                     Else
-                        .Items(a).BackColor = Color.LightBlue
+                        .Items(a).BackColor = Color.Transparent
                     End If
                 End With
             Next
@@ -283,76 +326,55 @@ Public Class frmJurnalPenyesuaian
         Try
             KoneksiKeAccess()
 
-            txtDebet.Text = "0"
-            txtKredit.Text = "0"
-            lblDebet.Text = "0"
-            lblKredit.Text = "0"
-
-            CariPeriode()
-
-            PosisiListGrid()
-            IsiListGridDJurnal()
-            NoTransaksi()
-
-            cmdTambah.Text = "&New Item"
+            KondisiAwal()
         Catch ex As Exception
         End Try
     End Sub
 
     Private Sub cmdKeluar_Click(sender As Object, e As EventArgs) Handles cmdKeluar.Click
-        With objJurnalPenyesuaian
-            If lblDebet.Text <> lblKredit.Text Then
-                MsgBox("Jumlah debet dan kredit tidak seimbang, silahkan periksa", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Pesan")
-            Else
-                .Keluar()
-            End If
-        End With
+       If cmdKeluar.Text = "&Batal" Then
+            KondisiAwal()
+        Else
+            Me.Close()
+        End If
     End Sub
 
     Private Sub cmdSimpan_Click(sender As Object, e As EventArgs) Handles cmdSimpan.Click
-        Try
-            If txtNoTransaksi.Text = "" Then
-                MessageBox.Show("No.Transaksi tidak boleh kosong", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-                txtNoTransaksi.Focus()
+         Try
+            If txtKeterangan.Text = "" Then
+                MsgBox("Pastikan Data diisi Lengkap!", MsgBoxStyle.Information, "")
+                txtKeterangan.Focus()
             Else
-                If txtKeterangan.Text = "" Then
-                    MsgBox("Keterangan jurnal masih kosong, silahkan diisi", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Pesan")
-                    txtKeterangan.Focus()
+                If lblDebet.Text <> lblKredit.Text Then
+                    MsgBox("Jumlah debet dan kredit tidak seimbang, silahkan periksa", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Pesan")
                 Else
-                    If lblDebet.Text <> lblKredit.Text Then
-                        MsgBox("Jumlah debet dan kredit tidak seimbang, silahkan periksa", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Pesan")
-                    Else
-                        AdaNoTransaksi()
-                    End If
+                    AdaNoTransaksi()
+                    KondisiAwal()
                 End If
             End If
-        Catch 'ex As Exception
+        Catch ex As Exception
         End Try
     End Sub
 
     Private Sub cmdTambah_Click(sender As Object, e As EventArgs) Handles cmdTambah.Click
-        If lblDebet.Text <> lblKredit.Text Then
-            MsgBox("Jumlah debet dan kredit tidak seimbang, silahkan periksa", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Pesan")
+        Buka()
+        Try
+            dsData.Reset()
+            IsiListGridDJurnal()
+            BersihkanIsian()
+            txtKeterangan.Focus()
+            txtTgl.Text = Now
+            NoTransaksi()
+            ListView.Clear()
+            PosisiListGrid()
             txtNoPerkiraan.Enabled = True
-            txtNoPerkiraan.Focus()
-        Else
-            Try
-                dsData.Reset()
-                IsiListGridDJurnal()
-                BersihkanIsian()
-                txtTgl.Focus()
-                txtTgl.Text = Now
-                NoTransaksi()
-                ListView.Clear()
-                PosisiListGrid()
-                txtNoPerkiraan.Enabled = True
-                txtNoTransaksi.Enabled = True
-                cmdEdit.Text = "&Edit"
-                cmdTambah.Text = "&New Item"
-                cmdSimpan.Enabled = True
-            Catch 'ex As Exception
-            End Try
-        End If
+            txtNoTransaksi.Enabled = True
+            cmdEdit.Text = "&Edit"
+            cmdTambah.Text = "&New Item"
+            cmdKeluar.Text = "&Batal"
+            cmdSimpan.Enabled = True
+        Catch ex As Exception
+        End Try
     End Sub
 
     Private Sub txtKredit_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtKredit.KeyPress
@@ -361,7 +383,7 @@ Public Class frmJurnalPenyesuaian
                 If cmdTambah.Text = "&New Item" Then
                     Try
                         If txtNoPerkiraan.Text = "" Then
-                            MessageBox.Show("No.Perkiraan masih kosong", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                            MessageBox.Show("No.Akun masih kosong", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                             txtNoPerkiraan.Focus()
                         Else
                             If cmdEdit.Text = "&Edit" Then
@@ -401,7 +423,7 @@ Public Class frmJurnalPenyesuaian
                     If mPosted = "UnPosted" Then
                         Try
                             If txtNoPerkiraan.Text = "" Then
-                                MessageBox.Show("No.Perkiraan masih kosong", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                                MessageBox.Show("No.Akun masih kosong", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                                 txtNoPerkiraan.Focus()
                             Else
                                 If cmdEdit.Text = "&Edit" Then
@@ -551,7 +573,7 @@ Public Class frmJurnalPenyesuaian
             Else
                 MsgBox("Data ini sudah diposting, tidak bisa di Edit", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Pesan edit")
                 cmdEdit.Text = "&Edit"
-                BersihkanIsianGrid()
+                KondisiAwal()
                 cmdSimpan.Enabled = True
             End If
         End With
@@ -597,7 +619,7 @@ Public Class frmJurnalPenyesuaian
                                     cmdEdit.Text = "&Edit"
                                     cmdTambah.Text = "&New Item"
                                     txtNoPerkiraan.Enabled = True
-                                    cmdSimpan.Enabled = True
+                                    KondisiAwal()
                             End Select
                         Else
                             'untuk menghapus record jurnal AJP
@@ -640,6 +662,10 @@ Public Class frmJurnalPenyesuaian
             txtNoPerkiraan.Enabled = False
             cmdEdit.Text = "&Update"
             cmdSimpan.Enabled = False
+            cmdEdit.Enabled = True
+            cmdHapus.Enabled = False
+            cmdKeluar.Text = "&Batal"
+            Buka()
         Catch ex As Exception
         End Try
     End Sub
@@ -695,17 +721,11 @@ Public Class frmJurnalPenyesuaian
         End If
     End Sub
 
-    Private Sub cmdNoTransaksi_Click(sender As Object, e As EventArgs) Handles cmdNoTransaksi.Click
-        If lblDebet.Text <> lblKredit.Text Then
-            MsgBox("Jumlah debet dan kredit tidak seimbang, silahkan periksa", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Pesan")
-            txtNoPerkiraan.Enabled = True
-            txtNoPerkiraan.Focus()
-        Else
-            frmSubJurnalAJP.ShowDialog()
-            cmdEdit.Text = "&Edit"
-            txtTgl.Focus()
-            BersihkanIsianGrid()
-            cmdSimpan.Enabled = False
-        End If
+    Private Sub cmdTransaksi_Click(sender As Object, e As EventArgs) Handles cmdTransaksi.Click
+        frmSubJurnalAJP.ShowDialog()
+        cmdEdit.Text = "&Edit"
+        txtTgl.Focus()
+        BersihkanIsianGrid()
+        cmdSimpan.Enabled = False
     End Sub
 End Class

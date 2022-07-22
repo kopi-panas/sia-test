@@ -117,8 +117,4 @@ Public Class clsJurnalPenyesuaian
         End Try
     End Function
 
-    Public Sub Keluar()
-        frmJurnalPenyesuaian.Dispose()
-    End Sub
-
 End Class

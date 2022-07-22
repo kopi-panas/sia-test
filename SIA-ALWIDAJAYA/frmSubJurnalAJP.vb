@@ -27,9 +27,9 @@ Public Class frmSubJurnalAJP
                     .Items(a).SubItems.Add(dsData.Tables(0).Rows(a).Item(3))
                     .Items(a).SubItems.Add(dsData.Tables(0).Rows(a).Item(4))
                     If (a Mod 2 = 0) Then
-                        .Items(a).BackColor = Color.LightSteelBlue
+                        .Items(a).BackColor = Color.White
                     Else
-                        .Items(a).BackColor = Color.LightBlue
+                        .Items(a).BackColor = Color.Transparent
                     End If
                 End With
             Next
