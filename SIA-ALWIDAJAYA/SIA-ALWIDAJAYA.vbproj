@@ -189,12 +189,6 @@
       <DependentUpon>RptPerubahanModal.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="RptRugiLaba.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RptRugiLaba.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="clsAktiva.vb" />
     <Compile Include="clsJurnalPenyesuaian.vb" />
     <Compile Include="clsJurnalUmum.vb" />
@@ -349,6 +343,12 @@
       <DependentUpon>RptNeracaLajur.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="RptRugiLaba.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptRugiLaba.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmRptAJP.resx">
@@ -412,10 +412,6 @@
     <EmbeddedResource Include="RptPerubahanModal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RptPerubahanModal.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RptRugiLaba.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>RptRugiLaba.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAktivaTetap.resx">
       <DependentUpon>frmAktivaTetap.vb</DependentUpon>
@@ -489,6 +485,10 @@
     <EmbeddedResource Include="RptNeracaLajur.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RptNeracaLajur.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptRugiLaba.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptRugiLaba.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

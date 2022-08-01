@@ -301,4 +301,5 @@ Public Class frmAktivaTetap
             MsgBox(ex.Message, MsgBoxStyle.Information, "Perhatian")
         End Try
     End Sub
+
 End Class

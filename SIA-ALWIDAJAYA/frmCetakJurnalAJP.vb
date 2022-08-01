@@ -146,4 +146,5 @@ Public Class frmCetakJurnalAJP
         jurnalpenyesuaian.Visible = False
         bukubesar.Visible = False
     End Sub
+
 End Class
