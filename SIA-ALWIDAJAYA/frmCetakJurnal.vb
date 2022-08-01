@@ -129,4 +129,22 @@ Public Class frmCetakJurnal
             End Try
         End If
     End Sub
+
+    Private Sub cmdJU_Click(sender As Object, e As EventArgs) Handles cmdJU.Click
+        jurnalumum.Visible = True
+        bukubesar.Visible = False
+        neracasaldo.Visible = False
+    End Sub
+
+    Private Sub cmdBB_Click(sender As Object, e As EventArgs) Handles cmdBB.Click
+        bukubesar.Visible = True
+        jurnalumum.Visible = False
+        neracasaldo.Visible = False
+    End Sub
+
+    Private Sub cmdNS_Click(sender As Object, e As EventArgs) Handles cmdNS.Click
+        neracasaldo.Visible = True
+        jurnalumum.Visible = False
+        bukubesar.Visible = False
+    End Sub
 End Class

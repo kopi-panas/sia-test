@@ -128,4 +128,22 @@ Public Class frmCetakJurnalAJP
             End Try
         End If
     End Sub
+
+    Private Sub cmdJP_Click(sender As Object, e As EventArgs) Handles cmdJP.Click
+        jurnalpenyesuaian.Visible = True
+        bukubesar.Visible = False
+        neracasaldo.Visible = False
+    End Sub
+
+    Private Sub cmdBB_Click(sender As Object, e As EventArgs) Handles cmdBB.Click
+        bukubesar.Visible = True
+        jurnalpenyesuaian.Visible = False
+        neracasaldo.Visible = False
+    End Sub
+
+    Private Sub cmdNS_Click(sender As Object, e As EventArgs) Handles cmdNS.Click
+        neracasaldo.Visible = True
+        jurnalpenyesuaian.Visible = False
+        bukubesar.Visible = False
+    End Sub
 End Class
