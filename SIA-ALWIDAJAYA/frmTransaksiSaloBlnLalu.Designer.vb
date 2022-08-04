@@ -216,11 +216,11 @@ Partial Class frmTransaksiSaloBlnLalu
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(67, 81)
+        Me.Label2.Location = New System.Drawing.Point(92, 81)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(93, 13)
+        Me.Label2.Size = New System.Drawing.Size(68, 13)
         Me.Label2.TabIndex = 3
-        Me.Label2.Text = "No. Perkiraan :"
+        Me.Label2.Text = "No. Akun :"
         '
         'cmdKeluar
         '

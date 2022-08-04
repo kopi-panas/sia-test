@@ -64,7 +64,7 @@ Partial Class frmCetakJurnalAJP
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(142, 204)
+        Me.Panel1.Size = New System.Drawing.Size(142, 187)
         Me.Panel1.TabIndex = 130
         '
         'cmdNS
@@ -72,7 +72,7 @@ Partial Class frmCetakJurnalAJP
         Me.cmdNS.Font = New System.Drawing.Font("Microsoft Tai Le", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdNS.Image = CType(resources.GetObject("cmdNS.Image"), System.Drawing.Image)
         Me.cmdNS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdNS.Location = New System.Drawing.Point(12, 103)
+        Me.cmdNS.Location = New System.Drawing.Point(12, 96)
         Me.cmdNS.Name = "cmdNS"
         Me.cmdNS.Size = New System.Drawing.Size(114, 32)
         Me.cmdNS.TabIndex = 122
@@ -85,7 +85,7 @@ Partial Class frmCetakJurnalAJP
         Me.cmdBB.Font = New System.Drawing.Font("Microsoft Tai Le", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdBB.Image = CType(resources.GetObject("cmdBB.Image"), System.Drawing.Image)
         Me.cmdBB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdBB.Location = New System.Drawing.Point(12, 65)
+        Me.cmdBB.Location = New System.Drawing.Point(12, 58)
         Me.cmdBB.Name = "cmdBB"
         Me.cmdBB.Size = New System.Drawing.Size(114, 32)
         Me.cmdBB.TabIndex = 123
@@ -98,7 +98,7 @@ Partial Class frmCetakJurnalAJP
         Me.cmdJP.Font = New System.Drawing.Font("Microsoft Tai Le", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdJP.Image = CType(resources.GetObject("cmdJP.Image"), System.Drawing.Image)
         Me.cmdJP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdJP.Location = New System.Drawing.Point(12, 27)
+        Me.cmdJP.Location = New System.Drawing.Point(12, 20)
         Me.cmdJP.Name = "cmdJP"
         Me.cmdJP.Size = New System.Drawing.Size(114, 32)
         Me.cmdJP.TabIndex = 124
@@ -110,7 +110,7 @@ Partial Class frmCetakJurnalAJP
         Me.cmdKeluar.Font = New System.Drawing.Font("Microsoft Tai Le", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdKeluar.Image = CType(resources.GetObject("cmdKeluar.Image"), System.Drawing.Image)
         Me.cmdKeluar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdKeluar.Location = New System.Drawing.Point(31, 151)
+        Me.cmdKeluar.Location = New System.Drawing.Point(31, 147)
         Me.cmdKeluar.Name = "cmdKeluar"
         Me.cmdKeluar.Size = New System.Drawing.Size(74, 32)
         Me.cmdKeluar.TabIndex = 121
@@ -126,14 +126,14 @@ Partial Class frmCetakJurnalAJP
         Me.neracasaldo.Dock = System.Windows.Forms.DockStyle.Fill
         Me.neracasaldo.Location = New System.Drawing.Point(142, 0)
         Me.neracasaldo.Name = "neracasaldo"
-        Me.neracasaldo.Size = New System.Drawing.Size(297, 204)
+        Me.neracasaldo.Size = New System.Drawing.Size(297, 187)
         Me.neracasaldo.TabIndex = 133
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(94, 28)
+        Me.Label5.Location = New System.Drawing.Point(90, 25)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(121, 13)
         Me.Label5.TabIndex = 124
@@ -144,7 +144,7 @@ Partial Class frmCetakJurnalAJP
         Me.cmdCetakNS.Font = New System.Drawing.Font("Microsoft Tai Le", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdCetakNS.Image = CType(resources.GetObject("cmdCetakNS.Image"), System.Drawing.Image)
         Me.cmdCetakNS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdCetakNS.Location = New System.Drawing.Point(114, 142)
+        Me.cmdCetakNS.Location = New System.Drawing.Point(110, 139)
         Me.cmdCetakNS.Name = "cmdCetakNS"
         Me.cmdCetakNS.Size = New System.Drawing.Size(74, 32)
         Me.cmdCetakNS.TabIndex = 123
@@ -157,7 +157,7 @@ Partial Class frmCetakJurnalAJP
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.cboPeriodeNS)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(22, 65)
+        Me.GroupBox2.Location = New System.Drawing.Point(18, 62)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(263, 54)
         Me.GroupBox2.TabIndex = 122
@@ -191,7 +191,7 @@ Partial Class frmCetakJurnalAJP
         Me.bukubesar.Dock = System.Windows.Forms.DockStyle.Fill
         Me.bukubesar.Location = New System.Drawing.Point(142, 0)
         Me.bukubesar.Name = "bukubesar"
-        Me.bukubesar.Size = New System.Drawing.Size(297, 204)
+        Me.bukubesar.Size = New System.Drawing.Size(297, 187)
         Me.bukubesar.TabIndex = 132
         '
         'Label4
@@ -209,7 +209,7 @@ Partial Class frmCetakJurnalAJP
         Me.cmdCetakBB.Font = New System.Drawing.Font("Microsoft Tai Le", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdCetakBB.Image = CType(resources.GetObject("cmdCetakBB.Image"), System.Drawing.Image)
         Me.cmdCetakBB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdCetakBB.Location = New System.Drawing.Point(111, 147)
+        Me.cmdCetakBB.Location = New System.Drawing.Point(111, 139)
         Me.cmdCetakBB.Name = "cmdCetakBB"
         Me.cmdCetakBB.Size = New System.Drawing.Size(74, 32)
         Me.cmdCetakBB.TabIndex = 123
@@ -222,7 +222,7 @@ Partial Class frmCetakJurnalAJP
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.cboPeriodeBB)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(19, 70)
+        Me.GroupBox1.Location = New System.Drawing.Point(19, 66)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(263, 54)
         Me.GroupBox1.TabIndex = 122
@@ -272,7 +272,7 @@ Partial Class frmCetakJurnalAJP
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(92, 36)
+        Me.Label3.Location = New System.Drawing.Point(89, 24)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(154, 13)
         Me.Label3.TabIndex = 63
@@ -283,7 +283,7 @@ Partial Class frmCetakJurnalAJP
         Me.cmdCetakJP.Font = New System.Drawing.Font("Microsoft Tai Le", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdCetakJP.Image = CType(resources.GetObject("cmdCetakJP.Image"), System.Drawing.Image)
         Me.cmdCetakJP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdCetakJP.Location = New System.Drawing.Point(112, 151)
+        Me.cmdCetakJP.Location = New System.Drawing.Point(109, 139)
         Me.cmdCetakJP.Name = "cmdCetakJP"
         Me.cmdCetakJP.Size = New System.Drawing.Size(74, 32)
         Me.cmdCetakJP.TabIndex = 121
@@ -296,7 +296,7 @@ Partial Class frmCetakJurnalAJP
         Me.Group.Controls.Add(Me.Label15)
         Me.Group.Controls.Add(Me.cboPeriodeJP)
         Me.Group.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Group.Location = New System.Drawing.Point(20, 74)
+        Me.Group.Location = New System.Drawing.Point(17, 62)
         Me.Group.Name = "Group"
         Me.Group.Size = New System.Drawing.Size(263, 54)
         Me.Group.TabIndex = 120
@@ -310,14 +310,14 @@ Partial Class frmCetakJurnalAJP
         Me.jurnalpenyesuaian.Dock = System.Windows.Forms.DockStyle.Fill
         Me.jurnalpenyesuaian.Location = New System.Drawing.Point(142, 0)
         Me.jurnalpenyesuaian.Name = "jurnalpenyesuaian"
-        Me.jurnalpenyesuaian.Size = New System.Drawing.Size(297, 204)
+        Me.jurnalpenyesuaian.Size = New System.Drawing.Size(297, 187)
         Me.jurnalpenyesuaian.TabIndex = 131
         '
         'frmCetakJurnalAJP
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(439, 204)
+        Me.ClientSize = New System.Drawing.Size(439, 187)
         Me.ControlBox = False
         Me.Controls.Add(Me.jurnalpenyesuaian)
         Me.Controls.Add(Me.bukubesar)

@@ -18,7 +18,7 @@ Imports System
 Imports System.ComponentModel
 
 
-Public Class JurnalUmum
+Public Class RptJurnalUmum
     Inherits ReportClass
     
     Public Sub New()
@@ -27,7 +27,7 @@ Public Class JurnalUmum
     
     Public Overrides Property ResourceName() As String
         Get
-            Return "JurnalUmum.rpt"
+            Return "RptJurnalUmum.rpt"
         End Get
         Set
             'Do nothing
@@ -45,7 +45,7 @@ Public Class JurnalUmum
     
     Public Overrides Property FullResourceName() As String
         Get
-            Return "SIA_ALWIDAJAYA.JurnalUmum.rpt"
+            Return "SIA_ALWIDAJAYA.RptJurnalUmum.rpt"
         End Get
         Set
             'Do nothing
@@ -126,7 +126,7 @@ Public Class JurnalUmum
 End Class
 
 <System.Drawing.ToolboxBitmapAttribute(GetType(CrystalDecisions.[Shared].ExportOptions), "report.bmp")>  _
-Public Class CachedJurnalUmum
+Public Class CachedRptJurnalUmum
     Inherits Component
     Implements ICachedReport
     
@@ -168,7 +168,7 @@ Public Class CachedJurnalUmum
     End Property
     
     Public Overridable Function CreateReport() As CrystalDecisions.CrystalReports.Engine.ReportDocument Implements CrystalDecisions.ReportSource.ICachedReport.CreateReport
-        Dim rpt As JurnalUmum = New JurnalUmum()
+        Dim rpt As RptJurnalUmum = New RptJurnalUmum()
         rpt.Site = Me.Site
         Return rpt
     End Function

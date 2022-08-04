@@ -80,7 +80,7 @@ Partial Class frmCetakJurnal
         Me.cmdCetakNS.Font = New System.Drawing.Font("Microsoft Tai Le", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdCetakNS.Image = CType(resources.GetObject("cmdCetakNS.Image"), System.Drawing.Image)
         Me.cmdCetakNS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdCetakNS.Location = New System.Drawing.Point(105, 141)
+        Me.cmdCetakNS.Location = New System.Drawing.Point(107, 141)
         Me.cmdCetakNS.Name = "cmdCetakNS"
         Me.cmdCetakNS.Size = New System.Drawing.Size(74, 32)
         Me.cmdCetakNS.TabIndex = 123
@@ -93,7 +93,7 @@ Partial Class frmCetakJurnal
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.cboPeriodeNS)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(13, 64)
+        Me.GroupBox2.Location = New System.Drawing.Point(19, 65)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(263, 54)
         Me.GroupBox2.TabIndex = 122
@@ -145,7 +145,7 @@ Partial Class frmCetakJurnal
         Me.cmdCetakJU.Font = New System.Drawing.Font("Microsoft Tai Le", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdCetakJU.Image = CType(resources.GetObject("cmdCetakJU.Image"), System.Drawing.Image)
         Me.cmdCetakJU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdCetakJU.Location = New System.Drawing.Point(105, 142)
+        Me.cmdCetakJU.Location = New System.Drawing.Point(107, 142)
         Me.cmdCetakJU.Name = "cmdCetakJU"
         Me.cmdCetakJU.Size = New System.Drawing.Size(74, 32)
         Me.cmdCetakJU.TabIndex = 121
@@ -222,9 +222,9 @@ Partial Class frmCetakJurnal
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.cboPeriodeBB)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(19, 70)
+        Me.GroupBox1.Location = New System.Drawing.Point(19, 65)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(263, 54)
+        Me.GroupBox1.Size = New System.Drawing.Size(263, 59)
         Me.GroupBox1.TabIndex = 122
         Me.GroupBox1.TabStop = False
         '
@@ -268,7 +268,7 @@ Partial Class frmCetakJurnal
         Me.cmdNS.Font = New System.Drawing.Font("Microsoft Tai Le", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdNS.Image = CType(resources.GetObject("cmdNS.Image"), System.Drawing.Image)
         Me.cmdNS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdNS.Location = New System.Drawing.Point(12, 103)
+        Me.cmdNS.Location = New System.Drawing.Point(12, 98)
         Me.cmdNS.Name = "cmdNS"
         Me.cmdNS.Size = New System.Drawing.Size(114, 32)
         Me.cmdNS.TabIndex = 122
@@ -281,7 +281,7 @@ Partial Class frmCetakJurnal
         Me.cmdBB.Font = New System.Drawing.Font("Microsoft Tai Le", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdBB.Image = CType(resources.GetObject("cmdBB.Image"), System.Drawing.Image)
         Me.cmdBB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdBB.Location = New System.Drawing.Point(12, 65)
+        Me.cmdBB.Location = New System.Drawing.Point(12, 60)
         Me.cmdBB.Name = "cmdBB"
         Me.cmdBB.Size = New System.Drawing.Size(114, 32)
         Me.cmdBB.TabIndex = 123
@@ -294,7 +294,7 @@ Partial Class frmCetakJurnal
         Me.cmdJU.Font = New System.Drawing.Font("Microsoft Tai Le", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdJU.Image = CType(resources.GetObject("cmdJU.Image"), System.Drawing.Image)
         Me.cmdJU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdJU.Location = New System.Drawing.Point(12, 27)
+        Me.cmdJU.Location = New System.Drawing.Point(12, 22)
         Me.cmdJU.Name = "cmdJU"
         Me.cmdJU.Size = New System.Drawing.Size(114, 32)
         Me.cmdJU.TabIndex = 124

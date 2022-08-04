@@ -111,7 +111,7 @@ Partial Class frmPerkiraan
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(660, 141)
+        Me.GroupBox1.Size = New System.Drawing.Size(656, 141)
         Me.GroupBox1.TabIndex = 119
         Me.GroupBox1.TabStop = False
         '
@@ -176,21 +176,21 @@ Partial Class frmPerkiraan
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(57, 68)
+        Me.Label2.Location = New System.Drawing.Point(79, 68)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(96, 16)
+        Me.Label2.Size = New System.Drawing.Size(74, 16)
         Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Nama Perkiraan :"
+        Me.Label2.Text = "Nama Akun :"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(71, 42)
+        Me.Label1.Location = New System.Drawing.Point(90, 42)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(82, 16)
+        Me.Label1.Size = New System.Drawing.Size(63, 16)
         Me.Label1.TabIndex = 2
-        Me.Label1.Text = "No.Perkiraan :"
+        Me.Label1.Text = "No. Akun :"
         '
         'cmdSimpan
         '
@@ -238,7 +238,7 @@ Partial Class frmPerkiraan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(660, 454)
+        Me.ClientSize = New System.Drawing.Size(656, 450)
         Me.ControlBox = False
         Me.Controls.Add(Me.cmdCetak)
         Me.Controls.Add(Me.cmdKeluar)

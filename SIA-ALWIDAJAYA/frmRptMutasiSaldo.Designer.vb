@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmRptJurnalUmum
+Partial Class frmRptMutasiSaldo
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -23,7 +23,7 @@ Partial Class frmRptJurnalUmum
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
-        Me.RptJurnalUmum1 = New SIA_ALWIDAJAYA.RptJurnalUmum()
+        Me.RptMutasiSaldo1 = New SIA_ALWIDAJAYA.RptMutasiSaldo()
         Me.SuspendLayout()
         '
         'CrystalReportViewer1
@@ -34,21 +34,21 @@ Partial Class frmRptJurnalUmum
         Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.ReportSource = Me.RptJurnalUmum1
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(830, 510)
+        Me.CrystalReportViewer1.ReportSource = Me.RptMutasiSaldo1
+        Me.CrystalReportViewer1.Size = New System.Drawing.Size(839, 543)
         Me.CrystalReportViewer1.TabIndex = 0
         '
-        'frmRptJurnalUmum
+        'frmRptMutasiSaldo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(830, 510)
+        Me.ClientSize = New System.Drawing.Size(839, 543)
         Me.Controls.Add(Me.CrystalReportViewer1)
-        Me.Name = "frmRptJurnalUmum"
-        Me.Text = "Cetak Jurnal Umum"
+        Me.Name = "frmRptMutasiSaldo"
+        Me.Text = "Cetak Mutasi Saldo"
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
-    Friend WithEvents RptJurnalUmum1 As SIA_ALWIDAJAYA.RptJurnalUmum
+    Friend WithEvents RptMutasiSaldo1 As SIA_ALWIDAJAYA.RptMutasiSaldo
 End Class

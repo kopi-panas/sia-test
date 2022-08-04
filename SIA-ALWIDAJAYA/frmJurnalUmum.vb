@@ -210,7 +210,7 @@ Public Class frmJurnalUmum
             daData.Fill(dsData)
 
             If dsData.Tables(0).Rows.Count - 1 Then
-                MsgBox("Belum ada transksi jurnal....", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Pesan simpan data")
+                MsgBox("Belum ada transaksi jurnal....", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Pesan simpan data")
                 txtNoPerkiraan.Focus()
             Else
                 PeriksaDataNoTransaksi()
@@ -723,17 +723,22 @@ Public Class frmJurnalUmum
     End Sub
 
     Private Sub cmdTransaksi_Click(sender As Object, e As EventArgs) Handles cmdTransaksi.Click
-        'If lblDebet.Text <> lblKredit.Text Then
-        '    MsgBox("Jumlah debet dan kredit tidak seimbang, silahkan periksa", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Pesan")
-        '    txtNoPerkiraan.Enabled = True
-        '    txtNoPerkiraan.Focus()
-        'Else
         frmSubJurnalUmum.ShowDialog()
         cmdEdit.Text = "&Edit"
         txtTgl.Focus()
         BersihkanIsianGrid()
         cmdSimpan.Enabled = False
-        'End If
     End Sub
 
+    Private Sub cmdPreview_Click(sender As Object, e As EventArgs) Handles cmdPreview.Click
+        Try
+            frmRptJurnalUmum.CrystalReportViewer1.SelectionFormula = "{hJurnal.Periode} = '" & lblPeriode.Text & "'"
+            frmRptJurnalUmum.CrystalReportViewer1.Dock = DockStyle.Fill
+            frmRptJurnalUmum.CrystalReportViewer1.RefreshReport()
+            frmRptJurnalUmum.ShowDialog()
+            cmdEdit.Text = "&Edit"
+        Catch ex As Exception
+            MsgBox("Mencetak jurnal gagal")
+        End Try
+    End Sub
 End Class

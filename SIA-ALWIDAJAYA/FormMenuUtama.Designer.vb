@@ -227,29 +227,27 @@ Partial Class FormMenuUtama
         Me.Panel6.Controls.Add(Me.Label2)
         Me.Panel6.Controls.Add(Me.Label1)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel6.Location = New System.Drawing.Point(168, 16)
+        Me.Panel6.Location = New System.Drawing.Point(175, 16)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(941, 123)
+        Me.Panel6.Size = New System.Drawing.Size(910, 123)
         Me.Panel6.TabIndex = 9
         '
         'Label2
         '
-        Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(270, 87)
+        Me.Label2.Location = New System.Drawing.Point(3, 87)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(478, 19)
+        Me.Label2.Size = New System.Drawing.Size(883, 19)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Alamat: Jalan Monginsidi Desa Pacul RT 14 RW 02, Bojonegoro, Jawa Timur"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Label1
         '
-        Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Bell MT", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(194, 18)
+        Me.Label1.Location = New System.Drawing.Point(6, 18)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(672, 58)
+        Me.Label1.Size = New System.Drawing.Size(880, 58)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "SISTEM INFORMASI AKUNTANSI LAPORAN KEUANGAN" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "UD AL-WIDA JAYA" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -259,7 +257,7 @@ Partial Class FormMenuUtama
         Me.Panel5.Controls.Add(Me.txtName)
         Me.Panel5.Controls.Add(Me.Label4)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel5.Location = New System.Drawing.Point(1109, 16)
+        Me.Panel5.Location = New System.Drawing.Point(1085, 16)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(235, 123)
         Me.Panel5.TabIndex = 8
@@ -286,9 +284,9 @@ Partial Class FormMenuUtama
         'Panel4
         '
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel4.Location = New System.Drawing.Point(1344, 16)
+        Me.Panel4.Location = New System.Drawing.Point(1320, 16)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(23, 123)
+        Me.Panel4.Size = New System.Drawing.Size(47, 123)
         Me.Panel4.TabIndex = 7
         '
         'Panel3
@@ -296,7 +294,7 @@ Partial Class FormMenuUtama
         Me.Panel3.Controls.Add(Me.Label5)
         Me.Panel3.Controls.Add(Me.PictureBox1)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel3.Location = New System.Drawing.Point(26, 16)
+        Me.Panel3.Location = New System.Drawing.Point(33, 16)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(142, 123)
         Me.Panel3.TabIndex = 6
@@ -323,7 +321,7 @@ Partial Class FormMenuUtama
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel2.Location = New System.Drawing.Point(3, 16)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(23, 123)
+        Me.Panel2.Size = New System.Drawing.Size(30, 123)
         Me.Panel2.TabIndex = 5
         '
         'Label3
@@ -470,20 +468,20 @@ Partial Class FormMenuUtama
         '
         Me.LogoutToolStripMenuItem.Image = CType(resources.GetObject("LogoutToolStripMenuItem.Image"), System.Drawing.Image)
         Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
         Me.LogoutToolStripMenuItem.Text = "Logout"
         '
         'KeluarToolStripMenuItem
         '
         Me.KeluarToolStripMenuItem.Image = CType(resources.GetObject("KeluarToolStripMenuItem.Image"), System.Drawing.Image)
         Me.KeluarToolStripMenuItem.Name = "KeluarToolStripMenuItem"
-        Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
         Me.KeluarToolStripMenuItem.Text = "Keluar"
         '
         'HapusToolStripMenuItem
         '
         Me.HapusToolStripMenuItem.Name = "HapusToolStripMenuItem"
-        Me.HapusToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.HapusToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
         Me.HapusToolStripMenuItem.Text = "Hapus"
         '
         'SetupToolStripMenuItem
@@ -523,7 +521,6 @@ Partial Class FormMenuUtama
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.Panel6.ResumeLayout(False)
-        Me.Panel6.PerformLayout()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         Me.Panel3.ResumeLayout(False)

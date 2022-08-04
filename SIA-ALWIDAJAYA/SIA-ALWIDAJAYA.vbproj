@@ -99,6 +99,18 @@
     <Compile Include="frmRptBukubesarAJP.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmRptJurnalUmum.Designer.vb">
+      <DependentUpon>frmRptJurnalUmum.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRptJurnalUmum.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRptMutasiSaldo.Designer.vb">
+      <DependentUpon>frmRptMutasiSaldo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRptMutasiSaldo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmRptNeraca.Designer.vb">
       <DependentUpon>frmRptNeraca.vb</DependentUpon>
     </Compile>
@@ -109,12 +121,6 @@
       <DependentUpon>frmRptNeracaLajur.vb</DependentUpon>
     </Compile>
     <Compile Include="frmRptNeracaLajur.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmRptJurnalUmum.Designer.vb">
-      <DependentUpon>frmRptJurnalUmum.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmRptJurnalUmum.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmRptNeracaSaldo.Designer.vb">
@@ -153,16 +159,22 @@
       <DependentUpon>RptBukuBesar.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="JurnalUmum.vb">
+    <Compile Include="RptJurnalUmum.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>JurnalUmum.rpt</DependentUpon>
+      <DependentUpon>RptJurnalUmum.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="RptBukubesarAJP.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RptBukubesarAJP.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptMutasiSaldo.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptMutasiSaldo.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="RptNeraca.vb">
@@ -360,14 +372,17 @@
     <EmbeddedResource Include="frmRptBukubesarAJP.resx">
       <DependentUpon>frmRptBukubesarAJP.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRptJurnalUmum.resx">
+      <DependentUpon>frmRptJurnalUmum.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRptMutasiSaldo.resx">
+      <DependentUpon>frmRptMutasiSaldo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRptNeraca.resx">
       <DependentUpon>frmRptNeraca.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRptNeracaLajur.resx">
       <DependentUpon>frmRptNeracaLajur.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmRptJurnalUmum.resx">
-      <DependentUpon>frmRptJurnalUmum.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRptNeracaSaldo.resx">
       <DependentUpon>frmRptNeracaSaldo.vb</DependentUpon>
@@ -389,13 +404,17 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RptBukuBesar.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="JurnalUmum.rpt">
+    <EmbeddedResource Include="RptJurnalUmum.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>JurnalUmum.vb</LastGenOutput>
+      <LastGenOutput>RptJurnalUmum.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="RptBukubesarAJP.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RptBukubesarAJP.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptMutasiSaldo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptMutasiSaldo.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="RptNeraca.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

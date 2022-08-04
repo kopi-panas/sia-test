@@ -51,7 +51,7 @@ Public Class clsJurnalPenyesuaian
             frmPerkiraan.IsiList()
             Return Query
         Catch ex As Exception
-            MsgBox("Data tidak bisa tersimpan karena NoPerkiraan sudah ada...", MsgBoxStyle.Exclamation, "Error")
+            MsgBox("Data tidak bisa tersimpan karena NoAkun sudah ada...", MsgBoxStyle.Exclamation, "Error")
             frmPerkiraan.txtNoPerkiraan.Focus()
             Return Query
         End Try

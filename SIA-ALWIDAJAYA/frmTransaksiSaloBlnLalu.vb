@@ -37,9 +37,9 @@ Public Class frmTransaksiSaloBlnLalu
                     .Items(a).SubItems.Add(Format(dsData.Tables(0).Rows(a).Item(6), "###,###"))
                     .Items(a).SubItems.Add(dsData.Tables(0).Rows(a).Item(7))
                     If (a Mod 2 = 0) Then
-                        .Items(a).BackColor = Color.LightSteelBlue
+                        .Items(a).BackColor = Color.Transparent
                     Else
-                        .Items(a).BackColor = Color.LightBlue
+                        .Items(a).BackColor = Color.White
                     End If
                 End With
             Next
@@ -320,6 +320,17 @@ Public Class frmTransaksiSaloBlnLalu
     End Sub
 
     Private Sub cmdCetak_Click(sender As Object, e As EventArgs) Handles cmdCetak.Click
-
+        If Len(cboPeriode.Text) = 0 Then
+            MsgBox("Pilih periode yang akan dicetak", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Pesan")
+            cboPeriode.Focus()
+        Else
+            Try
+                frmRptMutasiSaldo.CrystalReportViewer1.SelectionFormula = "{tmpSaldoBlnLalu.Periode} = '" & cboPeriode.Text & "'"
+                frmRptMutasiSaldo.CrystalReportViewer1.Dock = DockStyle.Fill
+                frmRptMutasiSaldo.CrystalReportViewer1.RefreshReport()
+                frmRptMutasiSaldo.ShowDialog()
+            Catch ex As Exception
+            End Try
+        End If
     End Sub
 End Class

@@ -222,13 +222,13 @@ Public Class frmJurnalPenyesuaian
 
     Private Sub AdaNoTransaksi()
         Try
-            Query = "SELECT noTransaksi FROM hJurnalAJP WHERE noTransaksi = '" & txtNoTransaksi.Text & "'"
+            Query = "SELECT NoTransaksi FROM hJurnalAJP WHERE NoTransaksi = '" & txtNoTransaksi.Text & "'"
             daData = New OleDbDataAdapter(Query, conn)
             dsData = New DataSet
             daData.Fill(dsData)
 
             If dsData.Tables(0).Rows.Count - 1 Then
-                MsgBox("Belum ada transksi jurnal....", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Pesan simpan data")
+                MsgBox("Belum ada transaksi jurnal....", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "")
                 txtNoPerkiraan.Focus()
             Else
                 PeriksaDataNoTransaksi()
@@ -253,7 +253,7 @@ Public Class frmJurnalPenyesuaian
             daData.Fill(dsData)
 
             If dsData.Tables(0).Rows.Count - 1 Then
-                MsgBox("No.Perkiraan ini tidak ada", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Cari no perkiraan")
+                MsgBox("No.Akun ini tidak ada", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "")
                 BersihkanIsianGrid()
                 txtNoPerkiraan.Focus()
             Else

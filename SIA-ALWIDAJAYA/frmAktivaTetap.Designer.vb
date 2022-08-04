@@ -69,17 +69,17 @@ Partial Class frmAktivaTetap
         '
         Me.GroupBox2.Controls.Add(Me.cboAkumulasi)
         Me.GroupBox2.Controls.Add(Me.Label12)
-        Me.GroupBox2.Location = New System.Drawing.Point(23, 257)
+        Me.GroupBox2.Location = New System.Drawing.Point(23, 271)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(582, 79)
+        Me.GroupBox2.Size = New System.Drawing.Size(606, 79)
         Me.GroupBox2.TabIndex = 125
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Kode Perkiraan:"
+        Me.GroupBox2.Text = "Kode Akun:"
         '
         'cboAkumulasi
         '
         Me.cboAkumulasi.FormattingEnabled = True
-        Me.cboAkumulasi.Location = New System.Drawing.Point(110, 41)
+        Me.cboAkumulasi.Location = New System.Drawing.Point(91, 41)
         Me.cboAkumulasi.Name = "cboAkumulasi"
         Me.cboAkumulasi.Size = New System.Drawing.Size(462, 21)
         Me.cboAkumulasi.TabIndex = 24
@@ -88,7 +88,7 @@ Partial Class frmAktivaTetap
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(11, 25)
+        Me.Label12.Location = New System.Drawing.Point(26, 25)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(142, 13)
         Me.Label12.TabIndex = 23
@@ -109,9 +109,9 @@ Partial Class frmAktivaTetap
         Me.cmdHitung.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdHitung.Image = CType(resources.GetObject("cmdHitung.Image"), System.Drawing.Image)
         Me.cmdHitung.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdHitung.Location = New System.Drawing.Point(435, 195)
+        Me.cmdHitung.Location = New System.Drawing.Point(427, 205)
         Me.cmdHitung.Name = "cmdHitung"
-        Me.cmdHitung.Size = New System.Drawing.Size(137, 25)
+        Me.cmdHitung.Size = New System.Drawing.Size(145, 31)
         Me.cmdHitung.TabIndex = 120
         Me.cmdHitung.Text = "&Hitung Penyusutan"
         Me.cmdHitung.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -171,7 +171,7 @@ Partial Class frmAktivaTetap
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(89, 13)
         Me.Label20.TabIndex = 30
-        Me.Label20.Text = "Baban Perbulan :"
+        Me.Label20.Text = "Beban Perbulan :"
         '
         'txtAkumulasi
         '
@@ -197,9 +197,9 @@ Partial Class frmAktivaTetap
         Me.cmdSimpan.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdSimpan.Image = CType(resources.GetObject("cmdSimpan.Image"), System.Drawing.Image)
         Me.cmdSimpan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdSimpan.Location = New System.Drawing.Point(23, 342)
+        Me.cmdSimpan.Location = New System.Drawing.Point(23, 356)
         Me.cmdSimpan.Name = "cmdSimpan"
-        Me.cmdSimpan.Size = New System.Drawing.Size(73, 25)
+        Me.cmdSimpan.Size = New System.Drawing.Size(73, 37)
         Me.cmdSimpan.TabIndex = 127
         Me.cmdSimpan.Text = "&Simpan"
         Me.cmdSimpan.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -211,9 +211,9 @@ Partial Class frmAktivaTetap
         Me.cmdHapus.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdHapus.Image = CType(resources.GetObject("cmdHapus.Image"), System.Drawing.Image)
         Me.cmdHapus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdHapus.Location = New System.Drawing.Point(181, 342)
+        Me.cmdHapus.Location = New System.Drawing.Point(181, 356)
         Me.cmdHapus.Name = "cmdHapus"
-        Me.cmdHapus.Size = New System.Drawing.Size(73, 25)
+        Me.cmdHapus.Size = New System.Drawing.Size(73, 37)
         Me.cmdHapus.TabIndex = 129
         Me.cmdHapus.Text = "&Hapus"
         Me.cmdHapus.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -222,7 +222,7 @@ Partial Class frmAktivaTetap
         'lblBebanPerbulan
         '
         Me.lblBebanPerbulan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblBebanPerbulan.Location = New System.Drawing.Point(458, 193)
+        Me.lblBebanPerbulan.Location = New System.Drawing.Point(435, 171)
         Me.lblBebanPerbulan.Name = "lblBebanPerbulan"
         Me.lblBebanPerbulan.Size = New System.Drawing.Size(137, 21)
         Me.lblBebanPerbulan.TabIndex = 126
@@ -297,9 +297,9 @@ Partial Class frmAktivaTetap
         Me.cmdKeluar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdKeluar.Image = CType(resources.GetObject("cmdKeluar.Image"), System.Drawing.Image)
         Me.cmdKeluar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdKeluar.Location = New System.Drawing.Point(260, 342)
+        Me.cmdKeluar.Location = New System.Drawing.Point(260, 356)
         Me.cmdKeluar.Name = "cmdKeluar"
-        Me.cmdKeluar.Size = New System.Drawing.Size(73, 25)
+        Me.cmdKeluar.Size = New System.Drawing.Size(73, 37)
         Me.cmdKeluar.TabIndex = 130
         Me.cmdKeluar.Text = "&Keluar"
         Me.cmdKeluar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -411,9 +411,9 @@ Partial Class frmAktivaTetap
         Me.cmdEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdEdit.Image = CType(resources.GetObject("cmdEdit.Image"), System.Drawing.Image)
         Me.cmdEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdEdit.Location = New System.Drawing.Point(102, 342)
+        Me.cmdEdit.Location = New System.Drawing.Point(102, 356)
         Me.cmdEdit.Name = "cmdEdit"
-        Me.cmdEdit.Size = New System.Drawing.Size(73, 25)
+        Me.cmdEdit.Size = New System.Drawing.Size(73, 37)
         Me.cmdEdit.TabIndex = 128
         Me.cmdEdit.Text = "&Edit"
         Me.cmdEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -433,6 +433,7 @@ Partial Class frmAktivaTetap
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.cmdHitung)
         Me.GroupBox1.Controls.Add(Me.Label18)
+        Me.GroupBox1.Controls.Add(Me.lblBebanPerbulan)
         Me.GroupBox1.Controls.Add(Me.txtNilaiBuku)
         Me.GroupBox1.Controls.Add(Me.Label17)
         Me.GroupBox1.Controls.Add(Me.txtBeban)
@@ -459,9 +460,9 @@ Partial Class frmAktivaTetap
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(23, 22)
+        Me.GroupBox1.Location = New System.Drawing.Point(23, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(582, 229)
+        Me.GroupBox1.Size = New System.Drawing.Size(606, 253)
         Me.GroupBox1.TabIndex = 124
         Me.GroupBox1.TabStop = False
         '
@@ -469,12 +470,11 @@ Partial Class frmAktivaTetap
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(618, 396)
+        Me.ClientSize = New System.Drawing.Size(641, 405)
         Me.ControlBox = False
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.cmdSimpan)
         Me.Controls.Add(Me.cmdHapus)
-        Me.Controls.Add(Me.lblBebanPerbulan)
         Me.Controls.Add(Me.cmdKeluar)
         Me.Controls.Add(Me.cmdEdit)
         Me.Controls.Add(Me.GroupBox1)
