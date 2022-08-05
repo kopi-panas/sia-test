@@ -481,7 +481,7 @@ Public Class frmJurnalUmum
             MsgBox("Keterangan masih kosong, silahkan isi", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Pesan")
             txtKeterangan.Focus()
         Else
-            frmSubNoPerkiraanJurnalUmum.ShowDialog()
+            frmSubNoPerkiraanJurnalUmum.Show()
             If Len(txtNoPerkiraan.Text) <> 0 Then
                 txtDebet.Focus()
             Else
@@ -723,7 +723,7 @@ Public Class frmJurnalUmum
     End Sub
 
     Private Sub cmdTransaksi_Click(sender As Object, e As EventArgs) Handles cmdTransaksi.Click
-        frmSubJurnalUmum.ShowDialog()
+        frmSubJurnalUmum.Show()
         cmdEdit.Text = "&Edit"
         txtTgl.Focus()
         BersihkanIsianGrid()
