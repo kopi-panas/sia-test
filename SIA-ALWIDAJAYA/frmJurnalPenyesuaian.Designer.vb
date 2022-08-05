@@ -37,6 +37,7 @@ Partial Class frmJurnalPenyesuaian
         Me.Label6 = New System.Windows.Forms.Label()
         Me.cmdHapus = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cmdTransaksi = New System.Windows.Forms.Button()
         Me.lblPeriode = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -46,7 +47,6 @@ Partial Class frmJurnalPenyesuaian
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmdTambah = New System.Windows.Forms.Button()
         Me.cmdSimpan = New System.Windows.Forms.Button()
-        Me.cmdTransaksi = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -56,7 +56,7 @@ Partial Class frmJurnalPenyesuaian
         Me.cmdKeluar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdKeluar.Image = CType(resources.GetObject("cmdKeluar.Image"), System.Drawing.Image)
         Me.cmdKeluar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdKeluar.Location = New System.Drawing.Point(669, 467)
+        Me.cmdKeluar.Location = New System.Drawing.Point(669, 460)
         Me.cmdKeluar.Name = "cmdKeluar"
         Me.cmdKeluar.Size = New System.Drawing.Size(76, 30)
         Me.cmdKeluar.TabIndex = 177
@@ -107,7 +107,7 @@ Partial Class frmJurnalPenyesuaian
         Me.cmdPreview.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdPreview.Image = CType(resources.GetObject("cmdPreview.Image"), System.Drawing.Image)
         Me.cmdPreview.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdPreview.Location = New System.Drawing.Point(576, 467)
+        Me.cmdPreview.Location = New System.Drawing.Point(576, 460)
         Me.cmdPreview.Name = "cmdPreview"
         Me.cmdPreview.Size = New System.Drawing.Size(87, 30)
         Me.cmdPreview.TabIndex = 186
@@ -216,9 +216,19 @@ Partial Class frmJurnalPenyesuaian
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(798, 141)
+        Me.GroupBox1.Size = New System.Drawing.Size(766, 141)
         Me.GroupBox1.TabIndex = 178
         Me.GroupBox1.TabStop = False
+        '
+        'cmdTransaksi
+        '
+        Me.cmdTransaksi.Image = CType(resources.GetObject("cmdTransaksi.Image"), System.Drawing.Image)
+        Me.cmdTransaksi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmdTransaksi.Location = New System.Drawing.Point(256, 36)
+        Me.cmdTransaksi.Name = "cmdTransaksi"
+        Me.cmdTransaksi.Size = New System.Drawing.Size(29, 28)
+        Me.cmdTransaksi.TabIndex = 17
+        Me.cmdTransaksi.UseVisualStyleBackColor = True
         '
         'lblPeriode
         '
@@ -318,21 +328,11 @@ Partial Class frmJurnalPenyesuaian
         Me.cmdSimpan.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.cmdSimpan.UseVisualStyleBackColor = False
         '
-        'cmdTransaksi
-        '
-        Me.cmdTransaksi.Image = CType(resources.GetObject("cmdTransaksi.Image"), System.Drawing.Image)
-        Me.cmdTransaksi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdTransaksi.Location = New System.Drawing.Point(256, 36)
-        Me.cmdTransaksi.Name = "cmdTransaksi"
-        Me.cmdTransaksi.Size = New System.Drawing.Size(29, 28)
-        Me.cmdTransaksi.TabIndex = 17
-        Me.cmdTransaksi.UseVisualStyleBackColor = True
-        '
         'frmJurnalPenyesuaian
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(798, 518)
+        Me.ClientSize = New System.Drawing.Size(766, 499)
         Me.ControlBox = False
         Me.Controls.Add(Me.cmdKeluar)
         Me.Controls.Add(Me.ListView)

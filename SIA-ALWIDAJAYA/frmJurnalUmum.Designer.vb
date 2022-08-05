@@ -198,7 +198,7 @@ Partial Class frmJurnalUmum
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(776, 126)
+        Me.GroupBox1.Size = New System.Drawing.Size(772, 126)
         Me.GroupBox1.TabIndex = 161
         Me.GroupBox1.TabStop = False
         '
@@ -284,7 +284,7 @@ Partial Class frmJurnalUmum
         Me.cmdKeluar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdKeluar.Image = CType(resources.GetObject("cmdKeluar.Image"), System.Drawing.Image)
         Me.cmdKeluar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdKeluar.Location = New System.Drawing.Point(659, 460)
+        Me.cmdKeluar.Location = New System.Drawing.Point(659, 448)
         Me.cmdKeluar.Name = "cmdKeluar"
         Me.cmdKeluar.Size = New System.Drawing.Size(85, 34)
         Me.cmdKeluar.TabIndex = 160
@@ -309,7 +309,7 @@ Partial Class frmJurnalUmum
         Me.cmdPreview.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdPreview.Image = CType(resources.GetObject("cmdPreview.Image"), System.Drawing.Image)
         Me.cmdPreview.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdPreview.Location = New System.Drawing.Point(568, 460)
+        Me.cmdPreview.Location = New System.Drawing.Point(568, 448)
         Me.cmdPreview.Name = "cmdPreview"
         Me.cmdPreview.Size = New System.Drawing.Size(85, 34)
         Me.cmdPreview.TabIndex = 169
@@ -332,7 +332,7 @@ Partial Class frmJurnalUmum
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(776, 490)
+        Me.ClientSize = New System.Drawing.Size(772, 486)
         Me.ControlBox = False
         Me.Controls.Add(Me.txtKredit)
         Me.Controls.Add(Me.Label6)

@@ -269,4 +269,26 @@ Public Class frmPerkiraan
         txtNoPerkiraan.Enabled = False
         AmbilDataDariList()
     End Sub
+
+    Private Sub cboGroup_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboGroup.SelectedIndexChanged
+        If Me.cboGroup.Text = "1-AKTIVA" Then
+            txtNoPerkiraan.Text = 10000
+            txtNoPerkiraan.Focus()
+        ElseIf Me.cboGroup.Text = "2-HUTANG" Then
+            txtNoPerkiraan.Text = 20000
+            txtNoPerkiraan.Focus()
+        ElseIf Me.cboGroup.Text = "3-MODAL" Then
+            txtNoPerkiraan.Text = 30000
+            txtNoPerkiraan.Focus()
+        ElseIf Me.cboGroup.Text = "4-PENDAPATAN" Then
+            txtNoPerkiraan.Text = 40000
+            txtNoPerkiraan.Focus()
+        ElseIf Me.cboGroup.Text = "5-PEMBELIAN" Then
+            txtNoPerkiraan.Text = 50000
+            txtNoPerkiraan.Focus()
+        ElseIf Me.cboGroup.Text = "6-BIAYA" Then
+            txtNoPerkiraan.Text = 60000
+            txtNoPerkiraan.Focus()
+        End If
+    End Sub
 End Class

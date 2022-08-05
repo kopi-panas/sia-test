@@ -111,24 +111,24 @@ Partial Class frmPerkiraan
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(656, 141)
+        Me.GroupBox1.Size = New System.Drawing.Size(652, 141)
         Me.GroupBox1.TabIndex = 119
         Me.GroupBox1.TabStop = False
         '
         'cboGroup
         '
         Me.cboGroup.FormattingEnabled = True
-        Me.cboGroup.Items.AddRange(New Object() {"1-AKTIVA", "2-HUTANG", "3-MODAL", "4-PENDAPATAN", "5-BIAYA"})
-        Me.cboGroup.Location = New System.Drawing.Point(159, 93)
+        Me.cboGroup.Items.AddRange(New Object() {"1-AKTIVA", "2-HUTANG", "3-MODAL", "4-PENDAPATAN", "5-PEMBELIAN", "6-BIAYA"})
+        Me.cboGroup.Location = New System.Drawing.Point(100, 51)
         Me.cboGroup.Name = "cboGroup"
-        Me.cboGroup.Size = New System.Drawing.Size(186, 21)
+        Me.cboGroup.Size = New System.Drawing.Size(116, 21)
         Me.cboGroup.TabIndex = 7
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(105, 94)
+        Me.Label4.Location = New System.Drawing.Point(97, 33)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(48, 16)
         Me.Label4.TabIndex = 6
@@ -140,7 +140,7 @@ Partial Class frmPerkiraan
         Me.cboKeterangan.Items.AddRange(New Object() {"-", "Ya"})
         Me.cboKeterangan.Location = New System.Drawing.Point(500, 93)
         Me.cboKeterangan.Name = "cboKeterangan"
-        Me.cboKeterangan.Size = New System.Drawing.Size(76, 21)
+        Me.cboKeterangan.Size = New System.Drawing.Size(36, 21)
         Me.cboKeterangan.TabIndex = 5
         Me.cboKeterangan.Text = "-"
         '
@@ -157,16 +157,16 @@ Partial Class frmPerkiraan
         'txtNamaPerkiraan
         '
         Me.txtNamaPerkiraan.BackColor = System.Drawing.Color.White
-        Me.txtNamaPerkiraan.Location = New System.Drawing.Point(159, 67)
+        Me.txtNamaPerkiraan.Location = New System.Drawing.Point(100, 94)
         Me.txtNamaPerkiraan.MaxLength = 40
         Me.txtNamaPerkiraan.Name = "txtNamaPerkiraan"
-        Me.txtNamaPerkiraan.Size = New System.Drawing.Size(462, 20)
+        Me.txtNamaPerkiraan.Size = New System.Drawing.Size(282, 20)
         Me.txtNamaPerkiraan.TabIndex = 1
         '
         'txtNoPerkiraan
         '
         Me.txtNoPerkiraan.BackColor = System.Drawing.Color.White
-        Me.txtNoPerkiraan.Location = New System.Drawing.Point(159, 41)
+        Me.txtNoPerkiraan.Location = New System.Drawing.Point(222, 52)
         Me.txtNoPerkiraan.MaxLength = 5
         Me.txtNoPerkiraan.Name = "txtNoPerkiraan"
         Me.txtNoPerkiraan.Size = New System.Drawing.Size(77, 20)
@@ -176,7 +176,7 @@ Partial Class frmPerkiraan
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(79, 68)
+        Me.Label2.Location = New System.Drawing.Point(97, 75)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(74, 16)
         Me.Label2.TabIndex = 3
@@ -186,7 +186,7 @@ Partial Class frmPerkiraan
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(90, 42)
+        Me.Label1.Location = New System.Drawing.Point(222, 33)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(63, 16)
         Me.Label1.TabIndex = 2
@@ -238,7 +238,7 @@ Partial Class frmPerkiraan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(656, 450)
+        Me.ClientSize = New System.Drawing.Size(652, 446)
         Me.ControlBox = False
         Me.Controls.Add(Me.cmdCetak)
         Me.Controls.Add(Me.cmdKeluar)

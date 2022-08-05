@@ -1,14 +1,12 @@
 ﻿Imports System.Data.OleDb
 Public Class frmJurnalPenyesuaian
 
-
-    'Menciptakan objek bernama objJurnalPenyesuaian
-    Dim objJurnalPenyesuaian As New clsJurnalPenyesuaian
+    Dim objJurnal As New clsJurnalPenyesuaian
 
     Public mPosted As String
     Public mDK As String
     Dim mNoTransaksi As String
-    Dim mJumlah As Long 'mengetahui ada tidaknya transaksi
+    Dim mJumlah As Long
 
     Sub KondisiAwal()
         Tutup()
@@ -33,24 +31,6 @@ Public Class frmJurnalPenyesuaian
         cmdSimpan.Enabled = False
         cmdEdit.Enabled = False
         cmdHapus.Enabled = False
-    End Sub
-
-    Sub Buka()
-        txtNoTransaksi.Enabled = True
-        txtTgl.Enabled = True
-        txtKeterangan.Enabled = True
-        txtNoPerkiraan.Enabled = True
-        txtDebet.Enabled = True
-        txtKredit.Enabled = True
-    End Sub
-
-    Sub Tutup()
-        txtNoTransaksi.Enabled = True
-        txtTgl.Enabled = False
-        txtKeterangan.Enabled = False
-        txtNoPerkiraan.Enabled = False
-        txtDebet.Enabled = False
-        txtKredit.Enabled = False
     End Sub
 
     Public Sub PosisiListGrid()
@@ -164,7 +144,7 @@ Public Class frmJurnalPenyesuaian
         End Try
     End Sub
 
-    Public Sub HapusIsiGrid()
+    Private Sub HapusIsiGrid()
         Try
             'Menghapus isi data grid
             Query = "DELETE FROM dJurnalAJP WHERE NoTransaksi = '" & txtNoTransaksi.Text & "' AND NoPerkiraan = '" & txtNoPerkiraan.Text & "' AND DK = '" & mDK & "'"
@@ -204,7 +184,7 @@ Public Class frmJurnalPenyesuaian
 
     'Sub rutin untuk menyimpan data ke hJurnal
     Private Sub PeriksaDataNoTransaksi()
-        With objJurnalPenyesuaian
+        With objJurnal
             Try
                 Query = "SELECT hJurnalAJP.Periode, hJurnalAJP.TglTransaksi, hJurnalAJP.NoTransaksi, hJurnalAJP.Keterangan, hJurnalAJP.Status FROM(hJurnalAJP) GROUP BY hJurnalAJP.Periode, hJurnalAJP.TglTransaksi, hJurnalAJP.NoTransaksi, hJurnalAJP.Keterangan, hJurnalAJP.Status HAVING(((hJurnalAJP.NoTransaksi) = '" & txtNoTransaksi.Text & "')) ORDER BY hJurnalAJP.Periode, hJurnalAJP.TglTransaksi, hJurnalAJP.NoTransaksi, hJurnalAJP.Keterangan, hJurnalAJP.Status"
                 daData = New OleDbDataAdapter(Query, conn)
@@ -212,7 +192,7 @@ Public Class frmJurnalPenyesuaian
                 daData.Fill(dsData)
 
                 If dsData.Tables(0).Rows.Count - 1 Then
-                    'Menyimpan data ke hJurnal AJP
+                    'Menyimpan data ke hJurnal
                     .SimpanDataHJurnal()
                 End If
             Catch ex As Exception
@@ -222,13 +202,13 @@ Public Class frmJurnalPenyesuaian
 
     Private Sub AdaNoTransaksi()
         Try
-            Query = "SELECT NoTransaksi FROM hJurnalAJP WHERE NoTransaksi = '" & txtNoTransaksi.Text & "'"
+            Query = "SELECT noTransaksi FROM hJurnalAJP WHERE noTransaksi = '" & txtNoTransaksi.Text & "'"
             daData = New OleDbDataAdapter(Query, conn)
             dsData = New DataSet
             daData.Fill(dsData)
 
             If dsData.Tables(0).Rows.Count - 1 Then
-                MsgBox("Belum ada transaksi jurnal....", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "")
+                MsgBox("Belum ada transaksi jurnal....", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Pesan simpan data")
                 txtNoPerkiraan.Focus()
             Else
                 PeriksaDataNoTransaksi()
@@ -253,7 +233,7 @@ Public Class frmJurnalPenyesuaian
             daData.Fill(dsData)
 
             If dsData.Tables(0).Rows.Count - 1 Then
-                MsgBox("No.Akun ini tidak ada", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "")
+                MsgBox("No.Akun ini tidak ada", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Cari no perkiraan")
                 BersihkanIsianGrid()
                 txtNoPerkiraan.Focus()
             Else
@@ -265,16 +245,16 @@ Public Class frmJurnalPenyesuaian
     End Sub
 
     Private Sub EditJurnalGrid()
-        With objJurnalPenyesuaian
+        With objJurnal
             Try
-                .EditDatahJurnal() 'edit hJurnal AJP
+                .EditDataHJurnal() 'edit hJurnal
 
                 If txtDebet.Text > 0 Then
                     mDK = "D"
                 Else
                     mDK = "K"
                 End If
-                .EditData() 'edit dJurnal AJP
+                .EditData() 'edit dJurnal
                 IsiListGridDJurnal()
                 BersihkanIsianGrid()
                 txtNoPerkiraan.Enabled = True
@@ -322,6 +302,24 @@ Public Class frmJurnalPenyesuaian
         txtNoPerkiraan.Focus()
     End Sub
 
+    Sub Buka()
+        txtNoTransaksi.Enabled = True
+        txtTgl.Enabled = True
+        txtKeterangan.Enabled = True
+        txtNoPerkiraan.Enabled = True
+        txtDebet.Enabled = True
+        txtKredit.Enabled = True
+    End Sub
+
+    Sub Tutup()
+        txtNoTransaksi.Enabled = True
+        txtTgl.Enabled = False
+        txtKeterangan.Enabled = False
+        txtNoPerkiraan.Enabled = False
+        txtDebet.Enabled = False
+        txtKredit.Enabled = False
+    End Sub
+
     Private Sub frmJurnalPenyesuaian_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             KoneksiKeAccess()
@@ -332,7 +330,7 @@ Public Class frmJurnalPenyesuaian
     End Sub
 
     Private Sub cmdKeluar_Click(sender As Object, e As EventArgs) Handles cmdKeluar.Click
-       If cmdKeluar.Text = "&Batal" Then
+        If cmdKeluar.Text = "&Batal" Then
             KondisiAwal()
         Else
             Me.Close()
@@ -340,7 +338,7 @@ Public Class frmJurnalPenyesuaian
     End Sub
 
     Private Sub cmdSimpan_Click(sender As Object, e As EventArgs) Handles cmdSimpan.Click
-         Try
+        Try
             If txtKeterangan.Text = "" Then
                 MsgBox("Pastikan Data diisi Lengkap!", MsgBoxStyle.Information, "")
                 txtKeterangan.Focus()
@@ -378,7 +376,7 @@ Public Class frmJurnalPenyesuaian
     End Sub
 
     Private Sub txtKredit_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtKredit.KeyPress
-        With objJurnalPenyesuaian
+        With objJurnal
             If e.KeyChar = Chr(13) Then
                 If cmdTambah.Text = "&New Item" Then
                     Try
@@ -406,7 +404,7 @@ Public Class frmJurnalPenyesuaian
                                 End If
 
                                 PeriksaDataNoTransaksi()
-                                .SimpanData() 'dJurnal AJP
+                                .SimpanData() 'dJurnal
                                 mPosted = "UnPosted"
                                 TotalDebetKredit()
                                 IsiListGridDJurnal()
@@ -445,7 +443,7 @@ Public Class frmJurnalPenyesuaian
                                         txtKredit.Text = txtKredit.Text
                                     End If
 
-                                    .SimpanData() 'dJurnal AJP
+                                    .SimpanData() 'dJurnal
                                     mPosted = "UnPosted"
                                     TotalDebetKredit()
 
@@ -481,7 +479,7 @@ Public Class frmJurnalPenyesuaian
             MsgBox("Keterangan masih kosong, silahkan isi", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Pesan")
             txtKeterangan.Focus()
         Else
-            frmSubNoPerkiraanAJP.ShowDialog()
+            frmSubNoPerkiraanAJP.Show()
             If Len(txtNoPerkiraan.Text) <> 0 Then
                 txtDebet.Focus()
             Else
@@ -545,26 +543,27 @@ Public Class frmJurnalPenyesuaian
     Private Sub cmdEdit_Click(sender As Object, e As EventArgs) Handles cmdEdit.Click
         Dim A As String
 
-        With objJurnalPenyesuaian
+        With objJurnal
             If mPosted = "UnPosted" Then
                 A = MsgBox("Benar akan di-Edit", MsgBoxStyle.Question + MsgBoxStyle.OkCancel, "Informasi Edit")
                 Select Case A
                     Case vbCancel
                         txtNoTransaksi.Focus()
                         cmdEdit.Text = "&Edit"
+                        cmdSimpan.Enabled = True
                         BersihkanIsianGrid()
                         Exit Sub
                     Case vbOK
                         Try
                             If txtNoPerkiraan.Text = "" Then
-                                .EditDatahJurnal() 'EditHJurnal AJP
+                                .EditDatahJurnal() 'EditHJurnal
                                 TotalDebetKredit()
                                 cmdEdit.Text = "&Edit"
-                                cmdSimpan.Enabled = True
+                                KondisiAwal()
                             Else
                                 EditJurnalGrid()
                                 cmdEdit.Text = "&Edit"
-                                cmdSimpan.Enabled = True
+                                KondisiAwal()
                             End If
                         Catch ex As Exception
                             MsgBox("Terjadi kesalahan")
@@ -574,7 +573,7 @@ Public Class frmJurnalPenyesuaian
                 MsgBox("Data ini sudah diposting, tidak bisa di Edit", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Pesan edit")
                 cmdEdit.Text = "&Edit"
                 KondisiAwal()
-                cmdSimpan.Enabled = True
+                BersihkanIsianGrid()
             End If
         End With
     End Sub
@@ -582,7 +581,7 @@ Public Class frmJurnalPenyesuaian
     Private Sub cmdHapus_Click(sender As Object, e As EventArgs) Handles cmdHapus.Click
         Dim A As String
 
-        With objJurnalPenyesuaian
+        With objJurnal
             If mPosted = "UnPosted" Then
                 Try
                     If Len(txtNoTransaksi.Text) = 0 Then
@@ -601,19 +600,19 @@ Public Class frmJurnalPenyesuaian
                                     cmdEdit.Text = "&Edit"
                                     cmdTambah.Text = "&New Item"
                                     txtNoPerkiraan.Enabled = True
-                                    cmdSimpan.Enabled = True
+                                    KondisiAwal()
                                     Exit Sub
                                 Case vbOK
-                                    'Hapus hJurnal AJP
+                                    'Hapus hJurnal
                                     .HapusDatahJurnal()
-                                    'Hapus dJurnal AJP
+                                    'Hapus dJurnal
                                     .HapusData()
                                     BersihkanIsian()
                                     BersihkanIsianGrid()
                                     ListView.Clear()
                                     PosisiListGrid()
                                     IsiListGridDJurnal()
-                                    txtTgl.Focus()
+                                    txtKeterangan.Focus()
                                     NoTransaksi()
                                     TotalDebetKredit()
                                     cmdEdit.Text = "&Edit"
@@ -622,7 +621,7 @@ Public Class frmJurnalPenyesuaian
                                     KondisiAwal()
                             End Select
                         Else
-                            'untuk menghapus record jurnal AJP
+                            'untuk menghapus record jurnal
                             A = MsgBox("Benar akan dihapus...", MsgBoxStyle.OkCancel, "Informasi")
                             Select Case A
                                 Case vbCancel
@@ -699,9 +698,9 @@ Public Class frmJurnalPenyesuaian
             Select Case A
                 Case vbCancel
                     txtNoPerkiraan.Enabled = True
+                    cmdSimpan.Enabled = True
                     txtNoPerkiraan.Focus()
                     BersihkanIsianGrid()
-                    cmdSimpan.Enabled = True
                     Exit Sub
                 Case vbOK
                     If mPosted = "UnPosted" Then
@@ -709,9 +708,9 @@ Public Class frmJurnalPenyesuaian
                         IsiListGridDJurnal()
                         BersihkanIsianGrid()
                         txtNoPerkiraan.Enabled = True
+                        cmdSimpan.Enabled = True
                         txtNoPerkiraan.Focus()
                         TotalDebetKredit()
-                        cmdSimpan.Enabled = True
                     Else
                         MsgBox("Data ini sudah diposting, tidak bisa dihapus", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Pesan")
                         BersihkanIsianGrid()
@@ -722,10 +721,23 @@ Public Class frmJurnalPenyesuaian
     End Sub
 
     Private Sub cmdTransaksi_Click(sender As Object, e As EventArgs) Handles cmdTransaksi.Click
-        frmSubJurnalAJP.ShowDialog()
+        frmSubJurnalAJP.Show()
         cmdEdit.Text = "&Edit"
         txtTgl.Focus()
         BersihkanIsianGrid()
         cmdSimpan.Enabled = False
     End Sub
+
+    Private Sub cmdPreview_Click(sender As Object, e As EventArgs) Handles cmdPreview.Click
+        Try
+            frmRptAJP.CrystalReportViewer1.SelectionFormula = "{hJurnal.Periode} = '" & lblPeriode.Text & "'"
+            frmRptAJP.CrystalReportViewer1.Dock = DockStyle.Fill
+            frmRptAJP.CrystalReportViewer1.RefreshReport()
+            frmRptAJP.ShowDialog()
+            cmdEdit.Text = "&Edit"
+        Catch ex As Exception
+            MsgBox("Mencetak jurnal gagal")
+        End Try
+    End Sub
+
 End Class
