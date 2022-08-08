@@ -37,7 +37,7 @@ Public Class frmSubJurnalAJP
         End Try
     End Sub
 
-    Private Sub AmabilData()
+    Private Sub AmbilData()
         Try
             With ListView.SelectedItems
                 frmJurnalPenyesuaian.lblPeriode.Text = .Item(0).SubItems(0).Text
@@ -46,6 +46,7 @@ Public Class frmSubJurnalAJP
                 frmJurnalPenyesuaian.txtKeterangan.Text = .Item(0).SubItems(3).Text
                 frmJurnalPenyesuaian.mPosted = .Item(0).SubItems(4).Text
                 frmJurnalPenyesuaian.cmdTambah.Text = "&Tambah"
+                frmJurnalPenyesuaian.cmdHapus.Enabled = True
             End With
         Catch ex As Exception
         End Try
@@ -82,30 +83,30 @@ Public Class frmSubJurnalAJP
     End Sub
 
     Private Sub cmdKeluar_Click(sender As Object, e As EventArgs) Handles cmdKeluar.Click
-        Dispose()
+        Me.Close()
     End Sub
 
     Private Sub ListView_DoubleClick(sender As Object, e As EventArgs) Handles ListView.DoubleClick
-        AmabilData()
+        AmbilData()
         frmJurnalPenyesuaian.IsiListGridDJurnal()
         frmJurnalPenyesuaian.TotalDebetKredit()
-        Dispose()
+        Me.Close()
     End Sub
 
     Private Sub ListView_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ListView.KeyPress
         If e.KeyChar = Chr(13) Then
-            AmabilData()
+            AmbilData()
             frmJurnalPenyesuaian.IsiListGridDJurnal()
             frmJurnalPenyesuaian.TotalDebetKredit()
-            Dispose()
+            Me.Close()
         End If
     End Sub
 
     Private Sub cmdYa_Click(sender As Object, e As EventArgs) Handles cmdYa.Click
-        AmabilData()
+        AmbilData()
         frmJurnalPenyesuaian.IsiListGridDJurnal()
         frmJurnalPenyesuaian.TotalDebetKredit()
-        Dispose()
+        Me.Close()
     End Sub
 
     Private Sub txtNoTransaksi_TextChanged(sender As Object, e As EventArgs) Handles txtNoTransaksi.TextChanged
@@ -124,9 +125,9 @@ Public Class frmSubJurnalAJP
                     .Items(a).SubItems.Add(dsData.Tables(0).Rows(a).Item(3))
                     .Items(a).SubItems.Add(dsData.Tables(0).Rows(a).Item(4))
                     If (a Mod 2 = 0) Then
-                        .Items(a).BackColor = Color.LightSteelBlue
+                        .Items(a).BackColor = Color.Transparent
                     Else
-                        .Items(a).BackColor = Color.LightBlue
+                        .Items(a).BackColor = Color.White
                     End If
                 End With
             Next
@@ -161,9 +162,9 @@ Public Class frmSubJurnalAJP
                     .Items(a).SubItems.Add(dsData.Tables(0).Rows(a).Item(3))
                     .Items(a).SubItems.Add(dsData.Tables(0).Rows(a).Item(4))
                     If (a Mod 2 = 0) Then
-                        .Items(a).BackColor = Color.LightSteelBlue
+                        .Items(a).BackColor = Color.Transparent
                     Else
-                        .Items(a).BackColor = Color.LightBlue
+                        .Items(a).BackColor = Color.White
                     End If
                 End With
             Next

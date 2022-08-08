@@ -741,4 +741,6 @@ Public Class frmJurnalUmum
             MsgBox("Mencetak jurnal gagal")
         End Try
     End Sub
+
+
 End Class

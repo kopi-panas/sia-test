@@ -73,22 +73,22 @@ Public Class frmPosting
         End Try
     End Sub
 
-    'Private Sub MembuatPeriodeBerikutnya()
-    '    Try
-    '        If Microsoft.VisualBasic.Right(cboPeriode.Text, 2) = "12" Then
-    '            lblPeriodeBerikutnya.Text = Microsoft.VisualBasic.Left(cboPeriode.Text, 4) + 1 & "01"
-    '        Else
-    '            lblPeriodeBerikutnya.Text = cboPeriode.Text + 1
-    '        End If
-    '    Catch ex As Exception
-    '    End Try
-    'End Sub
+    Private Sub MembuatPeriodeBerikutnya()
+        Try
+            If Microsoft.VisualBasic.Right(cboPeriode.Text, 2) = "12" Then
+                lblPeriodeBerikutnya.Text = Microsoft.VisualBasic.Left(cboPeriode.Text, 4) + 1 & "01"
+            Else
+                lblPeriodeBerikutnya.Text = cboPeriode.Text + 1
+            End If
+        Catch ex As Exception
+        End Try
+    End Sub
 
     Private Sub cmdKeluar_Click(sender As Object, e As EventArgs) Handles cmdKeluar.Click
         Me.Close()
     End Sub
 
     Private Sub cboPeriode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboPeriode.SelectedIndexChanged
-        'MembuatPeriodeBerikutnya()
+        MembuatPeriodeBerikutnya()
     End Sub
 End Class

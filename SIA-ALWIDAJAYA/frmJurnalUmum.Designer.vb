@@ -198,7 +198,7 @@ Partial Class frmJurnalUmum
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(772, 126)
+        Me.GroupBox1.Size = New System.Drawing.Size(768, 126)
         Me.GroupBox1.TabIndex = 161
         Me.GroupBox1.TabStop = False
         '
@@ -332,7 +332,7 @@ Partial Class frmJurnalUmum
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(772, 486)
+        Me.ClientSize = New System.Drawing.Size(768, 499)
         Me.ControlBox = False
         Me.Controls.Add(Me.txtKredit)
         Me.Controls.Add(Me.Label6)

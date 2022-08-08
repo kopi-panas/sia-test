@@ -18,7 +18,7 @@ Imports System
 Imports System.ComponentModel
 
 
-Public Class RptAJP
+Public Class RptJurnalPenyesuaian
     Inherits ReportClass
     
     Public Sub New()
@@ -27,7 +27,7 @@ Public Class RptAJP
     
     Public Overrides Property ResourceName() As String
         Get
-            Return "RptAJP.rpt"
+            Return "RptJurnalPenyesuaian.rpt"
         End Get
         Set
             'Do nothing
@@ -45,7 +45,7 @@ Public Class RptAJP
     
     Public Overrides Property FullResourceName() As String
         Get
-            Return "SIA_ALWIDAJAYA.RptAJP.rpt"
+            Return "SIA_ALWIDAJAYA.RptJurnalPenyesuaian.rpt"
         End Get
         Set
             'Do nothing
@@ -126,7 +126,7 @@ Public Class RptAJP
 End Class
 
 <System.Drawing.ToolboxBitmapAttribute(GetType(CrystalDecisions.[Shared].ExportOptions), "report.bmp")>  _
-Public Class CachedRptAJP
+Public Class CachedRptJurnalPenyesuaian
     Inherits Component
     Implements ICachedReport
     
@@ -168,7 +168,7 @@ Public Class CachedRptAJP
     End Property
     
     Public Overridable Function CreateReport() As CrystalDecisions.CrystalReports.Engine.ReportDocument Implements CrystalDecisions.ReportSource.ICachedReport.CreateReport
-        Dim rpt As RptAJP = New RptAJP()
+        Dim rpt As RptJurnalPenyesuaian = New RptJurnalPenyesuaian()
         rpt.Site = Me.Site
         Return rpt
     End Function

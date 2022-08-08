@@ -10,7 +10,7 @@ Public Class frmTransaksiSaloBlnLalu
             .Add("Periode", 0)
             .Add("Tanggal", 0)
             .Add("Kode", 55)
-            .Add("Nama Perkiraan", 250)
+            .Add("Nama Akun", 250)
             .Add("D/K", 40)
             .Add("Debet", 120, HorizontalAlignment.Right)
             .Add("Kredit", 120, HorizontalAlignment.Right)

@@ -23,7 +23,7 @@ Partial Class frmRptAJP
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
-        Me.RptAJP1 = New SIA_ALWIDAJAYA.RptAJP()
+        Me.RptJurnalPenyesuaian1 = New SIA_ALWIDAJAYA.RptJurnalPenyesuaian()
         Me.SuspendLayout()
         '
         'CrystalReportViewer1
@@ -34,7 +34,7 @@ Partial Class frmRptAJP
         Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.ReportSource = Me.RptAJP1
+        Me.CrystalReportViewer1.ReportSource = Me.RptJurnalPenyesuaian1
         Me.CrystalReportViewer1.Size = New System.Drawing.Size(823, 499)
         Me.CrystalReportViewer1.TabIndex = 0
         '
@@ -51,5 +51,5 @@ Partial Class frmRptAJP
 
     End Sub
     Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
-    Friend WithEvents RptAJP1 As SIA_ALWIDAJAYA.RptAJP
+    Friend WithEvents RptJurnalPenyesuaian1 As SIA_ALWIDAJAYA.RptJurnalPenyesuaian
 End Class

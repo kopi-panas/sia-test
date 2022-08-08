@@ -35,8 +35,8 @@ Public Class frmJurnalPenyesuaian
 
     Public Sub PosisiListGrid()
         With ListView.Columns
-            .Add("NO.Transaksi", 0)
-            .Add("No.Rek", 68)
+            .Add("No.Transaksi", 0)
+            .Add("No.Akun", 68)
             .Add("Nama Akun", 360)
             .Add("DK", 0)
             .Add("Debet", 125, HorizontalAlignment.Right)

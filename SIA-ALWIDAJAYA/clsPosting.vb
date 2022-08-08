@@ -95,7 +95,7 @@ Public Class clsPosting
         mPeriode = frmPosting.cboPeriode.Text
         Try
             'Periksa data rugi / laba ada apa tidak
-            Query = "SELECT NeracaLajur.Periode, NeracaLajur.NoPerkiraan, IIf(Left(NeracaLajur.NoPerkiraan,1)= '" & "4" & "','" & "Pendapatan" & "',IIf(Left(NeracaLajur.NoPerkiraan,1)='" & "5" & "','" & "Biaya-Biaya" & "','" & " " & "')) AS Keterangan, NeracaLajur.DebetRL AS Debet, NeracaLajur.KreditRL AS Kredit FROM NeracaLajur LEFT JOIN tblMasterPerkiraan ON NeracaLajur.NoPerkiraan = tblMasterPerkiraan.NoPerkiraan WHERE(((NeracaLajur.Periode) ='" & mPeriode & "') And ((NeracaLajur.NoPerkiraan) Like '" & "4" & "%" & "' Or (NeracaLajur.NoPerkiraan) Like '" & "5" & "%" & "'))"
+            Query = "SELECT NeracaLajur.Periode, NeracaLajur.NoPerkiraan, IIf(Left(NeracaLajur.NoPerkiraan,1)= '" & "4" & "','" & "Pendapatan" & "',IIf(Left(NeracaLajur.NoPerkiraan,1)= '" & "5" & "','" & "Harga Pokok Penjualan" & "',IIf(Left(NeracaLajur.NoPerkiraan,1)='" & "6" & "','" & "Biaya-Biaya" & "','" & " " & "')) AS Keterangan, NeracaLajur.DebetRL AS Debet, NeracaLajur.KreditRL AS Kredit FROM NeracaLajur LEFT JOIN tblMasterPerkiraan ON NeracaLajur.NoPerkiraan = tblMasterPerkiraan.NoPerkiraan WHERE(((NeracaLajur.Periode) ='" & mPeriode & "') And ((NeracaLajur.NoPerkiraan) Like '" & "4" & "%" & "' Or (NeracaLajur.NoPerkiraan) Like '" & "5" & "%" & "' Or (NeracaLajur.NoPerkiraan) Like '" & "6" & "%" & "'))"
             daData = New OleDbDataAdapter(Query, conn)
             dsData = New DataSet
             daData.Fill(dsData)
@@ -106,12 +106,17 @@ Public Class clsPosting
                 dsData = New DataSet
                 daData.Fill(dsData)
 
-                Query = "INSERT INTO tblRugiLaba Values('" & mPeriode & "', '" & "51001" & "' , '" & "Biaya-Biaya" & "', '" & 0 & "', '" & 0 & "')"
+                Query = "INSERT INTO tblRugiLaba Values('" & mPeriode & "', '" & "51001" & "' , '" & "Harga Pokok Penjualan" & "', '" & 0 & "', '" & 0 & "')"
+                daData = New OleDbDataAdapter(Query, CONN)
+                dsData = New DataSet
+                daData.Fill(dsData)
+
+                Query = "INSERT INTO tblRugiLaba Values('" & mPeriode & "', '" & "61001" & "' , '" & "Biaya-Biaya" & "', '" & 0 & "', '" & 0 & "')"
                 daData = New OleDbDataAdapter(Query, conn)
                 dsData = New DataSet
                 daData.Fill(dsData)
             Else
-                Query = "INSERT INTO tblRugiLaba SELECT NeracaLajur.Periode, NeracaLajur.NoPerkiraan, IIf(Left(NeracaLajur.NoPerkiraan,1)= '" & "4" & "','" & "Pendapatan" & "',IIf(Left(NeracaLajur.NoPerkiraan,1)='" & "5" & "','" & "Biaya-Biaya" & "','" & " " & "')) AS Keterangan, NeracaLajur.DebetRL AS Debet, NeracaLajur.KreditRL AS Kredit FROM NeracaLajur LEFT JOIN tblMasterPerkiraan ON NeracaLajur.NoPerkiraan = tblMasterPerkiraan.NoPerkiraan WHERE(((NeracaLajur.Periode) ='" & mPeriode & "') And ((NeracaLajur.NoPerkiraan) Like '" & "4" & "%" & "' Or (NeracaLajur.NoPerkiraan) Like '" & "5" & "%" & "'))"
+                Query = "INSERT INTO tblRugiLaba SELECT NeracaLajur.Periode, NeracaLajur.NoPerkiraan, IIf(Left(NeracaLajur.NoPerkiraan,1)= '" & "4" & "','" & "Pendapatan" & "',IIf(Left(NeracaLajur.NoPerkiraan,1)= '" & "5" & "','" & "Harga Pokok Penjualan" & "',IIf(Left(NeracaLajur.NoPerkiraan,1)='" & "6" & "','" & "Biaya-Biaya" & "','" & " " & "')) AS Keterangan, NeracaLajur.DebetRL AS Debet, NeracaLajur.KreditRL AS Kredit FROM NeracaLajur LEFT JOIN tblMasterPerkiraan ON NeracaLajur.NoPerkiraan = tblMasterPerkiraan.NoPerkiraan WHERE(((NeracaLajur.Periode) ='" & mPeriode & "') And ((NeracaLajur.NoPerkiraan) Like '" & "4" & "%" & "' Or (NeracaLajur.NoPerkiraan) Like '" & "5" & "%" & "' Or (NeracaLajur.NoPerkiraan) Like '" & "6" & "%" & "'))"
                 daData = New OleDbDataAdapter(Query, conn)
                 dsData = New DataSet
                 daData.Fill(dsData)
@@ -124,7 +129,7 @@ Public Class clsPosting
     Public Sub PerubahanModal()
         mPeriode = frmPosting.cboPeriode.Text
         Try
-            Query = "SELECT NeracaLajur.Periode, NeracaLajur.NoPerkiraan, IIf(Left(NeracaLajur.NoPerkiraan,1)='" & "4" & "','" & "Pendapatan" & "',IIf(Left(NeracaLajur.NoPerkiraan,1)= '" & "5" & "','" & "Biaya-Biaya" & "','" & "" & "')) AS Keterangan, NeracaLajur.DebetRL AS Debet, NeracaLajur.KreditRL AS Kredit FROM NeracaLajur LEFT JOIN tblMasterPerkiraan ON NeracaLajur.NoPerkiraan = tblMasterPerkiraan.NoPerkiraan WHERE(((NeracaLajur.Periode) = '" & mPeriode & "') And ((NeracaLajur.NoPerkiraan) Like '" & "4" & "%" & "' Or (NeracaLajur.NoPerkiraan) Like '" & "5" & "%" & "'))"
+            Query = "SELECT NeracaLajur.Periode, NeracaLajur.NoPerkiraan, IIf(Left(NeracaLajur.NoPerkiraan,1)='" & "4" & "','" & "Pendapatan" & "',IIf(Left(NeracaLajur.NoPerkiraan,1)= '" & "6" & "','" & "Biaya-Biaya" & "','" & "" & "')) AS Keterangan, NeracaLajur.DebetRL AS Debet, NeracaLajur.KreditRL AS Kredit FROM NeracaLajur LEFT JOIN tblMasterPerkiraan ON NeracaLajur.NoPerkiraan = tblMasterPerkiraan.NoPerkiraan WHERE(((NeracaLajur.Periode) = '" & mPeriode & "') And ((NeracaLajur.NoPerkiraan) Like '" & "4" & "%" & "' Or (NeracaLajur.NoPerkiraan) Like '" & "6" & "%" & "'))"
             daData = New OleDbDataAdapter(Query, conn)
             dsData = New DataSet
             daData.Fill(dsData)
@@ -279,7 +284,7 @@ Public Class clsPosting
     'Mutasi Saldo , menjadi saldo awal di periode berikutnya
     Public Sub SaldoBulanLalu()
         mPeriode = frmPosting.cboPeriode.Text
-        'mPeriodeBerikutnya = frmPosting.lblPeriodeBerikutnya.Text
+        mPeriodeBerikutnya = frmPosting.lblPeriodeBerikutnya.Text
         Try
             'Memasukkan saldo bulan lalu
             Query = "INSERT INTO tmpSaldoBlnLalu SELECT NeracaLajur.Periode, tblMasterPeriode.SampaiTgl AS TglTransaksi, NeracaLajur.NoPerkiraan, IIf([DebetNeraca]>[KreditNeraca],'" & "D" & "',IIf([DebetNeraca]=0 And [KreditNeraca]=0,'" & "D" & "','" & "K" & "')) AS DK, NeracaLajur.DebetNeraca AS Debet, NeracaLajur.KreditNeraca AS Kredit, '" & "UnPosted" & "' AS Status, '" & "Saldo bulan lalu" & "' AS Keterangan FROM NeracaLajur LEFT JOIN tblMasterPeriode ON NeracaLajur.Periode = tblMasterPeriode.Periode GROUP BY NeracaLajur.Periode, tblMasterPeriode.SampaiTgl, NeracaLajur.NoPerkiraan, IIf([DebetNeraca]>[KreditNeraca],'" & "D" & "',IIf([DebetNeraca]=0 And [KreditNeraca]=0,'" & "D" & "','" & "K" & "')), NeracaLajur.DebetNeraca, NeracaLajur.KreditNeraca, '" & "UnPosted" & "', '" & "Saldo bulan lalu" & "'  HAVING (((NeracaLajur.Periode)= '" & mPeriode & "') AND ((NeracaLajur.NoPerkiraan) Like '" & "1" & "%" & "' Or (NeracaLajur.NoPerkiraan) Like '" & "2" & "%" & "' Or (NeracaLajur.NoPerkiraan)='" & "31001" & "'))"

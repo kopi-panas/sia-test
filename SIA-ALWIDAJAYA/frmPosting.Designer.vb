@@ -25,12 +25,12 @@ Partial Class frmPosting
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPosting))
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.lblPeriodeBerikutnya = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cboPeriode = New System.Windows.Forms.ComboBox()
         Me.cmdPosting = New System.Windows.Forms.Button()
         Me.cmdKeluar = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblPeriodeBerikutnya = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -38,7 +38,7 @@ Partial Class frmPosting
         '
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(12, 187)
+        Me.Label3.Location = New System.Drawing.Point(12, 173)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(317, 30)
         Me.Label3.TabIndex = 134
@@ -55,37 +55,17 @@ Partial Class frmPosting
         Me.GroupBox1.ForeColor = System.Drawing.Color.Black
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(382, 132)
+        Me.GroupBox1.Size = New System.Drawing.Size(347, 108)
         Me.GroupBox1.TabIndex = 131
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Pilih periode:"
-        '
-        'lblPeriodeBerikutnya
-        '
-        Me.lblPeriodeBerikutnya.BackColor = System.Drawing.Color.White
-        Me.lblPeriodeBerikutnya.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblPeriodeBerikutnya.Location = New System.Drawing.Point(215, 77)
-        Me.lblPeriodeBerikutnya.Name = "lblPeriodeBerikutnya"
-        Me.lblPeriodeBerikutnya.Size = New System.Drawing.Size(87, 20)
-        Me.lblPeriodeBerikutnya.TabIndex = 4
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(43, 77)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(156, 13)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Periode bulan berikutnya :"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(51, 50)
+        Me.Label1.Location = New System.Drawing.Point(48, 52)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(148, 13)
         Me.Label1.TabIndex = 1
@@ -95,7 +75,7 @@ Partial Class frmPosting
         '
         Me.cboPeriode.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboPeriode.FormattingEnabled = True
-        Me.cboPeriode.Location = New System.Drawing.Point(214, 47)
+        Me.cboPeriode.Location = New System.Drawing.Point(211, 49)
         Me.cboPeriode.MaxLength = 6
         Me.cboPeriode.Name = "cboPeriode"
         Me.cboPeriode.Size = New System.Drawing.Size(88, 21)
@@ -107,7 +87,7 @@ Partial Class frmPosting
         Me.cmdPosting.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdPosting.Image = CType(resources.GetObject("cmdPosting.Image"), System.Drawing.Image)
         Me.cmdPosting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdPosting.Location = New System.Drawing.Point(104, 142)
+        Me.cmdPosting.Location = New System.Drawing.Point(91, 123)
         Me.cmdPosting.Name = "cmdPosting"
         Me.cmdPosting.Size = New System.Drawing.Size(86, 34)
         Me.cmdPosting.TabIndex = 133
@@ -121,7 +101,7 @@ Partial Class frmPosting
         Me.cmdKeluar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdKeluar.Image = CType(resources.GetObject("cmdKeluar.Image"), System.Drawing.Image)
         Me.cmdKeluar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdKeluar.Location = New System.Drawing.Point(196, 142)
+        Me.cmdKeluar.Location = New System.Drawing.Point(183, 123)
         Me.cmdKeluar.Name = "cmdKeluar"
         Me.cmdKeluar.Size = New System.Drawing.Size(86, 34)
         Me.cmdKeluar.TabIndex = 132
@@ -129,11 +109,31 @@ Partial Class frmPosting
         Me.cmdKeluar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.cmdKeluar.UseVisualStyleBackColor = False
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.SystemColors.Control
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label2.Location = New System.Drawing.Point(43, 77)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(156, 13)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Periode bulan berikutnya :"
+        '
+        'lblPeriodeBerikutnya
+        '
+        Me.lblPeriodeBerikutnya.BackColor = System.Drawing.SystemColors.Control
+        Me.lblPeriodeBerikutnya.Location = New System.Drawing.Point(215, 77)
+        Me.lblPeriodeBerikutnya.Name = "lblPeriodeBerikutnya"
+        Me.lblPeriodeBerikutnya.Size = New System.Drawing.Size(87, 20)
+        Me.lblPeriodeBerikutnya.TabIndex = 4
+        '
         'frmPosting
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(382, 226)
+        Me.ClientSize = New System.Drawing.Size(347, 215)
         Me.ControlBox = False
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.GroupBox1)
@@ -154,10 +154,10 @@ Partial Class frmPosting
     End Sub
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents lblPeriodeBerikutnya As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents cboPeriode As System.Windows.Forms.ComboBox
     Friend WithEvents cmdPosting As System.Windows.Forms.Button
     Friend WithEvents cmdKeluar As System.Windows.Forms.Button
+    Friend WithEvents lblPeriodeBerikutnya As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
 End Class

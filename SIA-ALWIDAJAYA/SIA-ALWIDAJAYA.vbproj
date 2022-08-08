@@ -147,16 +147,16 @@
     <Compile Include="frmRptRugiLaba.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RptAJP.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RptAJP.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="RptBukuBesar.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RptBukuBesar.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptJurnalPenyesuaian.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptJurnalPenyesuaian.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="RptJurnalUmum.vb">
@@ -396,13 +396,13 @@
     <EmbeddedResource Include="frmRptRugiLaba.resx">
       <DependentUpon>frmRptRugiLaba.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RptAJP.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>RptAJP.vb</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="RptBukuBesar.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RptBukuBesar.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptJurnalPenyesuaian.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptJurnalPenyesuaian.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="RptJurnalUmum.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

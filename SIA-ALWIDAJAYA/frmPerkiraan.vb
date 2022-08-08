@@ -272,22 +272,22 @@ Public Class frmPerkiraan
 
     Private Sub cboGroup_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboGroup.SelectedIndexChanged
         If Me.cboGroup.Text = "1-AKTIVA" Then
-            txtNoPerkiraan.Text = 10000
+            txtNoPerkiraan.Text = 1
             txtNoPerkiraan.Focus()
         ElseIf Me.cboGroup.Text = "2-HUTANG" Then
-            txtNoPerkiraan.Text = 20000
+            txtNoPerkiraan.Text = 2
             txtNoPerkiraan.Focus()
         ElseIf Me.cboGroup.Text = "3-MODAL" Then
-            txtNoPerkiraan.Text = 30000
+            txtNoPerkiraan.Text = 3
             txtNoPerkiraan.Focus()
         ElseIf Me.cboGroup.Text = "4-PENDAPATAN" Then
-            txtNoPerkiraan.Text = 40000
+            txtNoPerkiraan.Text = 4
             txtNoPerkiraan.Focus()
         ElseIf Me.cboGroup.Text = "5-PEMBELIAN" Then
-            txtNoPerkiraan.Text = 50000
+            txtNoPerkiraan.Text = 5
             txtNoPerkiraan.Focus()
         ElseIf Me.cboGroup.Text = "6-BIAYA" Then
-            txtNoPerkiraan.Text = 60000
+            txtNoPerkiraan.Text = 6
             txtNoPerkiraan.Focus()
         End If
     End Sub

@@ -56,7 +56,7 @@ Partial Class frmJurnalPenyesuaian
         Me.cmdKeluar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdKeluar.Image = CType(resources.GetObject("cmdKeluar.Image"), System.Drawing.Image)
         Me.cmdKeluar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdKeluar.Location = New System.Drawing.Point(669, 460)
+        Me.cmdKeluar.Location = New System.Drawing.Point(669, 449)
         Me.cmdKeluar.Name = "cmdKeluar"
         Me.cmdKeluar.Size = New System.Drawing.Size(76, 30)
         Me.cmdKeluar.TabIndex = 177
@@ -70,7 +70,7 @@ Partial Class frmJurnalPenyesuaian
         Me.ListView.ForeColor = System.Drawing.Color.Black
         Me.ListView.FullRowSelect = True
         Me.ListView.GridLines = True
-        Me.ListView.Location = New System.Drawing.Point(63, 215)
+        Me.ListView.Location = New System.Drawing.Point(63, 204)
         Me.ListView.MultiSelect = False
         Me.ListView.Name = "ListView"
         Me.ListView.Size = New System.Drawing.Size(684, 208)
@@ -84,7 +84,7 @@ Partial Class frmJurnalPenyesuaian
         Me.cmdEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdEdit.Image = CType(resources.GetObject("cmdEdit.Image"), System.Drawing.Image)
         Me.cmdEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdEdit.Location = New System.Drawing.Point(343, 147)
+        Me.cmdEdit.Location = New System.Drawing.Point(343, 137)
         Me.cmdEdit.Name = "cmdEdit"
         Me.cmdEdit.Size = New System.Drawing.Size(76, 30)
         Me.cmdEdit.TabIndex = 175
@@ -95,7 +95,7 @@ Partial Class frmJurnalPenyesuaian
         'txtKeterangan
         '
         Me.txtKeterangan.BackColor = System.Drawing.Color.White
-        Me.txtKeterangan.Location = New System.Drawing.Point(159, 94)
+        Me.txtKeterangan.Location = New System.Drawing.Point(159, 80)
         Me.txtKeterangan.MaxLength = 60
         Me.txtKeterangan.Name = "txtKeterangan"
         Me.txtKeterangan.Size = New System.Drawing.Size(544, 20)
@@ -107,7 +107,7 @@ Partial Class frmJurnalPenyesuaian
         Me.cmdPreview.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdPreview.Image = CType(resources.GetObject("cmdPreview.Image"), System.Drawing.Image)
         Me.cmdPreview.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdPreview.Location = New System.Drawing.Point(576, 460)
+        Me.cmdPreview.Location = New System.Drawing.Point(576, 449)
         Me.cmdPreview.Name = "cmdPreview"
         Me.cmdPreview.Size = New System.Drawing.Size(87, 30)
         Me.cmdPreview.TabIndex = 186
@@ -119,7 +119,7 @@ Partial Class frmJurnalPenyesuaian
         '
         Me.txtKredit.BackColor = System.Drawing.Color.White
         Me.txtKredit.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtKredit.Location = New System.Drawing.Point(621, 192)
+        Me.txtKredit.Location = New System.Drawing.Point(621, 181)
         Me.txtKredit.MaxLength = 17
         Me.txtKredit.Name = "txtKredit"
         Me.txtKredit.Size = New System.Drawing.Size(125, 20)
@@ -131,7 +131,7 @@ Partial Class frmJurnalPenyesuaian
         Me.lblKredit.BackColor = System.Drawing.Color.SkyBlue
         Me.lblKredit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblKredit.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblKredit.Location = New System.Drawing.Point(621, 426)
+        Me.lblKredit.Location = New System.Drawing.Point(621, 415)
         Me.lblKredit.Name = "lblKredit"
         Me.lblKredit.Size = New System.Drawing.Size(125, 20)
         Me.lblKredit.TabIndex = 184
@@ -141,7 +141,7 @@ Partial Class frmJurnalPenyesuaian
         '
         Me.txtDebet.BackColor = System.Drawing.Color.White
         Me.txtDebet.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDebet.Location = New System.Drawing.Point(495, 192)
+        Me.txtDebet.Location = New System.Drawing.Point(495, 181)
         Me.txtDebet.MaxLength = 17
         Me.txtDebet.Name = "txtDebet"
         Me.txtDebet.Size = New System.Drawing.Size(125, 20)
@@ -153,7 +153,7 @@ Partial Class frmJurnalPenyesuaian
         Me.lblNamaPerkiraan.BackColor = System.Drawing.Color.LightGray
         Me.lblNamaPerkiraan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblNamaPerkiraan.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNamaPerkiraan.Location = New System.Drawing.Point(133, 192)
+        Me.lblNamaPerkiraan.Location = New System.Drawing.Point(133, 181)
         Me.lblNamaPerkiraan.Name = "lblNamaPerkiraan"
         Me.lblNamaPerkiraan.Size = New System.Drawing.Size(360, 20)
         Me.lblNamaPerkiraan.TabIndex = 181
@@ -163,7 +163,7 @@ Partial Class frmJurnalPenyesuaian
         Me.lblDebet.BackColor = System.Drawing.Color.SkyBlue
         Me.lblDebet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblDebet.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDebet.Location = New System.Drawing.Point(496, 426)
+        Me.lblDebet.Location = New System.Drawing.Point(496, 415)
         Me.lblDebet.Name = "lblDebet"
         Me.lblDebet.Size = New System.Drawing.Size(125, 20)
         Me.lblDebet.TabIndex = 185
@@ -172,7 +172,7 @@ Partial Class frmJurnalPenyesuaian
         'txtNoPerkiraan
         '
         Me.txtNoPerkiraan.BackColor = System.Drawing.Color.White
-        Me.txtNoPerkiraan.Location = New System.Drawing.Point(64, 192)
+        Me.txtNoPerkiraan.Location = New System.Drawing.Point(64, 181)
         Me.txtNoPerkiraan.MaxLength = 5
         Me.txtNoPerkiraan.Name = "txtNoPerkiraan"
         Me.txtNoPerkiraan.Size = New System.Drawing.Size(70, 20)
@@ -182,7 +182,7 @@ Partial Class frmJurnalPenyesuaian
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(451, 430)
+        Me.Label6.Location = New System.Drawing.Point(451, 419)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(44, 13)
         Me.Label6.TabIndex = 187
@@ -194,7 +194,7 @@ Partial Class frmJurnalPenyesuaian
         Me.cmdHapus.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdHapus.Image = CType(resources.GetObject("cmdHapus.Image"), System.Drawing.Image)
         Me.cmdHapus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdHapus.Location = New System.Drawing.Point(422, 147)
+        Me.cmdHapus.Location = New System.Drawing.Point(422, 137)
         Me.cmdHapus.Name = "cmdHapus"
         Me.cmdHapus.Size = New System.Drawing.Size(76, 30)
         Me.cmdHapus.TabIndex = 176
@@ -216,7 +216,7 @@ Partial Class frmJurnalPenyesuaian
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(766, 141)
+        Me.GroupBox1.Size = New System.Drawing.Size(774, 125)
         Me.GroupBox1.TabIndex = 178
         Me.GroupBox1.TabStop = False
         '
@@ -224,7 +224,7 @@ Partial Class frmJurnalPenyesuaian
         '
         Me.cmdTransaksi.Image = CType(resources.GetObject("cmdTransaksi.Image"), System.Drawing.Image)
         Me.cmdTransaksi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdTransaksi.Location = New System.Drawing.Point(256, 36)
+        Me.cmdTransaksi.Location = New System.Drawing.Point(256, 22)
         Me.cmdTransaksi.Name = "cmdTransaksi"
         Me.cmdTransaksi.Size = New System.Drawing.Size(29, 28)
         Me.cmdTransaksi.TabIndex = 17
@@ -235,7 +235,7 @@ Partial Class frmJurnalPenyesuaian
         Me.lblPeriode.BackColor = System.Drawing.Color.PeachPuff
         Me.lblPeriode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblPeriode.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPeriode.Location = New System.Drawing.Point(669, 45)
+        Me.lblPeriode.Location = New System.Drawing.Point(669, 31)
         Me.lblPeriode.Name = "lblPeriode"
         Me.lblPeriode.Size = New System.Drawing.Size(70, 20)
         Me.lblPeriode.TabIndex = 7
@@ -245,7 +245,7 @@ Partial Class frmJurnalPenyesuaian
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(605, 46)
+        Me.Label4.Location = New System.Drawing.Point(605, 32)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(58, 13)
         Me.Label4.TabIndex = 6
@@ -255,7 +255,7 @@ Partial Class frmJurnalPenyesuaian
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(61, 72)
+        Me.Label3.Location = New System.Drawing.Point(61, 58)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(92, 13)
         Me.Label3.TabIndex = 5
@@ -264,7 +264,7 @@ Partial Class frmJurnalPenyesuaian
         'txtTgl
         '
         Me.txtTgl.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.txtTgl.Location = New System.Drawing.Point(159, 68)
+        Me.txtTgl.Location = New System.Drawing.Point(159, 54)
         Me.txtTgl.Name = "txtTgl"
         Me.txtTgl.Size = New System.Drawing.Size(91, 20)
         Me.txtTgl.TabIndex = 4
@@ -274,7 +274,7 @@ Partial Class frmJurnalPenyesuaian
         Me.txtNoTransaksi.BackColor = System.Drawing.Color.LightBlue
         Me.txtNoTransaksi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtNoTransaksi.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNoTransaksi.Location = New System.Drawing.Point(159, 42)
+        Me.txtNoTransaksi.Location = New System.Drawing.Point(159, 28)
         Me.txtNoTransaksi.MaxLength = 12
         Me.txtNoTransaksi.Name = "txtNoTransaksi"
         Me.txtNoTransaksi.Size = New System.Drawing.Size(91, 20)
@@ -284,7 +284,7 @@ Partial Class frmJurnalPenyesuaian
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(73, 97)
+        Me.Label2.Location = New System.Drawing.Point(73, 83)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(80, 13)
         Me.Label2.TabIndex = 3
@@ -294,7 +294,7 @@ Partial Class frmJurnalPenyesuaian
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(64, 45)
+        Me.Label1.Location = New System.Drawing.Point(64, 31)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(90, 13)
         Me.Label1.TabIndex = 2
@@ -306,7 +306,7 @@ Partial Class frmJurnalPenyesuaian
         Me.cmdTambah.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdTambah.Image = CType(resources.GetObject("cmdTambah.Image"), System.Drawing.Image)
         Me.cmdTambah.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdTambah.Location = New System.Drawing.Point(183, 147)
+        Me.cmdTambah.Location = New System.Drawing.Point(183, 137)
         Me.cmdTambah.Name = "cmdTambah"
         Me.cmdTambah.Size = New System.Drawing.Size(78, 30)
         Me.cmdTambah.TabIndex = 173
@@ -320,7 +320,7 @@ Partial Class frmJurnalPenyesuaian
         Me.cmdSimpan.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdSimpan.Image = CType(resources.GetObject("cmdSimpan.Image"), System.Drawing.Image)
         Me.cmdSimpan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdSimpan.Location = New System.Drawing.Point(264, 147)
+        Me.cmdSimpan.Location = New System.Drawing.Point(264, 137)
         Me.cmdSimpan.Name = "cmdSimpan"
         Me.cmdSimpan.Size = New System.Drawing.Size(76, 30)
         Me.cmdSimpan.TabIndex = 174
@@ -332,7 +332,7 @@ Partial Class frmJurnalPenyesuaian
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(766, 499)
+        Me.ClientSize = New System.Drawing.Size(774, 500)
         Me.ControlBox = False
         Me.Controls.Add(Me.cmdKeluar)
         Me.Controls.Add(Me.ListView)
