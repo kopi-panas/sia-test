@@ -481,7 +481,7 @@ Public Class frmJurnalUmum
             MsgBox("Keterangan masih kosong, silahkan isi", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Pesan")
             txtKeterangan.Focus()
         Else
-            frmSubNoPerkiraanJurnalUmum.Show()
+            frmSubNoPerkiraanJurnalUmum.ShowDialog()
             If Len(txtNoPerkiraan.Text) <> 0 Then
                 txtDebet.Focus()
             Else
