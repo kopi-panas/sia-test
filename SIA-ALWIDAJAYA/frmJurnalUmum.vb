@@ -723,7 +723,7 @@ Public Class frmJurnalUmum
     End Sub
 
     Private Sub cmdTransaksi_Click(sender As Object, e As EventArgs) Handles cmdTransaksi.Click
-        frmSubJurnalUmum.Show()
+        frmSubJurnalUmum.ShowDialog()
         cmdEdit.Text = "&Edit"
         txtTgl.Focus()
         BersihkanIsianGrid()

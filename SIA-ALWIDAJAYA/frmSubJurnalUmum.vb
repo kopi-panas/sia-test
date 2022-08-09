@@ -2,6 +2,7 @@
 Public Class frmSubJurnalUmum
 
     Private Sub PosisiList()
+        ListView.Columns.Clear()
         With ListView.Columns
             .Add("Periode", 0)
             .Add("Tanggal", 90, HorizontalAlignment.Right)

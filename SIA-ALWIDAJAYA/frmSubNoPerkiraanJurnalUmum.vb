@@ -2,6 +2,7 @@
 Public Class frmSubNoPerkiraanJurnalUmum
 
     Private Sub PosisiList()
+        ListView.Columns.Clear()
         With ListView.Columns
             .Add("No.Akun", 100)
             .Add("Nama Akun", 405)

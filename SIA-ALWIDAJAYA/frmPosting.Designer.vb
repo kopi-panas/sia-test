@@ -25,12 +25,12 @@ Partial Class frmPosting
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPosting))
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lblPeriodeBerikutnya = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cboPeriode = New System.Windows.Forms.ComboBox()
         Me.cmdPosting = New System.Windows.Forms.Button()
         Me.cmdKeluar = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.lblPeriodeBerikutnya = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -55,10 +55,31 @@ Partial Class frmPosting
         Me.GroupBox1.ForeColor = System.Drawing.Color.Black
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(347, 108)
+        Me.GroupBox1.Size = New System.Drawing.Size(343, 108)
         Me.GroupBox1.TabIndex = 131
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Pilih periode:"
+        '
+        'lblPeriodeBerikutnya
+        '
+        Me.lblPeriodeBerikutnya.BackColor = System.Drawing.SystemColors.Control
+        Me.lblPeriodeBerikutnya.ForeColor = System.Drawing.SystemColors.Control
+        Me.lblPeriodeBerikutnya.Location = New System.Drawing.Point(215, 77)
+        Me.lblPeriodeBerikutnya.Name = "lblPeriodeBerikutnya"
+        Me.lblPeriodeBerikutnya.Size = New System.Drawing.Size(87, 20)
+        Me.lblPeriodeBerikutnya.TabIndex = 4
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.SystemColors.Control
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label2.Location = New System.Drawing.Point(43, 77)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(156, 13)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Periode bulan berikutnya :"
         '
         'Label1
         '
@@ -109,31 +130,11 @@ Partial Class frmPosting
         Me.cmdKeluar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.cmdKeluar.UseVisualStyleBackColor = False
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.SystemColors.Control
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label2.Location = New System.Drawing.Point(43, 77)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(156, 13)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Periode bulan berikutnya :"
-        '
-        'lblPeriodeBerikutnya
-        '
-        Me.lblPeriodeBerikutnya.BackColor = System.Drawing.SystemColors.Control
-        Me.lblPeriodeBerikutnya.Location = New System.Drawing.Point(215, 77)
-        Me.lblPeriodeBerikutnya.Name = "lblPeriodeBerikutnya"
-        Me.lblPeriodeBerikutnya.Size = New System.Drawing.Size(87, 20)
-        Me.lblPeriodeBerikutnya.TabIndex = 4
-        '
         'frmPosting
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(347, 215)
+        Me.ClientSize = New System.Drawing.Size(343, 211)
         Me.ControlBox = False
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.GroupBox1)

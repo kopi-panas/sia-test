@@ -721,7 +721,7 @@ Public Class frmJurnalPenyesuaian
     End Sub
 
     Private Sub cmdTransaksi_Click(sender As Object, e As EventArgs) Handles cmdTransaksi.Click
-        frmSubJurnalAJP.Show()
+        frmSubJurnalAJP.ShowDialog()
         cmdEdit.Text = "&Edit"
         txtTgl.Focus()
         BersihkanIsianGrid()
