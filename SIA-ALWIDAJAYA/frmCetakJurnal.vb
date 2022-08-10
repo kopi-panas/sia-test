@@ -81,6 +81,7 @@ Public Class frmCetakJurnal
             SetCboPeriodeJU()
             SetCboPeriodeBB()
             SetCboPeriodeNS()
+            cmdCetakJU.Focus()
         Catch ex As Exception
         End Try
     End Sub
@@ -134,17 +135,20 @@ Public Class frmCetakJurnal
         jurnalumum.Visible = True
         bukubesar.Visible = False
         neracasaldo.Visible = False
+        cmdCetakJU.Focus()
     End Sub
 
     Private Sub cmdBB_Click(sender As Object, e As EventArgs) Handles cmdBB.Click
         bukubesar.Visible = True
         jurnalumum.Visible = False
         neracasaldo.Visible = False
+        cmdCetakBB.Focus()
     End Sub
 
     Private Sub cmdNS_Click(sender As Object, e As EventArgs) Handles cmdNS.Click
         neracasaldo.Visible = True
         jurnalumum.Visible = False
         bukubesar.Visible = False
+        cmdCetakNS.Focus()
     End Sub
 End Class
