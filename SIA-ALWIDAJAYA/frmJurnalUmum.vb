@@ -210,7 +210,7 @@ Public Class frmJurnalUmum
             daData.Fill(dsData)
 
             If dsData.Tables(0).Rows.Count - 1 Then
-                MsgBox("Belum ada transaksi jurnal....", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Pesan simpan data")
+                MsgBox("Belum ada transaksi jurnal!", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "")
                 txtNoPerkiraan.Focus()
             Else
                 PeriksaDataNoTransaksi()
@@ -235,7 +235,7 @@ Public Class frmJurnalUmum
             daData.Fill(dsData)
 
             If dsData.Tables(0).Rows.Count - 1 Then
-                MsgBox("No.Perkiraan ini tidak ada", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Cari no perkiraan")
+                MsgBox("No.Akun ini tidak ada!", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "")
                 BersihkanIsianGrid()
                 txtNoPerkiraan.Focus()
             Else
@@ -275,7 +275,7 @@ Public Class frmJurnalUmum
             daData.Fill(dsData)
 
             If dsData.Tables(0).Rows.Count - 1 Then
-                MsgBox("Periode belum ada, silahkan buat periode di master periode...", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Pesan")
+                MsgBox("Periode belum ada, silahkan buat periode di master periode!", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "")
                 Dispose()
             Else
                 lblPeriode.Text = dsData.Tables(0).Rows(0).Item(0)
@@ -334,6 +334,7 @@ Public Class frmJurnalUmum
     Private Sub cmdKeluar_Click(sender As Object, e As EventArgs) Handles cmdKeluar.Click
         If cmdKeluar.Text = "&Batal" Then
             KondisiAwal()
+            ListView.Items.Clear()
         Else
             Me.Close()
         End If
@@ -346,7 +347,7 @@ Public Class frmJurnalUmum
                 txtKeterangan.Focus()
             Else
                 If lblDebet.Text <> lblKredit.Text Then
-                    MsgBox("Jumlah debet dan kredit tidak seimbang, silahkan periksa", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Pesan")
+                    MsgBox("Jumlah debet dan kredit tidak seimbang, silahkan periksa!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "")
                 Else
                     AdaNoTransaksi()
                     KondisiAwal()
@@ -383,7 +384,7 @@ Public Class frmJurnalUmum
                 If cmdTambah.Text = "&New Item" Then
                     Try
                         If txtNoPerkiraan.Text = "" Then
-                            MessageBox.Show("No.Akun masih kosong", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                            MessageBox.Show("No.Akun masih kosong!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                             txtNoPerkiraan.Focus()
                         Else
                             If cmdEdit.Text = "&Edit" Then
@@ -423,7 +424,7 @@ Public Class frmJurnalUmum
                     If mPosted = "UnPosted" Then
                         Try
                             If txtNoPerkiraan.Text = "" Then
-                                MessageBox.Show("No.Akun masih kosong", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                                MessageBox.Show("No.Akun masih kosong!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                                 txtNoPerkiraan.Focus()
                             Else
                                 If cmdEdit.Text = "&Edit" Then
@@ -458,11 +459,11 @@ Public Class frmJurnalUmum
                                 End If
                             End If
                         Catch ex As Exception
-                            MsgBox("Silahkan tekan tombol tambah data", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Pesan kesalahan")
+                            MsgBox("Silahkan tekan tombol tambah data!", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "")
                             BersihkanIsianGrid()
                         End Try
                     Else
-                        MsgBox("Data ini sudah diposting, tidak bisa edit / tambah data", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Pesan Edit Data")
+                        MsgBox("Data ini sudah diposting, tidak bisa edit/tambah data!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "")
                         txtNoPerkiraan.Focus()
                         BersihkanIsianGrid()
                     End If
@@ -478,7 +479,7 @@ Public Class frmJurnalUmum
 
     Private Sub txtNoPerkiraan_DoubleClick(sender As Object, e As EventArgs) Handles txtNoPerkiraan.DoubleClick
         If txtKeterangan.Text = "" Then
-            MsgBox("Keterangan masih kosong, silahkan isi", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Pesan")
+            MsgBox("Keterangan masih kosong, silahkan isi!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "")
             txtKeterangan.Focus()
         Else
             frmSubNoPerkiraanJurnalUmum.ShowDialog()
@@ -493,7 +494,7 @@ Public Class frmJurnalUmum
     Private Sub txtNoPerkiraan_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNoPerkiraan.KeyPress
         If e.KeyChar = Chr(13) Then
             If txtKeterangan.Text = "" Then
-                MsgBox("Keterangan tidak boleh kosong, silahkan isi", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Isi keterangan")
+                MsgBox("Keterangan tidak boleh kosong, silahkan isi!", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "")
                 txtKeterangan.Focus()
             Else
                 If txtNoPerkiraan.Text = "" Then
@@ -534,7 +535,7 @@ Public Class frmJurnalUmum
     Private Sub txtKeterangan_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtKeterangan.KeyPress
         If e.KeyChar = Chr(13) Then
             If txtKeterangan.Text = "" Then
-                MsgBox("Keterangan masih kosong, silahkan isi", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Pesan")
+                MsgBox("Keterangan masih kosong, silahkan isi!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "")
                 txtKeterangan.Focus()
             Else
                 txtNoPerkiraan.Focus()
@@ -547,8 +548,8 @@ Public Class frmJurnalUmum
 
         With objJurnal
             If mPosted = "UnPosted" Then
-                A = MsgBox("Benar akan di-Edit", MsgBoxStyle.Question + MsgBoxStyle.OkCancel, "Informasi Edit")
-                Select Case A
+                A = MsgBox("Benar akan di-Edit?", MsgBoxStyle.Question + MsgBoxStyle.OkCancel, "")
+                Select A
                     Case vbCancel
                         txtNoTransaksi.Focus()
                         cmdEdit.Text = "&Edit"
@@ -572,10 +573,10 @@ Public Class frmJurnalUmum
                         End Try
                 End Select
             Else
-                MsgBox("Data ini sudah diposting, tidak bisa di Edit", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Pesan edit")
+                MsgBox("Data ini sudah diposting, tidak bisa di Edit!", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "")
                 cmdEdit.Text = "&Edit"
-                KondisiAwal()
-                BersihkanIsianGrid()
+                'KondisiAwal()
+                'BersihkanIsianGrid()
             End If
         End With
     End Sub
@@ -587,7 +588,7 @@ Public Class frmJurnalUmum
             If mPosted = "UnPosted" Then
                 Try
                     If Len(txtNoTransaksi.Text) = 0 Then
-                        MsgBox("Pilih data yang dihapus", MsgBoxStyle.Information, "Informasi hapus")
+                        MsgBox("Pilih data yang dihapus!", MsgBoxStyle.Information, "")
                         txtNoPerkiraan.Enabled = True
                         txtNoPerkiraan.Focus()
                         cmdSimpan.Enabled = True
@@ -595,7 +596,7 @@ Public Class frmJurnalUmum
                     Else
                         If txtNoPerkiraan.Text = "" Then
                             'hapus semua transaksi dengan no transksi yang sesuai dengan no.transaksi
-                            A = MsgBox("Benar akan dihapus...", MsgBoxStyle.Question + MsgBoxStyle.OkCancel, "Informasi")
+                            A = MsgBox("Benar akan dihapus?", MsgBoxStyle.Question + MsgBoxStyle.OkCancel, "")
                             Select Case A
                                 Case vbCancel
                                     txtNoPerkiraan.Focus()
@@ -624,7 +625,7 @@ Public Class frmJurnalUmum
                             End Select
                         Else
                             'untuk menghapus record jurnal
-                            A = MsgBox("Benar akan dihapus...", MsgBoxStyle.OkCancel, "Informasi")
+                            A = MsgBox("Benar akan dihapus?", MsgBoxStyle.OkCancel, "")
                             Select Case A
                                 Case vbCancel
                                     txtNoPerkiraan.Focus()
@@ -650,8 +651,8 @@ Public Class frmJurnalUmum
                     MsgBox(ex.Message, MsgBoxStyle.Information, "Perhatian")
                 End Try
             Else
-                MsgBox("Data ini sudah diposting, tidak bisa dihapus...", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Hapus data")
-                cmdSimpan.Enabled = True
+                MsgBox("Data ini sudah diposting, tidak bisa dihapus!", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "")
+                cmdSimpan.Enabled = False
             End If
         End With
     End Sub
@@ -696,7 +697,7 @@ Public Class frmJurnalUmum
 
         If e.KeyCode = Keys.Delete Then
             AmbilData()
-            A = MsgBox("Benar akan dihapus...", MsgBoxStyle.Question + MsgBoxStyle.OkCancel, "Informasi")
+            A = MsgBox("Benar akan dihapus?", MsgBoxStyle.Question + MsgBoxStyle.OkCancel, "")
             Select Case A
                 Case vbCancel
                     txtNoPerkiraan.Enabled = True
@@ -714,7 +715,7 @@ Public Class frmJurnalUmum
                         txtNoPerkiraan.Focus()
                         TotalDebetKredit()
                     Else
-                        MsgBox("Data ini sudah diposting, tidak bisa dihapus", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Pesan")
+                        MsgBox("Data ini sudah diposting, tidak bisa dihapus!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "")
                         BersihkanIsianGrid()
                         cmdSimpan.Enabled = True
                     End If

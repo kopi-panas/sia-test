@@ -51,6 +51,7 @@ Public Class frmSubJurnalUmum
                 frmJurnalUmum.cmdEdit.Enabled = True
                 frmJurnalUmum.cmdHapus.Enabled = True
                 frmJurnalUmum.cmdKeluar.Text = "&Batal"
+                frmJurnalUmum.cmdEdit.Text = "&Update"
             End With
         Catch ex As Exception
         End Try
