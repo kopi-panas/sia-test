@@ -21,7 +21,7 @@ Public Class clsJurnalUmum
 
     Public Function SimpanDataHJurnal()
         Try
-            mNoTransaksi = frmJurnalUmum.txtNoTransaksi.Text
+            mNoTransaksi = frmJurnalUmum.lblNoTransaksi.Text
             mPeriode = frmJurnalUmum.lblPeriode.Text
             mTglTransaksi = frmJurnalUmum.txtTgl.Value
             mKeterangan = frmJurnalUmum.txtKeterangan.Text
@@ -38,7 +38,7 @@ Public Class clsJurnalUmum
 
     Public Function SimpanData()
         Try
-            mNoTransaksi = frmJurnalUmum.txtNoTransaksi.Text
+            mNoTransaksi = frmJurnalUmum.lblNoTransaksi.Text
             mNoPerkiraan = frmJurnalUmum.txtNoPerkiraan.Text
             DK = frmJurnalUmum.mDK
             mDebet = frmJurnalUmum.txtDebet.Text
@@ -59,7 +59,7 @@ Public Class clsJurnalUmum
 
     Public Function EditDataHJurnal()
         Try
-            mNoTransaksi = frmJurnalUmum.txtNoTransaksi.Text
+            mNoTransaksi = frmJurnalUmum.lblNoTransaksi.Text
             mTglTransaksi = Format(frmJurnalUmum.txtTgl.Value, "dd/MM/yyyy")
             mKeterangan = frmJurnalUmum.txtKeterangan.Text
 
@@ -78,7 +78,7 @@ Public Class clsJurnalUmum
             DK = frmJurnalUmum.mDK
             mDebet = frmJurnalUmum.txtDebet.Text
             mKredit = frmJurnalUmum.txtKredit.Text
-            mNoTransaksi = frmJurnalUmum.txtNoTransaksi.Text
+            mNoTransaksi = frmJurnalUmum.lblNoTransaksi.Text
             mNoPerkiraan = frmJurnalUmum.txtNoPerkiraan.Text
 
             Query = "UPDATE dJurnal SET  DK = '" & DK & "', Debet = '" & mDebet & "', Kredit = '" & mKredit & "' WHERE NoTransaksi = '" & mNoTransaksi & "' AND NoPerkiraan = '" & mNoPerkiraan & "'"
@@ -93,7 +93,7 @@ Public Class clsJurnalUmum
 
     Public Function HapusDataHJurnal()
         Try
-            mNoTransaksi = frmJurnalUmum.txtNoTransaksi.Text
+            mNoTransaksi = frmJurnalUmum.lblNoTransaksi.Text
             Query = "DELETE FROM hJurnal WHERE NoTransaksi = '" & mNoTransaksi & "'"
             daData = New OleDbDataAdapter(Query, conn)
             dsData = New DataSet
@@ -106,7 +106,7 @@ Public Class clsJurnalUmum
 
     Public Function HapusData()
         Try
-            mNoTransaksi = frmJurnalUmum.txtNoTransaksi.Text
+            mNoTransaksi = frmJurnalUmum.lblNoTransaksi.Text
             Query = "DELETE FROM dJurnal WHERE NoTransaksi = '" & mNoTransaksi & "'"
             daData = New OleDbDataAdapter(Query, conn)
             dsData = New DataSet

@@ -30,7 +30,6 @@ Public Class frmMasterPeriode
         txtTglSampai.Enabled = False
     End Sub
 
-
     Public Sub PosisiList()
         With ListView.Columns
             .Add("Periode", 84)

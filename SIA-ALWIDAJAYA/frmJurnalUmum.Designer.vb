@@ -32,10 +32,10 @@ Partial Class frmJurnalUmum
         Me.cmdHapus = New System.Windows.Forms.Button()
         Me.ListView = New System.Windows.Forms.ListView()
         Me.txtKeterangan = New System.Windows.Forms.TextBox()
-        Me.txtNoTransaksi = New System.Windows.Forms.TextBox()
         Me.txtNoPerkiraan = New System.Windows.Forms.TextBox()
         Me.txtTgl = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lblNoTransaksi = New System.Windows.Forms.Label()
         Me.cmdTransaksi = New System.Windows.Forms.Button()
         Me.lblPeriode = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -101,7 +101,7 @@ Partial Class frmJurnalUmum
         Me.cmdEdit.Name = "cmdEdit"
         Me.cmdEdit.Size = New System.Drawing.Size(85, 34)
         Me.cmdEdit.TabIndex = 158
-        Me.cmdEdit.Text = "&Edit"
+        Me.cmdEdit.Text = "&Update"
         Me.cmdEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.cmdEdit.UseVisualStyleBackColor = False
         '
@@ -156,17 +156,6 @@ Partial Class frmJurnalUmum
         Me.txtKeterangan.Size = New System.Drawing.Size(543, 20)
         Me.txtKeterangan.TabIndex = 1
         '
-        'txtNoTransaksi
-        '
-        Me.txtNoTransaksi.BackColor = System.Drawing.Color.LightBlue
-        Me.txtNoTransaksi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtNoTransaksi.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNoTransaksi.Location = New System.Drawing.Point(153, 26)
-        Me.txtNoTransaksi.MaxLength = 12
-        Me.txtNoTransaksi.Name = "txtNoTransaksi"
-        Me.txtNoTransaksi.Size = New System.Drawing.Size(91, 20)
-        Me.txtNoTransaksi.TabIndex = 0
-        '
         'txtNoPerkiraan
         '
         Me.txtNoPerkiraan.BackColor = System.Drawing.Color.White
@@ -186,27 +175,38 @@ Partial Class frmJurnalUmum
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.lblNoTransaksi)
         Me.GroupBox1.Controls.Add(Me.cmdTransaksi)
         Me.GroupBox1.Controls.Add(Me.lblPeriode)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.txtTgl)
         Me.GroupBox1.Controls.Add(Me.txtKeterangan)
-        Me.GroupBox1.Controls.Add(Me.txtNoTransaksi)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(768, 126)
+        Me.GroupBox1.Size = New System.Drawing.Size(807, 126)
         Me.GroupBox1.TabIndex = 161
         Me.GroupBox1.TabStop = False
+        '
+        'lblNoTransaksi
+        '
+        Me.lblNoTransaksi.BackColor = System.Drawing.Color.LightBlue
+        Me.lblNoTransaksi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblNoTransaksi.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNoTransaksi.Location = New System.Drawing.Point(154, 25)
+        Me.lblNoTransaksi.Name = "lblNoTransaksi"
+        Me.lblNoTransaksi.Size = New System.Drawing.Size(98, 22)
+        Me.lblNoTransaksi.TabIndex = 17
+        Me.lblNoTransaksi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'cmdTransaksi
         '
         Me.cmdTransaksi.Image = CType(resources.GetObject("cmdTransaksi.Image"), System.Drawing.Image)
         Me.cmdTransaksi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdTransaksi.Location = New System.Drawing.Point(250, 21)
+        Me.cmdTransaksi.Location = New System.Drawing.Point(253, 21)
         Me.cmdTransaksi.Name = "cmdTransaksi"
         Me.cmdTransaksi.Size = New System.Drawing.Size(29, 28)
         Me.cmdTransaksi.TabIndex = 16
@@ -332,7 +332,7 @@ Partial Class frmJurnalUmum
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(768, 499)
+        Me.ClientSize = New System.Drawing.Size(807, 510)
         Me.ControlBox = False
         Me.Controls.Add(Me.txtKredit)
         Me.Controls.Add(Me.Label6)
@@ -372,7 +372,6 @@ Partial Class frmJurnalUmum
     Friend WithEvents cmdHapus As System.Windows.Forms.Button
     Friend WithEvents ListView As System.Windows.Forms.ListView
     Friend WithEvents txtKeterangan As System.Windows.Forms.TextBox
-    Friend WithEvents txtNoTransaksi As System.Windows.Forms.TextBox
     Friend WithEvents txtNoPerkiraan As System.Windows.Forms.TextBox
     Friend WithEvents txtTgl As System.Windows.Forms.DateTimePicker
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
@@ -387,4 +386,5 @@ Partial Class frmJurnalUmum
     Friend WithEvents cmdPreview As System.Windows.Forms.Button
     Friend WithEvents lblDebet As System.Windows.Forms.Label
     Friend WithEvents cmdTransaksi As System.Windows.Forms.Button
+    Friend WithEvents lblNoTransaksi As System.Windows.Forms.Label
 End Class

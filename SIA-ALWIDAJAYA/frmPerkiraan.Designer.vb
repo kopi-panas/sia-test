@@ -38,7 +38,6 @@ Partial Class frmPerkiraan
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmdSimpan = New System.Windows.Forms.Button()
         Me.ListView = New System.Windows.Forms.ListView()
-        Me.cmdCetak = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -111,12 +110,13 @@ Partial Class frmPerkiraan
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(652, 141)
+        Me.GroupBox1.Size = New System.Drawing.Size(644, 141)
         Me.GroupBox1.TabIndex = 119
         Me.GroupBox1.TabStop = False
         '
         'cboGroup
         '
+        Me.cboGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboGroup.FormattingEnabled = True
         Me.cboGroup.Items.AddRange(New Object() {"1-AKTIVA", "2-HUTANG", "3-MODAL", "4-PENDAPATAN", "5-PEMBELIAN", "6-BIAYA"})
         Me.cboGroup.Location = New System.Drawing.Point(100, 51)
@@ -220,27 +220,12 @@ Partial Class frmPerkiraan
         Me.ListView.UseCompatibleStateImageBehavior = False
         Me.ListView.View = System.Windows.Forms.View.Details
         '
-        'cmdCetak
-        '
-        Me.cmdCetak.BackColor = System.Drawing.SystemColors.Control
-        Me.cmdCetak.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdCetak.Image = CType(resources.GetObject("cmdCetak.Image"), System.Drawing.Image)
-        Me.cmdCetak.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdCetak.Location = New System.Drawing.Point(421, 147)
-        Me.cmdCetak.Name = "cmdCetak"
-        Me.cmdCetak.Size = New System.Drawing.Size(73, 29)
-        Me.cmdCetak.TabIndex = 126
-        Me.cmdCetak.Text = "&Cetak"
-        Me.cmdCetak.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.cmdCetak.UseVisualStyleBackColor = False
-        '
         'frmPerkiraan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(652, 446)
+        Me.ClientSize = New System.Drawing.Size(644, 438)
         Me.ControlBox = False
-        Me.Controls.Add(Me.cmdCetak)
         Me.Controls.Add(Me.cmdKeluar)
         Me.Controls.Add(Me.cmdTambah)
         Me.Controls.Add(Me.cmdEdit)
@@ -276,6 +261,5 @@ Partial Class frmPerkiraan
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents cmdSimpan As System.Windows.Forms.Button
     Friend WithEvents ListView As System.Windows.Forms.ListView
-    Friend WithEvents cmdCetak As System.Windows.Forms.Button
 
 End Class

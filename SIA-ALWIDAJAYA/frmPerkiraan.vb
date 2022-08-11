@@ -6,9 +6,9 @@ Public Class frmPerkiraan
         cmdEdit.Enabled = False
         cmdSimpan.Enabled = False
         cmdHapus.Enabled = False
-        cmdCetak.Enabled = True
         cmdKeluar.Enabled = True
-        txtNoPerkiraan.Focus()
+        cboGroup.Focus()
+        'txtNoPerkiraan.Focus()
         cmdKeluar.Text = "Keluar"
         cmdEdit.Text = "Edit"
         BersihkanIsian()
@@ -16,7 +16,7 @@ Public Class frmPerkiraan
     End Sub
 
     Sub Buka()
-        txtNoPerkiraan.Enabled = True
+        txtNoPerkiraan.Enabled = False
         txtNamaPerkiraan.Enabled = True
         cboKeterangan.Enabled = True
         cboGroup.Enabled = True
@@ -79,8 +79,8 @@ Public Class frmPerkiraan
         Try
             txtNoPerkiraan.Clear()
             txtNamaPerkiraan.Clear()
-            txtNoPerkiraan.Enabled = True
-            txtNoPerkiraan.Focus()
+            'txtNoPerkiraan.Enabled = True
+            'txtNoPerkiraan.Focus()
             cboGroup.Text = ""
             cboKeterangan.Text = "-"
         Catch ex As Exception
@@ -138,8 +138,8 @@ Public Class frmPerkiraan
 
     Private Sub cmdSimpan_Click(sender As Object, e As EventArgs) Handles cmdSimpan.Click
         Try
-            If txtNoPerkiraan.Text = "" Or txtNamaPerkiraan.Text = "" Or cboGroup.Text = "" Or cboKeterangan.Text = "" Then
-                MsgBox("Pastikan Data diisi Lengkap!", MsgBoxStyle.Information, "")
+            If Len(txtNoPerkiraan.Text) < 5 Or txtNoPerkiraan.Text = "" Or txtNamaPerkiraan.Text = "" Or cboGroup.Text = "" Or cboKeterangan.Text = "" Then
+                MsgBox("Pastikan Data diisi Lengkap atau digit kode akun kurang dari 5!", MsgBoxStyle.Information, "")
             Else
                 KoneksiKeAccess()
                 Dim SimpanData As String = "Insert into tblMasterPerkiraan values ('" & txtNoPerkiraan.Text & "','" & txtNamaPerkiraan.Text & "','" & cboGroup.Text & "','" & cboKeterangan.Text & "')"
@@ -163,6 +163,7 @@ Public Class frmPerkiraan
                 cmdSimpan.Enabled = False
                 cmdHapus.Enabled = False
                 cmdKeluar.Text = "Batal"
+                cboGroup.Enabled = False
                 txtNoPerkiraan.Enabled = False
                 txtNamaPerkiraan.Focus()
             ElseIf txtNoPerkiraan.Text = "" Or txtNamaPerkiraan.Text = "" Or cboGroup.Text = "" Or cboKeterangan.Text = "" Then
@@ -236,8 +237,8 @@ Public Class frmPerkiraan
     End Sub
 
     Private Sub ListView_Click(sender As Object, e As EventArgs) Handles ListView.Click
+        Tutup()
         cmdTambah.Enabled = False
-        cmdCetak.Enabled = False
         cmdSimpan.Enabled = False
         cmdHapus.Enabled = True
         cmdEdit.Enabled = True
@@ -273,22 +274,29 @@ Public Class frmPerkiraan
     Private Sub cboGroup_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboGroup.SelectedIndexChanged
         If Me.cboGroup.Text = "1-AKTIVA" Then
             txtNoPerkiraan.Text = 1
+            txtNoPerkiraan.Enabled = True
             txtNoPerkiraan.Focus()
         ElseIf Me.cboGroup.Text = "2-HUTANG" Then
             txtNoPerkiraan.Text = 2
+            txtNoPerkiraan.Enabled = True
             txtNoPerkiraan.Focus()
         ElseIf Me.cboGroup.Text = "3-MODAL" Then
             txtNoPerkiraan.Text = 3
+            txtNoPerkiraan.Enabled = True
             txtNoPerkiraan.Focus()
         ElseIf Me.cboGroup.Text = "4-PENDAPATAN" Then
             txtNoPerkiraan.Text = 4
+            txtNoPerkiraan.Enabled = True
             txtNoPerkiraan.Focus()
         ElseIf Me.cboGroup.Text = "5-PEMBELIAN" Then
             txtNoPerkiraan.Text = 5
+            txtNoPerkiraan.Enabled = True
             txtNoPerkiraan.Focus()
         ElseIf Me.cboGroup.Text = "6-BIAYA" Then
             txtNoPerkiraan.Text = 6
+            txtNoPerkiraan.Enabled = True
             txtNoPerkiraan.Focus()
         End If
     End Sub
+
 End Class

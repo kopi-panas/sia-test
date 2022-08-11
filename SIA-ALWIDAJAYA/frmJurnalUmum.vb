@@ -18,6 +18,8 @@ Public Class frmJurnalUmum
         txtKredit.Text = "0"
         lblDebet.Text = "0"
         lblKredit.Text = "0"
+        txtNoPerkiraan.Text = ""
+        lblNamaPerkiraan.Text = ""
         ListView.Items.Clear()
 
         CariPeriode()
@@ -26,7 +28,7 @@ Public Class frmJurnalUmum
         IsiListGridDJurnal()
         NoTransaksi()
 
-        cmdTambah.Text = "&New Item"
+        cmdTambah.Text = "&Tambah"
         cmdKeluar.Text = "&Keluar"
         cmdTambah.Enabled = True
         cmdSimpan.Enabled = False
@@ -36,8 +38,9 @@ Public Class frmJurnalUmum
 
 
     Public Sub PosisiListGrid()
+        ListView.Columns.Clear()
         With ListView.Columns
-            .Add("NO.Transaksi", 0)
+            .Add("No.Transaksi", 0)
             .Add("No.Rek", 68)
             .Add("Nama Akun", 360)
             .Add("DK", 0)
@@ -48,7 +51,7 @@ Public Class frmJurnalUmum
 
     Public Sub IsiListGridDJurnal()
         Try
-            Query = "SELECT dJurnal.NoTransaksi, dJurnal.NoPerkiraan, tblMasterPerkiraan.NamaPerkiraan, dJurnal.DK, dJurnal.Debet, dJurnal.Kredit FROM (dJurnal LEFT JOIN hJurnal ON dJurnal.NoTransaksi = hJurnal.NoTransaksi) LEFT JOIN tblMasterPerkiraan ON dJurnal.NoPerkiraan = tblMasterPerkiraan.NoPerkiraan WHERE(((dJurnal.NoTransaksi) = '" & txtNoTransaksi.Text & "'))"
+            Query = "SELECT dJurnal.NoTransaksi, dJurnal.NoPerkiraan, tblMasterPerkiraan.NamaPerkiraan, dJurnal.DK, dJurnal.Debet, dJurnal.Kredit FROM (dJurnal LEFT JOIN hJurnal ON dJurnal.NoTransaksi = hJurnal.NoTransaksi) LEFT JOIN tblMasterPerkiraan ON dJurnal.NoPerkiraan = tblMasterPerkiraan.NoPerkiraan WHERE(((dJurnal.NoTransaksi) = '" & lblNoTransaksi.Text & "'))"
             daData = New OleDbDataAdapter(Query, conn)
             dsData = New DataSet
             daData.Fill(dsData)
@@ -79,7 +82,7 @@ Public Class frmJurnalUmum
             Dim mTempNoTransaksi As String
 
             mMemoriNo = Format(Microsoft.VisualBasic.Right(Now.Year, 2)) & Format(Now.Month, "00") & Format(Now.Day, "00")
-            txtNoTransaksi.Text = "JU-" & mMemoriNo & "000"
+            lblNoTransaksi.Text = "JU-" & mMemoriNo & "000"
             Query = "SELECT Count(hJurnal.NoTransaksi) AS CountOfNoTransaksi FROM(hJurnal) HAVING ((Mid([hJurnal].[NoTransaksi],4,6)='" & mMemoriNo & "'))"
 
             daData = New OleDbDataAdapter(Query, conn)
@@ -87,22 +90,22 @@ Public Class frmJurnalUmum
             daData.Fill(dsData)
 
             If dsData.Tables(0).Rows.Count = 0 Then
-                txtNoTransaksi.Text = "JU-" & mMemoriNo + "000" + dsData.Tables(0).Rows(0).Item(0) + 1
+                lblNoTransaksi.Text = "JU-" & mMemoriNo + "000" + dsData.Tables(0).Rows(0).Item(0) + 1
                 mTempNoTransaksi = "JU-" & mMemoriNo + "000" + dsData.Tables(0).Rows(0).Item(0) + 1
             Else
-                txtNoTransaksi.Text = "JU-" & mMemoriNo + "000" + dsData.Tables(0).Rows(0).Item(0) + 1
+                lblNoTransaksi.Text = "JU-" & mMemoriNo + "000" + dsData.Tables(0).Rows(0).Item(0) + 1
                 mTempNoTransaksi = "JU-" & mMemoriNo + "000" + dsData.Tables(0).Rows(0).Item(0) + 1
             End If
 
-            Query = "SELECT hJurnal.NoTransaksi, Count(hJurnal.NoTransaksi) AS Jumlah FROM hJurnal GROUP BY hJurnal.NoTransaksi HAVING (((hJurnal.NoTransaksi)='" & txtNoTransaksi.Text & "'))"
+            Query = "SELECT hJurnal.NoTransaksi, Count(hJurnal.NoTransaksi) AS Jumlah FROM hJurnal GROUP BY hJurnal.NoTransaksi HAVING (((hJurnal.NoTransaksi)='" & lblNoTransaksi.Text & "'))"
             daData = New OleDbDataAdapter(Query, conn)
             dsData = New DataSet
             daData.Fill(dsData)
 
             If dsData.Tables(0).Rows.Count = 0 Then
-                txtNoTransaksi.Text = mTempNoTransaksi
+                lblNoTransaksi.Text = mTempNoTransaksi
             Else
-                txtNoTransaksi.Text = Microsoft.VisualBasic.Mid(txtNoTransaksi.Text, 1, 3) & Val(Microsoft.VisualBasic.Mid(txtNoTransaksi.Text, 4, 9)) + 1
+                lblNoTransaksi.Text = Microsoft.VisualBasic.Mid(lblNoTransaksi.Text, 1, 3) & Val(Microsoft.VisualBasic.Mid(lblNoTransaksi.Text, 4, 9)) + 1
             End If
         Catch ex As Exception
         End Try
@@ -110,7 +113,7 @@ Public Class frmJurnalUmum
 
     Public Sub TotalDebetKredit()
         Try
-            QueryDebetKredit = "SELECT dJurnal.NoTransaksi, Sum(dJurnal.Debet) AS TotalDebet, Sum(dJurnal.Kredit) AS TotalKredit FROM(dJurnal) GROUP BY dJurnal.NoTransaksi HAVING (((dJurnal.NoTransaksi)= '" & txtNoTransaksi.Text & "'))"
+            QueryDebetKredit = "SELECT dJurnal.NoTransaksi, Sum(dJurnal.Debet) AS TotalDebet, Sum(dJurnal.Kredit) AS TotalKredit FROM(dJurnal) GROUP BY dJurnal.NoTransaksi HAVING (((dJurnal.NoTransaksi)= '" & lblNoTransaksi.Text & "'))"
             daDataDebetKredit = New OleDbDataAdapter(QueryDebetKredit, conn)
             dsDataDebetKredit = New DataSet
             daDataDebetKredit.Fill(dsDataDebetKredit)
@@ -149,7 +152,7 @@ Public Class frmJurnalUmum
     Private Sub HapusIsiGrid()
         Try
             'Menghapus isi data grid
-            Query = "DELETE FROM dJurnal WHERE NoTransaksi = '" & txtNoTransaksi.Text & "' AND NoPerkiraan = '" & txtNoPerkiraan.Text & "' AND DK = '" & mDK & "'"
+            Query = "DELETE FROM dJurnal WHERE NoTransaksi = '" & lblNoTransaksi.Text & "' AND NoPerkiraan = '" & txtNoPerkiraan.Text & "' AND DK = '" & mDK & "'"
             daData = New OleDbDataAdapter(Query, conn)
             dsData = New DataSet
             daData.Fill(dsData)
@@ -159,7 +162,7 @@ Public Class frmJurnalUmum
 
     Private Sub CariDataNoTransaksi()
         Try
-            Query = "SELECT hJurnal.Periode, hJurnal.TglTransaksi, hJurnal.NoTransaksi, hJurnal.Keterangan, hJurnal.Status FROM(hJurnal) GROUP BY hJurnal.Periode, hJurnal.TglTransaksi, hJurnal.NoTransaksi, hJurnal.Keterangan, hJurnal.Status HAVING(((hJurnal.NoTransaksi) = '" & txtNoTransaksi.Text & "')) ORDER BY hJurnal.Periode, hJurnal.TglTransaksi, hJurnal.NoTransaksi, hJurnal.Keterangan, hJurnal.Status"
+            Query = "SELECT hJurnal.Periode, hJurnal.TglTransaksi, hJurnal.NoTransaksi, hJurnal.Keterangan, hJurnal.Status FROM(hJurnal) GROUP BY hJurnal.Periode, hJurnal.TglTransaksi, hJurnal.NoTransaksi, hJurnal.Keterangan, hJurnal.Status HAVING(((hJurnal.NoTransaksi) = '" & lblNoTransaksi.Text & "')) ORDER BY hJurnal.Periode, hJurnal.TglTransaksi, hJurnal.NoTransaksi, hJurnal.Keterangan, hJurnal.Status"
             daData = New OleDbDataAdapter(Query, conn)
             dsData = New DataSet
             daData.Fill(dsData)
@@ -173,7 +176,7 @@ Public Class frmJurnalUmum
             Else
                 lblPeriode.Text = dsData.Tables(0).Rows(0).Item(0)
                 txtTgl.Text = dsData.Tables(0).Rows(0).Item(1)
-                txtNoTransaksi.Text = dsData.Tables(0).Rows(0).Item(2)
+                lblNoTransaksi.Text = dsData.Tables(0).Rows(0).Item(2)
                 txtKeterangan.Text = dsData.Tables(0).Rows(0).Item(3)
                 mPosted = dsData.Tables(0).Rows(0).Item(4)
 
@@ -188,7 +191,7 @@ Public Class frmJurnalUmum
     Private Sub PeriksaDataNoTransaksi()
         With objJurnal
             Try
-                Query = "SELECT hJurnal.Periode, hJurnal.TglTransaksi, hJurnal.NoTransaksi, hJurnal.Keterangan, hJurnal.Status FROM(hJurnal) GROUP BY hJurnal.Periode, hJurnal.TglTransaksi, hJurnal.NoTransaksi, hJurnal.Keterangan, hJurnal.Status HAVING(((hJurnal.NoTransaksi) = '" & txtNoTransaksi.Text & "')) ORDER BY hJurnal.Periode, hJurnal.TglTransaksi, hJurnal.NoTransaksi, hJurnal.Keterangan, hJurnal.Status"
+                Query = "SELECT hJurnal.Periode, hJurnal.TglTransaksi, hJurnal.NoTransaksi, hJurnal.Keterangan, hJurnal.Status FROM(hJurnal) GROUP BY hJurnal.Periode, hJurnal.TglTransaksi, hJurnal.NoTransaksi, hJurnal.Keterangan, hJurnal.Status HAVING(((hJurnal.NoTransaksi) = '" & lblNoTransaksi.Text & "')) ORDER BY hJurnal.Periode, hJurnal.TglTransaksi, hJurnal.NoTransaksi, hJurnal.Keterangan, hJurnal.Status"
                 daData = New OleDbDataAdapter(Query, conn)
                 dsData = New DataSet
                 daData.Fill(dsData)
@@ -204,7 +207,7 @@ Public Class frmJurnalUmum
 
     Private Sub AdaNoTransaksi()
         Try
-            Query = "SELECT noTransaksi FROM hJurnal WHERE noTransaksi = '" & txtNoTransaksi.Text & "'"
+            Query = "SELECT noTransaksi FROM hJurnal WHERE noTransaksi = '" & lblNoTransaksi.Text & "'"
             daData = New OleDbDataAdapter(Query, conn)
             dsData = New DataSet
             daData.Fill(dsData)
@@ -220,8 +223,8 @@ Public Class frmJurnalUmum
                 ListView.Clear()
                 PosisiListGrid()
                 IsiListGridDJurnal()
-                cmdEdit.Text = "&Edit"
-                cmdTambah.Text = "&New Item"
+                cmdEdit.Text = "&Update"
+                cmdTambah.Text = "&Tambah"
             End If
         Catch ex As Exception
         End Try
@@ -260,7 +263,7 @@ Public Class frmJurnalUmum
                 IsiListGridDJurnal()
                 BersihkanIsianGrid()
                 txtNoPerkiraan.Enabled = True
-                txtNoTransaksi.Enabled = True
+                lblNoTransaksi.Enabled = True
                 TotalDebetKredit()
             Catch ex As Exception
             End Try
@@ -305,7 +308,7 @@ Public Class frmJurnalUmum
     End Sub
 
     Sub Buka()
-        txtNoTransaksi.Enabled = True
+        lblNoTransaksi.Enabled = True
         txtTgl.Enabled = True
         txtKeterangan.Enabled = True
         txtNoPerkiraan.Enabled = True
@@ -314,7 +317,7 @@ Public Class frmJurnalUmum
     End Sub
 
     Sub Tutup()
-        txtNoTransaksi.Enabled = True
+        lblNoTransaksi.Enabled = True
         txtTgl.Enabled = False
         txtKeterangan.Enabled = False
         txtNoPerkiraan.Enabled = False
@@ -351,6 +354,7 @@ Public Class frmJurnalUmum
                 Else
                     AdaNoTransaksi()
                     KondisiAwal()
+                    MsgBox("Data berhasil diSimpan!", MsgBoxStyle.OkOnly, "")
                 End If
             End If
         Catch ex As Exception
@@ -360,20 +364,24 @@ Public Class frmJurnalUmum
     Private Sub cmdTambah_Click(sender As Object, e As EventArgs) Handles cmdTambah.Click
         Buka()
         Try
-            dsData.Reset()
-            IsiListGridDJurnal()
-            BersihkanIsian()
-            txtKeterangan.Focus()
-            txtTgl.Text = Now
-            NoTransaksi()
-            ListView.Clear()
-            PosisiListGrid()
-            txtNoPerkiraan.Enabled = True
-            txtNoTransaksi.Enabled = True
-            cmdEdit.Text = "&Edit"
-            cmdTambah.Text = "&New Item"
-            cmdKeluar.Text = "&Batal"
-            cmdSimpan.Enabled = True
+            If lblDebet.Text <> lblKredit.Text Then
+                MsgBox("Jumlah debet dan kredit tidak seimbang, silahkan periksa!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "")
+            Else
+                dsData.Reset()
+                IsiListGridDJurnal()
+                BersihkanIsian()
+                txtKeterangan.Focus()
+                txtTgl.Text = Now
+                NoTransaksi()
+                ListView.Clear()
+                PosisiListGrid()
+                txtNoPerkiraan.Enabled = True
+                lblNoTransaksi.Enabled = True
+                cmdEdit.Text = "&Update"
+                cmdTambah.Text = "&Tambah"
+                cmdKeluar.Text = "&Batal"
+                cmdSimpan.Enabled = True
+            End If
         Catch ex As Exception
         End Try
     End Sub
@@ -381,13 +389,13 @@ Public Class frmJurnalUmum
     Private Sub txtKredit_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtKredit.KeyPress
         With objJurnal
             If e.KeyChar = Chr(13) Then
-                If cmdTambah.Text = "&New Item" Then
+                If cmdTambah.Text = "&Tambah" Then
                     Try
                         If txtNoPerkiraan.Text = "" Then
                             MessageBox.Show("No.Akun masih kosong!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                             txtNoPerkiraan.Focus()
                         Else
-                            If cmdEdit.Text = "&Edit" Then
+                            If cmdEdit.Text = "&Update" Then
                                 If txtDebet.Text > 0 Then
                                     mDK = "D"
                                 Else
@@ -414,7 +422,7 @@ Public Class frmJurnalUmum
                                 BersihkanIsianGrid()
                                 txtNoPerkiraan.Focus()
                             Else
-                                cmdEdit.Text = "&Edit"
+                                cmdEdit.Text = "&Update"
                                 EditJurnalGrid()
                             End If
                         End If
@@ -526,11 +534,11 @@ Public Class frmJurnalUmum
         End If
     End Sub
 
-    Private Sub txtNoTransaksi_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNoTransaksi.KeyPress
-        If e.KeyChar = Chr(13) Then
-            CariDataNoTransaksi()
-        End If
-    End Sub
+    'Private Sub txtNoTransaksi_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNoTransaksi.KeyPress
+    '    If e.KeyChar = Chr(13) Then
+    '        CariDataNoTransaksi()
+    '    End If
+    'End Sub
 
     Private Sub txtKeterangan_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtKeterangan.KeyPress
         If e.KeyChar = Chr(13) Then
@@ -548,11 +556,11 @@ Public Class frmJurnalUmum
 
         With objJurnal
             If mPosted = "UnPosted" Then
-                A = MsgBox("Benar akan di-Edit?", MsgBoxStyle.Question + MsgBoxStyle.OkCancel, "")
-                Select A
+                A = MsgBox("Benar akan di-Update?", MsgBoxStyle.Question + MsgBoxStyle.OkCancel, "")
+                Select Case A
                     Case vbCancel
-                        txtNoTransaksi.Focus()
-                        cmdEdit.Text = "&Edit"
+                        lblNoTransaksi.Focus()
+                        cmdEdit.Text = "&Update"
                         cmdSimpan.Enabled = True
                         BersihkanIsianGrid()
                         Exit Sub
@@ -561,20 +569,23 @@ Public Class frmJurnalUmum
                             If txtNoPerkiraan.Text = "" Then
                                 .EditDataHJurnal() 'EditHJurnal
                                 TotalDebetKredit()
-                                cmdEdit.Text = "&Edit"
+                                cmdEdit.Text = "&Update"
                                 KondisiAwal()
+                                ListView.Items.Clear()
                             Else
                                 EditJurnalGrid()
-                                cmdEdit.Text = "&Edit"
+                                cmdEdit.Text = "&Update"
                                 KondisiAwal()
+                                ListView.Items.Clear()
+                                MsgBox("Data berhasil di-Update!", MsgBoxStyle.OkOnly, "")
                             End If
                         Catch ex As Exception
                             MsgBox("Terjadi kesalahan")
                         End Try
                 End Select
             Else
-                MsgBox("Data ini sudah diposting, tidak bisa di Edit!", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "")
-                cmdEdit.Text = "&Edit"
+                MsgBox("Data ini sudah diposting, tidak bisa di-Update!", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "")
+                cmdEdit.Text = "&Update"
                 'KondisiAwal()
                 'BersihkanIsianGrid()
             End If
@@ -587,8 +598,8 @@ Public Class frmJurnalUmum
         With objJurnal
             If mPosted = "UnPosted" Then
                 Try
-                    If Len(txtNoTransaksi.Text) = 0 Then
-                        MsgBox("Pilih data yang dihapus!", MsgBoxStyle.Information, "")
+                    If Len(lblNoTransaksi.Text) = 0 Then
+                        MsgBox("Pilih data yang akan dihapus!", MsgBoxStyle.Information, "")
                         txtNoPerkiraan.Enabled = True
                         txtNoPerkiraan.Focus()
                         cmdSimpan.Enabled = True
@@ -600,8 +611,8 @@ Public Class frmJurnalUmum
                             Select Case A
                                 Case vbCancel
                                     txtNoPerkiraan.Focus()
-                                    cmdEdit.Text = "&Edit"
-                                    cmdTambah.Text = "&New Item"
+                                    cmdEdit.Text = "&Update"
+                                    cmdTambah.Text = "&Tambah"
                                     txtNoPerkiraan.Enabled = True
                                     KondisiAwal()
                                     Exit Sub
@@ -618,8 +629,8 @@ Public Class frmJurnalUmum
                                     txtKeterangan.Focus()
                                     NoTransaksi()
                                     TotalDebetKredit()
-                                    cmdEdit.Text = "&Edit"
-                                    cmdTambah.Text = "&New Item"
+                                    cmdEdit.Text = "&Update"
+                                    cmdTambah.Text = "&Tambah"
                                     txtNoPerkiraan.Enabled = True
                                     KondisiAwal()
                             End Select
@@ -629,8 +640,8 @@ Public Class frmJurnalUmum
                             Select Case A
                                 Case vbCancel
                                     txtNoPerkiraan.Focus()
-                                    cmdEdit.Text = "&Edit"
-                                    cmdTambah.Text = "&New Item"
+                                    cmdEdit.Text = "&Update"
+                                    cmdTambah.Text = "&Tambah"
                                     txtNoPerkiraan.Enabled = True
                                     cmdSimpan.Enabled = True
                                     Exit Sub
@@ -640,8 +651,8 @@ Public Class frmJurnalUmum
                                     BersihkanIsianGrid()
                                     txtNoPerkiraan.Focus()
                                     TotalDebetKredit()
-                                    cmdEdit.Text = "&Edit"
-                                    cmdTambah.Text = "&New Item"
+                                    cmdEdit.Text = "&Update"
+                                    cmdTambah.Text = "&Tambah"
                                     txtNoPerkiraan.Enabled = True
                                     cmdSimpan.Enabled = True
                             End Select
@@ -660,7 +671,7 @@ Public Class frmJurnalUmum
     Private Sub ListView_DoubleClick(sender As Object, e As EventArgs) Handles ListView.DoubleClick
         Try
             AmbilData()
-            txtNoTransaksi.Enabled = False
+            lblNoTransaksi.Enabled = False
             txtNoPerkiraan.Enabled = False
             cmdEdit.Text = "&Update"
             cmdSimpan.Enabled = False
@@ -676,7 +687,7 @@ Public Class frmJurnalUmum
         If e.KeyChar = Chr(13) Then
             Try
                 AmbilData()
-                txtNoTransaksi.Enabled = False
+                lblNoTransaksi.Enabled = False
                 txtNoPerkiraan.Enabled = False
                 cmdEdit.Text = "&Update"
             Catch ex As Exception
@@ -691,7 +702,7 @@ Public Class frmJurnalUmum
             BersihkanIsianGrid()
             txtNoPerkiraan.Enabled = True
             txtNoPerkiraan.Focus()
-            cmdEdit.Text = "&Edit"
+            cmdEdit.Text = "&Update"
             cmdSimpan.Enabled = True
         End If
 
@@ -725,7 +736,7 @@ Public Class frmJurnalUmum
 
     Private Sub cmdTransaksi_Click(sender As Object, e As EventArgs) Handles cmdTransaksi.Click
         frmSubJurnalUmum.ShowDialog()
-        cmdEdit.Text = "&Edit"
+        cmdEdit.Text = "&Update"
         txtTgl.Focus()
         BersihkanIsianGrid()
         cmdSimpan.Enabled = False
@@ -737,11 +748,10 @@ Public Class frmJurnalUmum
             frmRptJurnalUmum.CrystalReportViewer1.Dock = DockStyle.Fill
             frmRptJurnalUmum.CrystalReportViewer1.RefreshReport()
             frmRptJurnalUmum.ShowDialog()
-            cmdEdit.Text = "&Edit"
+            cmdEdit.Text = "&Update"
         Catch ex As Exception
             MsgBox("Mencetak jurnal gagal")
         End Try
     End Sub
-
 
 End Class

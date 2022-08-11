@@ -44,14 +44,13 @@ Public Class frmSubJurnalUmum
             With ListView.SelectedItems
                 frmJurnalUmum.lblPeriode.Text = .Item(0).SubItems(0).Text
                 frmJurnalUmum.txtTgl.Text = .Item(0).SubItems(1).Text
-                frmJurnalUmum.txtNoTransaksi.Text = .Item(0).SubItems(2).Text
+                frmJurnalUmum.lblNoTransaksi.Text = .Item(0).SubItems(2).Text
                 frmJurnalUmum.txtKeterangan.Text = .Item(0).SubItems(3).Text
                 frmJurnalUmum.mPosted = .Item(0).SubItems(4).Text
                 frmJurnalUmum.cmdTambah.Enabled = False
-                frmJurnalUmum.cmdEdit.Enabled = True
+                frmJurnalUmum.cmdEdit.Enabled = False
                 frmJurnalUmum.cmdHapus.Enabled = True
                 frmJurnalUmum.cmdKeluar.Text = "&Batal"
-                frmJurnalUmum.cmdEdit.Text = "&Update"
             End With
         Catch ex As Exception
         End Try
