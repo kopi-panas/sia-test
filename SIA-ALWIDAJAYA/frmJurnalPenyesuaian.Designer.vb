@@ -42,11 +42,11 @@ Partial Class frmJurnalPenyesuaian
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtTgl = New System.Windows.Forms.DateTimePicker()
-        Me.txtNoTransaksi = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmdTambah = New System.Windows.Forms.Button()
         Me.cmdSimpan = New System.Windows.Forms.Button()
+        Me.lblNoTransaksi = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -204,19 +204,19 @@ Partial Class frmJurnalPenyesuaian
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.lblNoTransaksi)
         Me.GroupBox1.Controls.Add(Me.cmdTransaksi)
         Me.GroupBox1.Controls.Add(Me.lblPeriode)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.txtTgl)
         Me.GroupBox1.Controls.Add(Me.txtKeterangan)
-        Me.GroupBox1.Controls.Add(Me.txtNoTransaksi)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(774, 125)
+        Me.GroupBox1.Size = New System.Drawing.Size(770, 125)
         Me.GroupBox1.TabIndex = 178
         Me.GroupBox1.TabStop = False
         '
@@ -224,7 +224,7 @@ Partial Class frmJurnalPenyesuaian
         '
         Me.cmdTransaksi.Image = CType(resources.GetObject("cmdTransaksi.Image"), System.Drawing.Image)
         Me.cmdTransaksi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdTransaksi.Location = New System.Drawing.Point(256, 22)
+        Me.cmdTransaksi.Location = New System.Drawing.Point(257, 22)
         Me.cmdTransaksi.Name = "cmdTransaksi"
         Me.cmdTransaksi.Size = New System.Drawing.Size(29, 28)
         Me.cmdTransaksi.TabIndex = 17
@@ -268,17 +268,6 @@ Partial Class frmJurnalPenyesuaian
         Me.txtTgl.Name = "txtTgl"
         Me.txtTgl.Size = New System.Drawing.Size(91, 20)
         Me.txtTgl.TabIndex = 4
-        '
-        'txtNoTransaksi
-        '
-        Me.txtNoTransaksi.BackColor = System.Drawing.Color.LightBlue
-        Me.txtNoTransaksi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtNoTransaksi.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNoTransaksi.Location = New System.Drawing.Point(159, 28)
-        Me.txtNoTransaksi.MaxLength = 12
-        Me.txtNoTransaksi.Name = "txtNoTransaksi"
-        Me.txtNoTransaksi.Size = New System.Drawing.Size(91, 20)
-        Me.txtNoTransaksi.TabIndex = 0
         '
         'Label2
         '
@@ -328,11 +317,22 @@ Partial Class frmJurnalPenyesuaian
         Me.cmdSimpan.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.cmdSimpan.UseVisualStyleBackColor = False
         '
+        'lblNoTransaksi
+        '
+        Me.lblNoTransaksi.BackColor = System.Drawing.Color.LightBlue
+        Me.lblNoTransaksi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblNoTransaksi.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNoTransaksi.Location = New System.Drawing.Point(159, 26)
+        Me.lblNoTransaksi.Name = "lblNoTransaksi"
+        Me.lblNoTransaksi.Size = New System.Drawing.Size(98, 22)
+        Me.lblNoTransaksi.TabIndex = 18
+        Me.lblNoTransaksi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'frmJurnalPenyesuaian
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(774, 500)
+        Me.ClientSize = New System.Drawing.Size(770, 496)
         Me.ControlBox = False
         Me.Controls.Add(Me.cmdKeluar)
         Me.Controls.Add(Me.ListView)
@@ -381,10 +381,10 @@ Partial Class frmJurnalPenyesuaian
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents txtTgl As System.Windows.Forms.DateTimePicker
-    Friend WithEvents txtNoTransaksi As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents cmdTambah As System.Windows.Forms.Button
     Friend WithEvents cmdSimpan As System.Windows.Forms.Button
     Friend WithEvents cmdTransaksi As System.Windows.Forms.Button
+    Friend WithEvents lblNoTransaksi As System.Windows.Forms.Label
 End Class

@@ -43,11 +43,13 @@ Public Class frmSubJurnalAJP
             With ListView.SelectedItems
                 frmJurnalPenyesuaian.lblPeriode.Text = .Item(0).SubItems(0).Text
                 frmJurnalPenyesuaian.txtTgl.Text = .Item(0).SubItems(1).Text
-                frmJurnalPenyesuaian.txtNoTransaksi.Text = .Item(0).SubItems(2).Text
+                frmJurnalPenyesuaian.lblNoTransaksi.Text = .Item(0).SubItems(2).Text
                 frmJurnalPenyesuaian.txtKeterangan.Text = .Item(0).SubItems(3).Text
                 frmJurnalPenyesuaian.mPosted = .Item(0).SubItems(4).Text
-                frmJurnalPenyesuaian.cmdTambah.Text = "&Tambah"
+                frmJurnalPenyesuaian.cmdTambah.Enabled = False
+                frmJurnalPenyesuaian.cmdEdit.Enabled = False
                 frmJurnalPenyesuaian.cmdHapus.Enabled = True
+                frmJurnalPenyesuaian.cmdKeluar.Text = "&Batal"
             End With
         Catch ex As Exception
         End Try

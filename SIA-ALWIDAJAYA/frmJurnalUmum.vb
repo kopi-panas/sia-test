@@ -36,12 +36,11 @@ Public Class frmJurnalUmum
         cmdHapus.Enabled = False
     End Sub
 
-
     Public Sub PosisiListGrid()
         ListView.Columns.Clear()
         With ListView.Columns
             .Add("No.Transaksi", 0)
-            .Add("No.Rek", 68)
+            .Add("No.Akun", 68)
             .Add("Nama Akun", 360)
             .Add("DK", 0)
             .Add("Debet", 125, HorizontalAlignment.Right)
@@ -435,7 +434,7 @@ Public Class frmJurnalUmum
                                 MessageBox.Show("No.Akun masih kosong!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                                 txtNoPerkiraan.Focus()
                             Else
-                                If cmdEdit.Text = "&Edit" Then
+                                If cmdEdit.Text = "&Update" Then
                                     If txtDebet.Text > 0 Then
                                         mDK = "D"
                                     Else
