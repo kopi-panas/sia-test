@@ -75,17 +75,6 @@ Public Class frmCetakJurnal
         End Try
     End Sub
 
-    Private Sub frmCetakJurnal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Try
-            KoneksiKeAccess()
-            SetCboPeriodeJU()
-            SetCboPeriodeBB()
-            SetCboPeriodeNS()
-            cmdCetakJU.Focus()
-        Catch ex As Exception
-        End Try
-    End Sub
-
     Private Sub cmdCetakJU_Click(sender As Object, e As EventArgs) Handles cmdCetakJU.Click
         If Len(cboPeriodeJU.Text) = 0 Then
             MsgBox("Pilih periode yang akan dicetak", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Pesan")
@@ -132,6 +121,9 @@ Public Class frmCetakJurnal
     End Sub
 
     Private Sub cmdJU_Click(sender As Object, e As EventArgs) Handles cmdJU.Click
+        cmdJU.BackColor = Color.Aqua
+        cmdBB.BackColor = Color.White
+        cmdNS.BackColor = Color.White
         jurnalumum.Visible = True
         bukubesar.Visible = False
         neracasaldo.Visible = False
@@ -139,6 +131,9 @@ Public Class frmCetakJurnal
     End Sub
 
     Private Sub cmdBB_Click(sender As Object, e As EventArgs) Handles cmdBB.Click
+        cmdBB.BackColor = Color.Aqua
+        cmdJU.BackColor = Color.White
+        cmdNS.BackColor = Color.White
         bukubesar.Visible = True
         jurnalumum.Visible = False
         neracasaldo.Visible = False
@@ -146,9 +141,27 @@ Public Class frmCetakJurnal
     End Sub
 
     Private Sub cmdNS_Click(sender As Object, e As EventArgs) Handles cmdNS.Click
+        cmdNS.BackColor = Color.Aqua
+        cmdBB.BackColor = Color.White
+        cmdJU.BackColor = Color.White
         neracasaldo.Visible = True
         jurnalumum.Visible = False
         bukubesar.Visible = False
         cmdCetakNS.Focus()
+    End Sub
+
+    Private Sub frmCetakJurnal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            cmdJU.BackColor = Color.Aqua
+            cmdNS.BackColor = Color.White
+            cmdBB.BackColor = Color.White
+
+            KoneksiKeAccess()
+            SetCboPeriodeJU()
+            SetCboPeriodeBB()
+            SetCboPeriodeNS()
+            cmdCetakJU.Focus()
+        Catch ex As Exception
+        End Try
     End Sub
 End Class
