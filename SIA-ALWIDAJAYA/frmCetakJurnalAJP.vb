@@ -73,7 +73,7 @@ Public Class frmCetakJurnalAJP
     Private Sub frmCetakJurnalAJP_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             cmdBB.BackColor = Color.White
-            cmdJP.BackColor = Color.Aqua
+            cmdJP.BackColor = Color.LightSteelBlue
             cmdNS.BackColor = Color.White
             KoneksiKeAccess()
             SetCboPeriodeJP()
@@ -133,7 +133,7 @@ Public Class frmCetakJurnalAJP
     End Sub
 
     Private Sub cmdJP_Click(sender As Object, e As EventArgs) Handles cmdJP.Click
-        cmdJP.BackColor = Color.Aqua
+        cmdJP.BackColor = Color.LightSteelBlue
         cmdNS.BackColor = Color.White
         cmdBB.BackColor = Color.White
         jurnalpenyesuaian.Visible = True
@@ -142,7 +142,7 @@ Public Class frmCetakJurnalAJP
     End Sub
 
     Private Sub cmdBB_Click(sender As Object, e As EventArgs) Handles cmdBB.Click
-        cmdBB.BackColor = Color.Aqua
+        cmdBB.BackColor = Color.LightSteelBlue
         cmdJP.BackColor = Color.White
         cmdNS.BackColor = Color.White
         bukubesar.Visible = True
@@ -151,7 +151,7 @@ Public Class frmCetakJurnalAJP
     End Sub
 
     Private Sub cmdNS_Click(sender As Object, e As EventArgs) Handles cmdNS.Click
-        cmdNS.BackColor = Color.Aqua
+        cmdNS.BackColor = Color.LightSteelBlue
         cmdBB.BackColor = Color.White
         cmdJP.BackColor = Color.White
         neracasaldo.Visible = True

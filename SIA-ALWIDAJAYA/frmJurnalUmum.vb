@@ -222,7 +222,7 @@ Public Class frmJurnalUmum
                 ListView.Clear()
                 PosisiListGrid()
                 IsiListGridDJurnal()
-                cmdEdit.Text = "&Update"
+                cmdEdit.Text = "&Edit"
                 cmdTambah.Text = "&Tambah"
             End If
         Catch ex As Exception
@@ -376,7 +376,7 @@ Public Class frmJurnalUmum
                 PosisiListGrid()
                 txtNoPerkiraan.Enabled = True
                 lblNoTransaksi.Enabled = True
-                cmdEdit.Text = "&Update"
+                cmdEdit.Text = "&Edit"
                 cmdTambah.Text = "&Tambah"
                 cmdKeluar.Text = "&Batal"
                 cmdSimpan.Enabled = True
@@ -394,7 +394,7 @@ Public Class frmJurnalUmum
                             MessageBox.Show("No.Akun masih kosong!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                             txtNoPerkiraan.Focus()
                         Else
-                            If cmdEdit.Text = "&Update" Then
+                            If cmdEdit.Text = "&Edit" Then
                                 If txtDebet.Text > 0 Then
                                     mDK = "D"
                                 Else
@@ -421,7 +421,7 @@ Public Class frmJurnalUmum
                                 BersihkanIsianGrid()
                                 txtNoPerkiraan.Focus()
                             Else
-                                cmdEdit.Text = "&Update"
+                                cmdEdit.Text = "&Edit"
                                 EditJurnalGrid()
                             End If
                         End If
@@ -434,7 +434,7 @@ Public Class frmJurnalUmum
                                 MessageBox.Show("No.Akun masih kosong!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                                 txtNoPerkiraan.Focus()
                             Else
-                                If cmdEdit.Text = "&Update" Then
+                                If cmdEdit.Text = "&Edit" Then
                                     If txtDebet.Text > 0 Then
                                         mDK = "D"
                                     Else
@@ -559,7 +559,7 @@ Public Class frmJurnalUmum
                 Select Case A
                     Case vbCancel
                         lblNoTransaksi.Focus()
-                        cmdEdit.Text = "&Update"
+                        cmdEdit.Text = "&Edit"
                         cmdSimpan.Enabled = True
                         BersihkanIsianGrid()
                         Exit Sub
@@ -568,12 +568,12 @@ Public Class frmJurnalUmum
                             If txtNoPerkiraan.Text = "" Then
                                 .EditDataHJurnal() 'EditHJurnal
                                 TotalDebetKredit()
-                                cmdEdit.Text = "&Update"
+                                cmdEdit.Text = "&Edit"
                                 KondisiAwal()
                                 ListView.Items.Clear()
                             Else
                                 EditJurnalGrid()
-                                cmdEdit.Text = "&Update"
+                                cmdEdit.Text = "&Edit"
                                 KondisiAwal()
                                 ListView.Items.Clear()
                                 MsgBox("Data berhasil di-Update!", MsgBoxStyle.OkOnly, "")
@@ -584,7 +584,7 @@ Public Class frmJurnalUmum
                 End Select
             Else
                 MsgBox("Data ini sudah diposting, tidak bisa di-Update!", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "")
-                cmdEdit.Text = "&Update"
+                cmdEdit.Text = "&Edit"
                 'KondisiAwal()
                 'BersihkanIsianGrid()
             End If
@@ -610,7 +610,7 @@ Public Class frmJurnalUmum
                             Select Case A
                                 Case vbCancel
                                     txtNoPerkiraan.Focus()
-                                    cmdEdit.Text = "&Update"
+                                    cmdEdit.Text = "&Edit"
                                     cmdTambah.Text = "&Tambah"
                                     txtNoPerkiraan.Enabled = True
                                     KondisiAwal()
@@ -628,7 +628,7 @@ Public Class frmJurnalUmum
                                     txtKeterangan.Focus()
                                     NoTransaksi()
                                     TotalDebetKredit()
-                                    cmdEdit.Text = "&Update"
+                                    cmdEdit.Text = "&Edit"
                                     cmdTambah.Text = "&Tambah"
                                     txtNoPerkiraan.Enabled = True
                                     KondisiAwal()
@@ -639,7 +639,7 @@ Public Class frmJurnalUmum
                             Select Case A
                                 Case vbCancel
                                     txtNoPerkiraan.Focus()
-                                    cmdEdit.Text = "&Update"
+                                    cmdEdit.Text = "&Edit"
                                     cmdTambah.Text = "&Tambah"
                                     txtNoPerkiraan.Enabled = True
                                     cmdSimpan.Enabled = True
@@ -650,7 +650,7 @@ Public Class frmJurnalUmum
                                     BersihkanIsianGrid()
                                     txtNoPerkiraan.Focus()
                                     TotalDebetKredit()
-                                    cmdEdit.Text = "&Update"
+                                    cmdEdit.Text = "&Edit"
                                     cmdTambah.Text = "&Tambah"
                                     txtNoPerkiraan.Enabled = True
                                     cmdSimpan.Enabled = True
@@ -735,7 +735,7 @@ Public Class frmJurnalUmum
 
     Private Sub cmdTransaksi_Click(sender As Object, e As EventArgs) Handles cmdTransaksi.Click
         frmSubJurnalUmum.ShowDialog()
-        cmdEdit.Text = "&Update"
+        cmdEdit.Text = "&Edit"
         txtTgl.Focus()
         BersihkanIsianGrid()
         cmdSimpan.Enabled = False
@@ -747,7 +747,7 @@ Public Class frmJurnalUmum
             frmRptJurnalUmum.CrystalReportViewer1.Dock = DockStyle.Fill
             frmRptJurnalUmum.CrystalReportViewer1.RefreshReport()
             frmRptJurnalUmum.ShowDialog()
-            cmdEdit.Text = "&Update"
+            cmdEdit.Text = "&Edit"
         Catch ex As Exception
             MsgBox("Mencetak jurnal gagal")
         End Try

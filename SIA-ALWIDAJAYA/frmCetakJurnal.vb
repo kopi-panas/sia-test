@@ -121,7 +121,7 @@ Public Class frmCetakJurnal
     End Sub
 
     Private Sub cmdJU_Click(sender As Object, e As EventArgs) Handles cmdJU.Click
-        cmdJU.BackColor = Color.Aqua
+        cmdJU.BackColor = Color.LightSteelBlue
         cmdBB.BackColor = Color.White
         cmdNS.BackColor = Color.White
         jurnalumum.Visible = True
@@ -131,7 +131,7 @@ Public Class frmCetakJurnal
     End Sub
 
     Private Sub cmdBB_Click(sender As Object, e As EventArgs) Handles cmdBB.Click
-        cmdBB.BackColor = Color.Aqua
+        cmdBB.BackColor = Color.LightSteelBlue
         cmdJU.BackColor = Color.White
         cmdNS.BackColor = Color.White
         bukubesar.Visible = True
@@ -141,7 +141,7 @@ Public Class frmCetakJurnal
     End Sub
 
     Private Sub cmdNS_Click(sender As Object, e As EventArgs) Handles cmdNS.Click
-        cmdNS.BackColor = Color.Aqua
+        cmdNS.BackColor = Color.LightSteelBlue
         cmdBB.BackColor = Color.White
         cmdJU.BackColor = Color.White
         neracasaldo.Visible = True
@@ -152,7 +152,7 @@ Public Class frmCetakJurnal
 
     Private Sub frmCetakJurnal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            cmdJU.BackColor = Color.Aqua
+            cmdJU.BackColor = Color.LightSteelBlue
             cmdNS.BackColor = Color.White
             cmdBB.BackColor = Color.White
 

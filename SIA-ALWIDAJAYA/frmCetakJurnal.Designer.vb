@@ -291,6 +291,7 @@ Partial Class frmCetakJurnal
         '
         'cmdJU
         '
+        Me.cmdJU.BackColor = System.Drawing.SystemColors.Control
         Me.cmdJU.Font = New System.Drawing.Font("Microsoft Tai Le", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdJU.Image = CType(resources.GetObject("cmdJU.Image"), System.Drawing.Image)
         Me.cmdJU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -300,7 +301,7 @@ Partial Class frmCetakJurnal
         Me.cmdJU.TabIndex = 124
         Me.cmdJU.Text = "Jurnal Umum"
         Me.cmdJU.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.cmdJU.UseVisualStyleBackColor = True
+        Me.cmdJU.UseVisualStyleBackColor = False
         '
         'Panel1
         '
