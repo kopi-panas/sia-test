@@ -415,6 +415,7 @@ Public Class frmJurnalUmum
 
                                 PeriksaDataNoTransaksi()
                                 .SimpanData() 'dJurnal
+                                ' .InsertBukuBesar()
                                 mPosted = "UnPosted"
                                 TotalDebetKredit()
                                 IsiListGridDJurnal()
@@ -454,6 +455,7 @@ Public Class frmJurnalUmum
                                     End If
 
                                     .SimpanData() 'dJurnal
+                                    ' .InsertBukuBesar()
                                     mPosted = "UnPosted"
                                     TotalDebetKredit()
 
