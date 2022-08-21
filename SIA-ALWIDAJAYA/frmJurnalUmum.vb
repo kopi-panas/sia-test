@@ -756,9 +756,9 @@ Public Class frmJurnalUmum
     End Sub
 
     Private Sub btnPreviewBB_Click(sender As Object, e As EventArgs) Handles btnPreviewBB.Click
-        'With objJurnal
-        '    .InsertBukuBesar()
-        'End With
+        With objJurnal
+            .InsertBukuBesar()
+        End With
         Try
             frmRptBukuBesar.CrystalReportViewer1.SelectionFormula = "{BukuBesar.Periode} = '" & lblPeriode.Text & "'"
             frmRptBukuBesar.CrystalReportViewer1.Dock = DockStyle.Fill

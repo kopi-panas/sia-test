@@ -30,7 +30,7 @@ Public Class clsJurnalUmum
             daData = New OleDbDataAdapter(Query, conn)
             dsData = New DataSet
             daData.Fill(dsData)
-            InsertBukuBesar()
+            'InsertBukuBesar()
             'Query = "SELECT DISTINCT hJurnal.Periode, hJurnal.Status FROM hJurnal WHERE (((hJurnal.Periode)='" & mPeriode & "') AND ((hJurnal.Status)='" & "UnPosted" & "'))"
             'daData = New OleDbDataAdapter(Query, CONN)
             'dsData = New DataSet
@@ -64,7 +64,7 @@ Public Class clsJurnalUmum
             dsData = New DataSet
             daData.Fill(dsData)
             frmPerkiraan.IsiList()
-            InsertBukuBesar()
+            'InsertBukuBesar()
             Return Query
         Catch ex As Exception
             MsgBox("Data tidak bisa tersimpan karena NoAkun sudah ada!", MsgBoxStyle.Exclamation, "Error")
@@ -103,6 +103,10 @@ Public Class clsJurnalUmum
             End If
         Catch ex As Exception
         End Try
+    End Sub
+
+    Public Sub UpdateBukuBesar()
+        Query = "UPDATE BukuBesar SET "
     End Sub
 
     Public Function EditDataHJurnal()
