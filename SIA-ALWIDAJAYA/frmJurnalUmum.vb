@@ -755,4 +755,18 @@ Public Class frmJurnalUmum
         End Try
     End Sub
 
+    Private Sub btnPreviewBB_Click(sender As Object, e As EventArgs) Handles btnPreviewBB.Click
+        'With objJurnal
+        '    .InsertBukuBesar()
+        'End With
+        Try
+            frmRptBukuBesar.CrystalReportViewer1.SelectionFormula = "{BukuBesar.Periode} = '" & lblPeriode.Text & "'"
+            frmRptBukuBesar.CrystalReportViewer1.Dock = DockStyle.Fill
+            frmRptBukuBesar.CrystalReportViewer1.RefreshReport()
+            frmRptBukuBesar.ShowDialog()
+            cmdEdit.Text = "&Edit"
+        Catch ex As Exception
+            MsgBox("Mencetak jurnal gagal")
+        End Try
+    End Sub
 End Class

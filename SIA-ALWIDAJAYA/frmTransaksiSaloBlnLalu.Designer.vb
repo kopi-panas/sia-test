@@ -42,6 +42,10 @@ Partial Class frmTransaksiSaloBlnLalu
         Me.cmdKeluar = New System.Windows.Forms.Button()
         Me.ListView = New System.Windows.Forms.ListView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.lblKredit = New System.Windows.Forms.Label()
+        Me.lblDebet = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -270,12 +274,58 @@ Partial Class frmTransaksiSaloBlnLalu
         Me.GroupBox1.TabIndex = 152
         Me.GroupBox1.TabStop = False
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(416, 457)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(78, 13)
+        Me.Label6.TabIndex = 173
+        Me.Label6.Text = "Total Debet:"
+        '
+        'lblKredit
+        '
+        Me.lblKredit.BackColor = System.Drawing.Color.SkyBlue
+        Me.lblKredit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblKredit.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblKredit.Location = New System.Drawing.Point(541, 470)
+        Me.lblKredit.Name = "lblKredit"
+        Me.lblKredit.Size = New System.Drawing.Size(125, 20)
+        Me.lblKredit.TabIndex = 171
+        Me.lblKredit.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'lblDebet
+        '
+        Me.lblDebet.BackColor = System.Drawing.Color.SkyBlue
+        Me.lblDebet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblDebet.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDebet.Location = New System.Drawing.Point(419, 470)
+        Me.lblDebet.Name = "lblDebet"
+        Me.lblDebet.Size = New System.Drawing.Size(125, 20)
+        Me.lblDebet.TabIndex = 172
+        Me.lblDebet.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(538, 457)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(77, 13)
+        Me.Label7.TabIndex = 174
+        Me.Label7.Text = "Total Kredit:"
+        '
         'frmTransaksiSaloBlnLalu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(725, 473)
+        Me.ClientSize = New System.Drawing.Size(725, 506)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.lblKredit)
+        Me.Controls.Add(Me.lblDebet)
         Me.Controls.Add(Me.cmdTambah)
         Me.Controls.Add(Me.cmdEdit)
         Me.Controls.Add(Me.cmdHapus)
@@ -294,6 +344,7 @@ Partial Class frmTransaksiSaloBlnLalu
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents cmdTambah As System.Windows.Forms.Button
@@ -315,4 +366,8 @@ Partial Class frmTransaksiSaloBlnLalu
     Friend WithEvents cmdKeluar As System.Windows.Forms.Button
     Friend WithEvents ListView As System.Windows.Forms.ListView
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents lblKredit As System.Windows.Forms.Label
+    Friend WithEvents lblDebet As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
 End Class

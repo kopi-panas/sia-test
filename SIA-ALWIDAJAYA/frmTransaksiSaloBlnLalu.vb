@@ -148,6 +148,21 @@ Public Class frmTransaksiSaloBlnLalu
         txtKredit.Text = "0"
     End Sub
 
+    Public Sub TotalDebetKredit()
+        Try
+            QueryDebetKredit = "SELECT tmpSaldoBlnLalu.Periode, Sum(tmpSaldoBlnLalu.Debet) AS TotalDebet, Sum(tmpSaldoBlnLalu.Kredit) AS TotalKredit FROM(tmpSaldoBlnLalu) GROUP BY tmpSaldoBlnLalu.Periode HAVING (((tmpSaldoBlnLalu.Periode)= '" & cboPeriode.Text & "'))"
+            daDataDebetKredit = New OleDbDataAdapter(QueryDebetKredit, conn)
+            dsDataDebetKredit = New DataSet
+            daDataDebetKredit.Fill(dsDataDebetKredit)
+
+            With dsDataDebetKredit.Tables(0).Rows(0)
+                lblDebet.Text = Format(.Item(1), "#,#")
+                lblKredit.Text = Format(.Item(2), "#,#")
+            End With
+        Catch ex As Exception
+        End Try
+    End Sub
+
     Private Sub txtDebet_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDebet.KeyPress
         If e.KeyChar = Chr(13) Then
             txtKredit.Focus()
@@ -252,6 +267,7 @@ Public Class frmTransaksiSaloBlnLalu
 
     Private Sub cboPeriode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboPeriode.SelectedIndexChanged
         IsiList()
+        TotalDebetKredit()
     End Sub
 
     Private Sub cmdTambah_Click(sender As Object, e As EventArgs) Handles cmdTambah.Click
