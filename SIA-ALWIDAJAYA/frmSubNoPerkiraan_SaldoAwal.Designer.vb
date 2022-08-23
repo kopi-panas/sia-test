@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmSubNoPerkiraan_SaloAwal
+Partial Class frmSubNoPerkiraan_SaldoAwal
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class frmSubNoPerkiraan_SaloAwal
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSubNoPerkiraan_SaloAwal))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSubNoPerkiraan_SaldoAwal))
         Me.cmdKeluar = New System.Windows.Forms.Button()
         Me.cmdYa = New System.Windows.Forms.Button()
         Me.ListView = New System.Windows.Forms.ListView()

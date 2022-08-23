@@ -355,6 +355,50 @@ Public Class frmJurnalUmum
                     KondisiAwal()
                     MsgBox("Data berhasil diSimpan!", MsgBoxStyle.OkOnly, "")
                 End If
+
+                'Dim objPosting As New clsPosting
+
+                'Dim mKeterangan As String
+
+                'If lblPeriode.Text = "" Then
+                '    MsgBox("Silahkan pilih periode yang diposting", vbExclamation + MsgBoxStyle.OkOnly, "Pesan")
+                '    lblPeriode.Focus()
+                'Else
+                '    Query = "SELECT Periode, Keterangan FROM tblMasterPeriode WHERE Periode = '" & lblPeriode.Text & "'"
+                '    daData = New OleDbDataAdapter(Query, CONN)
+                '    dsData = New DataSet
+                '    daData.Fill(dsData)
+
+                '    If dsData.Tables(0).Rows.Count = 0 Then
+                '        mKeterangan = 0
+                '    Else
+                '        mKeterangan = dsData.Tables(0).Rows(0).Item(1)
+                '    End If
+
+                '    If mKeterangan = "UnPosted" Then
+                '        With objPosting
+                '            .InsertBukuBesar()
+                '            .InsertBukuBesarAJP()
+                '            .InsertNeracaSaldo()
+                '            .InsertNeracaSaldoAJP()
+                '            .InsertNeracaLajur()
+                '            .InsertRugiLaba()
+                '            .PerubahanModal()
+                '            .UpdatePrive()
+                '            .NilaiNeraca()
+                '            .NilaiNeracaAkumulasi()
+                '            .UpdateModal()
+                '            .InsertLabaTakDibagi()
+                '            .UpDateSaldoAwal()
+                '            .SaldoBulanLalu()
+                '            .InsertKeteranganSaldoAwal() 'Menerangkan bahwa setup saldo awal sudah diPosted
+                '            MsgBox("Proses posting sudah selesai!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Pesan proses posting")
+                '        End With
+                '    Else
+                '        MsgBox("Maaf... periode ini sudah diposting", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Pesan proses posting")
+                '    End If
+                'End If
+
             End If
         Catch ex As Exception
         End Try
@@ -755,18 +799,18 @@ Public Class frmJurnalUmum
         End Try
     End Sub
 
-    Private Sub btnPreviewBB_Click(sender As Object, e As EventArgs) Handles btnPreviewBB.Click
-        With objJurnal
-            .InsertBukuBesar()
-        End With
-        Try
-            frmRptBukuBesar.CrystalReportViewer1.SelectionFormula = "{BukuBesar.Periode} = '" & lblPeriode.Text & "'"
-            frmRptBukuBesar.CrystalReportViewer1.Dock = DockStyle.Fill
-            frmRptBukuBesar.CrystalReportViewer1.RefreshReport()
-            frmRptBukuBesar.ShowDialog()
-            cmdEdit.Text = "&Edit"
-        Catch ex As Exception
-            MsgBox("Mencetak jurnal gagal")
-        End Try
-    End Sub
+    'Private Sub btnPreviewBB_Click(sender As Object, e As EventArgs) Handles btnPreviewBB.Click
+    '    With objJurnal
+    '        .InsertBukuBesar()
+    '    End With
+    '    Try
+    '        frmRptBukuBesar.CrystalReportViewer1.SelectionFormula = "{BukuBesar.Periode} = '" & lblPeriode.Text & "'"
+    '        frmRptBukuBesar.CrystalReportViewer1.Dock = DockStyle.Fill
+    '        frmRptBukuBesar.CrystalReportViewer1.RefreshReport()
+    '        frmRptBukuBesar.ShowDialog()
+    '        cmdEdit.Text = "&Edit"
+    '    Catch ex As Exception
+    '        MsgBox("Mencetak jurnal gagal")
+    '    End Try
+    'End Sub
 End Class

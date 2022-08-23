@@ -297,10 +297,10 @@
     <Compile Include="frmPosting.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTransaksiSaloBlnLalu.Designer.vb">
-      <DependentUpon>frmTransaksiSaloBlnLalu.vb</DependentUpon>
+    <Compile Include="frmTransaksiSaldoBlnLalu.Designer.vb">
+      <DependentUpon>frmTransaksiSaldoBlnLalu.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmTransaksiSaloBlnLalu.vb">
+    <Compile Include="frmTransaksiSaldoBlnLalu.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSubJurnalAJP.Designer.vb">
@@ -321,10 +321,10 @@
     <Compile Include="frmSubNoPerkiraanJurnalUmum.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSubNoPerkiraan_SaloAwal.Designer.vb">
-      <DependentUpon>frmSubNoPerkiraan_SaloAwal.vb</DependentUpon>
+    <Compile Include="frmSubNoPerkiraan_SaldoAwal.Designer.vb">
+      <DependentUpon>frmSubNoPerkiraan_SaldoAwal.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmSubNoPerkiraan_SaloAwal.vb">
+    <Compile Include="frmSubNoPerkiraan_SaldoAwal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSubJurnalUmum.Designer.vb">
@@ -477,8 +477,8 @@
     <EmbeddedResource Include="frmPosting.resx">
       <DependentUpon>frmPosting.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTransaksiSaloBlnLalu.resx">
-      <DependentUpon>frmTransaksiSaloBlnLalu.vb</DependentUpon>
+    <EmbeddedResource Include="frmTransaksiSaldoBlnLalu.resx">
+      <DependentUpon>frmTransaksiSaldoBlnLalu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSubJurnalAJP.resx">
       <DependentUpon>frmSubJurnalAJP.vb</DependentUpon>
@@ -489,8 +489,8 @@
     <EmbeddedResource Include="frmSubNoPerkiraanJurnalUmum.resx">
       <DependentUpon>frmSubNoPerkiraanJurnalUmum.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSubNoPerkiraan_SaloAwal.resx">
-      <DependentUpon>frmSubNoPerkiraan_SaloAwal.vb</DependentUpon>
+    <EmbeddedResource Include="frmSubNoPerkiraan_SaldoAwal.resx">
+      <DependentUpon>frmSubNoPerkiraan_SaldoAwal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSubJurnalUmum.resx">
       <DependentUpon>frmSubJurnalUmum.vb</DependentUpon>

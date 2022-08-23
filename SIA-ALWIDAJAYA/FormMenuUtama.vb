@@ -30,7 +30,7 @@ Public Class FormMenuUtama
     End Sub
 
     Private Sub SetUpSaldoAwalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SetUpSaldoAwalToolStripMenuItem.Click
-        frmTransaksiSaloBlnLalu.Show()
+        frmTransaksiSaldoBlnLalu.Show()
     End Sub
 
     Private Sub btnLapNL_Click(sender As Object, e As EventArgs) Handles btnLapNL.Click

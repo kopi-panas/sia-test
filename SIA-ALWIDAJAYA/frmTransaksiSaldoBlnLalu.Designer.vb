@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmTransaksiSaloBlnLalu
+Partial Class frmTransaksiSaldoBlnLalu
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,9 +22,7 @@ Partial Class frmTransaksiSaloBlnLalu
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmTransaksiSaloBlnLalu))
-        Me.cmdTambah = New System.Windows.Forms.Button()
-        Me.cmdEdit = New System.Windows.Forms.Button()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmTransaksiSaldoBlnLalu))
         Me.cmdHapus = New System.Windows.Forms.Button()
         Me.cmdCetak = New System.Windows.Forms.Button()
         Me.cboPeriode = New System.Windows.Forms.ComboBox()
@@ -46,36 +44,9 @@ Partial Class frmTransaksiSaloBlnLalu
         Me.lblKredit = New System.Windows.Forms.Label()
         Me.lblDebet = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.cmdTambah = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'cmdTambah
-        '
-        Me.cmdTambah.BackColor = System.Drawing.SystemColors.Control
-        Me.cmdTambah.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdTambah.Image = CType(resources.GetObject("cmdTambah.Image"), System.Drawing.Image)
-        Me.cmdTambah.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdTambah.Location = New System.Drawing.Point(60, 178)
-        Me.cmdTambah.Name = "cmdTambah"
-        Me.cmdTambah.Size = New System.Drawing.Size(75, 32)
-        Me.cmdTambah.TabIndex = 147
-        Me.cmdTambah.Text = "&Tambah"
-        Me.cmdTambah.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.cmdTambah.UseVisualStyleBackColor = False
-        '
-        'cmdEdit
-        '
-        Me.cmdEdit.BackColor = System.Drawing.SystemColors.Control
-        Me.cmdEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdEdit.Image = CType(resources.GetObject("cmdEdit.Image"), System.Drawing.Image)
-        Me.cmdEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdEdit.Location = New System.Drawing.Point(220, 178)
-        Me.cmdEdit.Name = "cmdEdit"
-        Me.cmdEdit.Size = New System.Drawing.Size(73, 32)
-        Me.cmdEdit.TabIndex = 149
-        Me.cmdEdit.Text = "&Edit"
-        Me.cmdEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.cmdEdit.UseVisualStyleBackColor = False
         '
         'cmdHapus
         '
@@ -83,7 +54,7 @@ Partial Class frmTransaksiSaloBlnLalu
         Me.cmdHapus.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdHapus.Image = CType(resources.GetObject("cmdHapus.Image"), System.Drawing.Image)
         Me.cmdHapus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdHapus.Location = New System.Drawing.Point(299, 178)
+        Me.cmdHapus.Location = New System.Drawing.Point(287, 178)
         Me.cmdHapus.Name = "cmdHapus"
         Me.cmdHapus.Size = New System.Drawing.Size(73, 32)
         Me.cmdHapus.TabIndex = 150
@@ -97,7 +68,7 @@ Partial Class frmTransaksiSaloBlnLalu
         Me.cmdCetak.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdCetak.Image = CType(resources.GetObject("cmdCetak.Image"), System.Drawing.Image)
         Me.cmdCetak.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdCetak.Location = New System.Drawing.Point(378, 178)
+        Me.cmdCetak.Location = New System.Drawing.Point(366, 178)
         Me.cmdCetak.Name = "cmdCetak"
         Me.cmdCetak.Size = New System.Drawing.Size(73, 32)
         Me.cmdCetak.TabIndex = 155
@@ -140,9 +111,9 @@ Partial Class frmTransaksiSaloBlnLalu
         Me.cmdSimpan.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdSimpan.Image = CType(resources.GetObject("cmdSimpan.Image"), System.Drawing.Image)
         Me.cmdSimpan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdSimpan.Location = New System.Drawing.Point(141, 178)
+        Me.cmdSimpan.Location = New System.Drawing.Point(206, 178)
         Me.cmdSimpan.Name = "cmdSimpan"
-        Me.cmdSimpan.Size = New System.Drawing.Size(73, 32)
+        Me.cmdSimpan.Size = New System.Drawing.Size(79, 32)
         Me.cmdSimpan.TabIndex = 148
         Me.cmdSimpan.Text = "&Simpan"
         Me.cmdSimpan.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -193,11 +164,11 @@ Partial Class frmTransaksiSaloBlnLalu
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(106, 60)
+        Me.Label3.Location = New System.Drawing.Point(99, 60)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(54, 13)
+        Me.Label3.Size = New System.Drawing.Size(61, 13)
         Me.Label3.TabIndex = 5
-        Me.Label3.Text = "Tangal :"
+        Me.Label3.Text = "Tanggal :"
         '
         'txtTgl
         '
@@ -316,6 +287,20 @@ Partial Class frmTransaksiSaloBlnLalu
         Me.Label7.TabIndex = 174
         Me.Label7.Text = "Total Kredit:"
         '
+        'cmdTambah
+        '
+        Me.cmdTambah.BackColor = System.Drawing.SystemColors.Control
+        Me.cmdTambah.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdTambah.Image = CType(resources.GetObject("cmdTambah.Image"), System.Drawing.Image)
+        Me.cmdTambah.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmdTambah.Location = New System.Drawing.Point(117, 178)
+        Me.cmdTambah.Name = "cmdTambah"
+        Me.cmdTambah.Size = New System.Drawing.Size(83, 32)
+        Me.cmdTambah.TabIndex = 147
+        Me.cmdTambah.Text = "&Tambah"
+        Me.cmdTambah.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.cmdTambah.UseVisualStyleBackColor = False
+        '
         'frmTransaksiSaloBlnLalu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -327,7 +312,6 @@ Partial Class frmTransaksiSaloBlnLalu
         Me.Controls.Add(Me.lblKredit)
         Me.Controls.Add(Me.lblDebet)
         Me.Controls.Add(Me.cmdTambah)
-        Me.Controls.Add(Me.cmdEdit)
         Me.Controls.Add(Me.cmdHapus)
         Me.Controls.Add(Me.cmdCetak)
         Me.Controls.Add(Me.cmdSimpan)
@@ -347,8 +331,6 @@ Partial Class frmTransaksiSaloBlnLalu
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents cmdTambah As System.Windows.Forms.Button
-    Friend WithEvents cmdEdit As System.Windows.Forms.Button
     Friend WithEvents cmdHapus As System.Windows.Forms.Button
     Friend WithEvents cmdCetak As System.Windows.Forms.Button
     Friend WithEvents cboPeriode As System.Windows.Forms.ComboBox
@@ -370,4 +352,5 @@ Partial Class frmTransaksiSaloBlnLalu
     Friend WithEvents lblKredit As System.Windows.Forms.Label
     Friend WithEvents lblDebet As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents cmdTambah As System.Windows.Forms.Button
 End Class

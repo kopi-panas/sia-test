@@ -9,7 +9,7 @@ Public Class clsSaldoBlnLalu
     Private mKredit As Long
 
     Public Sub TambahData()
-        With frmTransaksiSaloBlnLalu
+        With frmTransaksiSaldoBlnLalu
             .BersihkanIsian()
             .txtKodeRekening.Focus()
         End With
@@ -17,12 +17,12 @@ Public Class clsSaldoBlnLalu
 
     Public Function SimpanData()
         Try
-            mPeriode = frmTransaksiSaloBlnLalu.cboPeriode.Text
-            mTgl = frmTransaksiSaloBlnLalu.txtTgl.Value
-            mKodeRekening = frmTransaksiSaloBlnLalu.txtKodeRekening.Text
-            tempDK = frmTransaksiSaloBlnLalu.mDK
-            mDebet = frmTransaksiSaloBlnLalu.txtDebet.Text
-            mKredit = frmTransaksiSaloBlnLalu.txtKredit.Text
+            mPeriode = frmTransaksiSaldoBlnLalu.cboPeriode.Text
+            mTgl = frmTransaksiSaldoBlnLalu.txtTgl.Value
+            mKodeRekening = frmTransaksiSaldoBlnLalu.txtKodeRekening.Text
+            tempDK = frmTransaksiSaldoBlnLalu.mDK
+            mDebet = frmTransaksiSaldoBlnLalu.txtDebet.Text
+            mKredit = frmTransaksiSaldoBlnLalu.txtKredit.Text
 
             Query = "INSERT INTO tmpSaldoBlnLalu VALUES('" & mPeriode & "', '" & mTgl & "', '" & mKodeRekening & "', '" & tempDK & "', '" & mDebet & "','" & mKredit & "', '" & "UnPosted" & "', '" & "Saldo bulan lalu" & "')"
             daData = New OleDbDataAdapter(Query, conn)
@@ -36,9 +36,9 @@ Public Class clsSaldoBlnLalu
 
     Public Function EditData()
         Try
-            mKodeRekening = frmTransaksiSaloBlnLalu.txtKodeRekening.Text
-            mDebet = frmTransaksiSaloBlnLalu.txtDebet.Text
-            mKredit = frmTransaksiSaloBlnLalu.txtKredit.Text
+            mKodeRekening = frmTransaksiSaldoBlnLalu.txtKodeRekening.Text
+            mDebet = frmTransaksiSaldoBlnLalu.txtDebet.Text
+            mKredit = frmTransaksiSaldoBlnLalu.txtKredit.Text
 
             Query = "UPDATE tmpSaldoBlnLalu SET  Debet = '" & mDebet & "', Kredit = '" & mKredit & "'  WHERE NoPerkiraan = '" & mKodeRekening & "'"
             daData = New OleDbDataAdapter(Query, conn)
@@ -52,8 +52,8 @@ Public Class clsSaldoBlnLalu
 
     Public Function HapusData()
         Try
-            mPeriode = frmTransaksiSaloBlnLalu.cboPeriode.Text
-            mKodeRekening = frmTransaksiSaloBlnLalu.txtKodeRekening.Text
+            mPeriode = frmTransaksiSaldoBlnLalu.cboPeriode.Text
+            mKodeRekening = frmTransaksiSaldoBlnLalu.txtKodeRekening.Text
 
             Query = "DELETE FROM tmpSaldoBlnLalu WHERE NoPerkiraan = '" & mKodeRekening & "' AND Periode = '" & mPeriode & "'"
             daData = New OleDbDataAdapter(Query, conn)
@@ -64,9 +64,5 @@ Public Class clsSaldoBlnLalu
             Return 0
         End Try
     End Function
-
-    Public Sub Keluar()
-        frmTransaksiSaloBlnLalu.Dispose()
-    End Sub
 
 End Class

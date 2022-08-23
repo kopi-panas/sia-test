@@ -1,5 +1,5 @@
 ﻿Imports System.Data.OleDb
-Public Class frmSubNoPerkiraan_SaloAwal
+Public Class frmSubNoPerkiraan_SaldoAwal
 
     Private Sub PosisiList()
         ListView.Columns.Clear()
@@ -34,8 +34,8 @@ Public Class frmSubNoPerkiraan_SaloAwal
 
     Private Sub AmbilData()
         With ListView.SelectedItems
-            frmTransaksiSaloBlnLalu.txtKodeRekening.Text = .Item(0).SubItems(0).Text
-            frmTransaksiSaloBlnLalu.lblNamaPerkiraan.Text = .Item(0).SubItems(1).Text
+            frmTransaksiSaldoBlnLalu.txtKodeRekening.Text = .Item(0).SubItems(0).Text
+            frmTransaksiSaldoBlnLalu.lblNamaPerkiraan.Text = .Item(0).SubItems(1).Text
         End With
     End Sub
 

@@ -1,11 +1,12 @@
 ﻿Imports System.Data.OleDb
-Public Class frmTransaksiSaloBlnLalu
+Public Class frmTransaksiSaldoBlnLalu
 
     Dim objSaldoBlnLalu As New clsSaldoBlnLalu
 
     Public mDK As String
 
     Private Sub PosisiList()
+        ListView.Columns.Clear()
         With ListView.Columns
             .Add("Periode", 0)
             .Add("Tanggal", 0)
@@ -43,6 +44,7 @@ Public Class frmTransaksiSaloBlnLalu
                     End If
                 End With
             Next
+            TotalDebetKredit()
         Catch ex As Exception
         End Try
     End Sub
@@ -58,14 +60,14 @@ Public Class frmTransaksiSaloBlnLalu
             daData.Fill(dsData)
 
             If dsData.Tables(0).Rows.Count = 0 Then
-                txtTgl.Enabled = True
-                txtDebet.Enabled = True
-                txtKredit.Enabled = True
-                txtKodeRekening.Enabled = True
+                txtTgl.Enabled = False
+                txtDebet.Enabled = False
+                txtKredit.Enabled = False
+                txtKodeRekening.Enabled = False
                 cmdTambah.Enabled = True
-                cmdSimpan.Enabled = True
-                cmdEdit.Enabled = True
-                cmdHapus.Enabled = True
+                cmdSimpan.Enabled = False
+                ' cmdEdit.Enabled = True
+                cmdHapus.Enabled = False
             Else
                 Pesan = MsgBox("Maaf anda tidak boleh memasukkan saldo awal lagi" & vbCrLf _
                     & "karena sudah melakukan proses posting, menu ini digunakan hanya untuk pertama kali menggunakan aplikasi ini. " & vbCrLf _
@@ -77,11 +79,18 @@ Public Class frmTransaksiSaloBlnLalu
                 txtKodeRekening.Enabled = False
                 cmdTambah.Enabled = False
                 cmdSimpan.Enabled = False
-                cmdEdit.Enabled = False
+                ' cmdEdit.Enabled = False
                 cmdHapus.Enabled = False
             End If
         Catch ex As Exception
         End Try
+    End Sub
+
+    Sub Buka()
+        txtTgl.Enabled = True
+        txtDebet.Enabled = True
+        txtKredit.Enabled = True
+        txtKodeRekening.Enabled = True
     End Sub
 
     Private Sub AmbilData()
@@ -94,6 +103,8 @@ Public Class frmTransaksiSaloBlnLalu
                 mDK = .Item(0).SubItems(4).Text
                 txtDebet.Text = .Item(0).SubItems(5).Text
                 txtKredit.Text = .Item(0).SubItems(6).Text
+                cmdHapus.Enabled = True
+                cmdSimpan.Enabled = False
             End With
         Catch ex As Exception
         End Try
@@ -124,7 +135,7 @@ Public Class frmTransaksiSaloBlnLalu
             daData.Fill(dsData)
 
             If dsData.Tables(0).Rows.Count - 1 Then
-                MsgBox("No.Perkiraan ini tidak ada", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Cari no perkiraan")
+                MsgBox("No.Akun tidak ada!", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "")
                 txtKodeRekening.Focus()
                 txtKodeRekening.Text = ""
                 lblNamaPerkiraan.Text = ""
@@ -174,19 +185,29 @@ Public Class frmTransaksiSaloBlnLalu
     End Sub
 
     Private Sub cmdKeluar_Click(sender As Object, e As EventArgs) Handles cmdKeluar.Click
-        With objSaldoBlnLalu
-            .Keluar()
-        End With
+        Try
+            If lblDebet.Text <> lblKredit.Text Then
+                MsgBox("Jumlah debet dan kredit tidak seimbang, silahkan periksa!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "")
+                cmdHapus.Enabled = False
+                cmdSimpan.Enabled = False
+            Else
+                Me.Close()
+            End If
+        Catch ex As Exception
+        End Try
+        'With objSaldoBlnLalu
+        '    .Keluar()
+        'End With
     End Sub
 
     Private Sub txtKodeRekening_DoubleClick(sender As Object, e As EventArgs) Handles txtKodeRekening.DoubleClick
-        frmSubNoPerkiraan_SaloAwal.ShowDialog()
+        frmSubNoPerkiraan_SaldoAwal.ShowDialog()
     End Sub
 
     Private Sub txtKodeRekening_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtKodeRekening.KeyPress
         If e.KeyChar = Chr(13) Then
             If cboPeriode.Text = "" Then
-                MsgBox("Periode tidak boleh kosong, silahkan isi", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Isi keterangan")
+                MsgBox("Periode tidak boleh kosong, silahkan isi terlebih dahulu!", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "")
                 cboPeriode.Focus()
             Else
                 If txtTgl.Text = "" Then
@@ -206,10 +227,6 @@ Public Class frmTransaksiSaloBlnLalu
         If Not ((e.KeyChar >= "0" And e.KeyChar <= "9") Or e.KeyChar = vbBack Or e.KeyChar = ".") Then
             e.Handled = True
         End If
-    End Sub
-
-    Private Sub frmTransaksiSaloBlnLalu_Activated(sender As Object, e As EventArgs) Handles Me.Activated
-        cboPeriode.Focus()
     End Sub
 
     Private Sub frmTransaksiSaloBlnLalu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -248,6 +265,7 @@ Public Class frmTransaksiSaloBlnLalu
                 .SimpanData()
             End With
             IsiList()
+            TotalDebetKredit()
             BersihkanIsian()
             txtKodeRekening.Focus()
         Catch ex As Exception
@@ -257,7 +275,7 @@ Public Class frmTransaksiSaloBlnLalu
     Private Sub cboPeriode_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cboPeriode.KeyPress
         If e.KeyChar = Chr(13) Then
             If cboPeriode.Text = "" Then
-                MsgBox("Periode masih kosong, silahkan diisi", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Pesan")
+                MsgBox("Periode masih kosong, silahkan diisi terlebih dahulu!", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "")
                 cboPeriode.Focus()
             Else
                 txtTgl.Focus()
@@ -271,6 +289,8 @@ Public Class frmTransaksiSaloBlnLalu
     End Sub
 
     Private Sub cmdTambah_Click(sender As Object, e As EventArgs) Handles cmdTambah.Click
+        cmdSimpan.Enabled = True
+        Buka()
         With objSaldoBlnLalu
             .TambahData()
         End With
@@ -279,13 +299,13 @@ Public Class frmTransaksiSaloBlnLalu
     Private Sub cmdHapus_Click(sender As Object, e As EventArgs) Handles cmdHapus.Click
         Try
             If Len(txtKodeRekening.Text) = 0 Then
-                MsgBox("Pilih data yang dihapus", MsgBoxStyle.Information, "Perhatian")
+                MsgBox("Pilih data yang dihapus!", MsgBoxStyle.Information, "")
                 txtKodeRekening.Focus()
                 Exit Sub
             Else
                 Dim A As String
 
-                A = MsgBox("Benar akan dihapus...", MsgBoxStyle.OkCancel, "Informasi")
+                A = MsgBox("Benar akan dihapus?", MsgBoxStyle.OkCancel, "")
                 Select Case A
                     Case vbCancel
                         txtKodeRekening.Focus()
@@ -300,7 +320,7 @@ Public Class frmTransaksiSaloBlnLalu
                 End Select
             End If
         Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Information, "Perhatian")
+            MsgBox(ex.Message, MsgBoxStyle.Information, "")
         End Try
     End Sub
 
@@ -315,38 +335,42 @@ Public Class frmTransaksiSaloBlnLalu
         txtKodeRekening.Enabled = False
     End Sub
 
-    Private Sub cmdEdit_Click(sender As Object, e As EventArgs) Handles cmdEdit.Click
-        Dim A As String
+    'Private Sub cmdEdit_Click(sender As Object, e As EventArgs) Handles cmdEdit.Click
+    '    Dim A As String
 
-        A = MsgBox("Benar akan di-Edit", MsgBoxStyle.Question + MsgBoxStyle.OkCancel, "Informasi")
-        Select Case A
-            Case vbCancel
-                BersihkanIsian()
-                txtKodeRekening.Focus()
-                Exit Sub
-            Case vbOK
-                Try
-                    With objSaldoBlnLalu
-                        .EditData()
-                    End With
-                    IsiList()
-                Catch ex As Exception
-                End Try
-        End Select
-    End Sub
+    '    A = MsgBox("Benar akan di-Edit", MsgBoxStyle.Question + MsgBoxStyle.OkCancel, "Informasi")
+    '    Select Case A
+    '        Case vbCancel
+    '            BersihkanIsian()
+    '            txtKodeRekening.Focus()
+    '            Exit Sub
+    '        Case vbOK
+    '            Try
+    '                With objSaldoBlnLalu
+    '                    .EditData()
+    '                End With
+    '                IsiList()
+    '            Catch ex As Exception
+    '            End Try
+    '    End Select
+    'End Sub
 
     Private Sub cmdCetak_Click(sender As Object, e As EventArgs) Handles cmdCetak.Click
-        If Len(cboPeriode.Text) = 0 Then
-            MsgBox("Pilih periode yang akan dicetak", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Pesan")
-            cboPeriode.Focus()
+        If lblDebet.Text <> lblKredit.Text Then
+            MsgBox("Jumlah debet dan kredit tidak seimbang, silahkan periksa!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "")
         Else
-            Try
-                frmRptMutasiSaldo.CrystalReportViewer1.SelectionFormula = "{tmpSaldoBlnLalu.Periode} = '" & cboPeriode.Text & "'"
-                frmRptMutasiSaldo.CrystalReportViewer1.Dock = DockStyle.Fill
-                frmRptMutasiSaldo.CrystalReportViewer1.RefreshReport()
-                frmRptMutasiSaldo.ShowDialog()
-            Catch ex As Exception
-            End Try
+            If Len(cboPeriode.Text) = 0 Then
+                MsgBox("Pilih periode yang akan dicetak!", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "")
+                cboPeriode.Focus()
+            Else
+                Try
+                    frmRptMutasiSaldo.CrystalReportViewer1.SelectionFormula = "{tmpSaldoBlnLalu.Periode} = '" & cboPeriode.Text & "'"
+                    frmRptMutasiSaldo.CrystalReportViewer1.Dock = DockStyle.Fill
+                    frmRptMutasiSaldo.CrystalReportViewer1.RefreshReport()
+                    frmRptMutasiSaldo.ShowDialog()
+                Catch ex As Exception
+                End Try
+            End If
         End If
     End Sub
 End Class
