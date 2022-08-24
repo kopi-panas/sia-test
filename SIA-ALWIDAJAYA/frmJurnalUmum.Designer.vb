@@ -189,7 +189,7 @@ Partial Class frmJurnalUmum
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(779, 126)
+        Me.GroupBox1.Size = New System.Drawing.Size(775, 126)
         Me.GroupBox1.TabIndex = 161
         Me.GroupBox1.TabStop = False
         '
@@ -336,11 +336,11 @@ Partial Class frmJurnalUmum
         Me.cmdPreviewBB.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdPreviewBB.Image = CType(resources.GetObject("cmdPreviewBB.Image"), System.Drawing.Image)
         Me.cmdPreviewBB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdPreviewBB.Location = New System.Drawing.Point(477, 448)
+        Me.cmdPreviewBB.Location = New System.Drawing.Point(459, 448)
         Me.cmdPreviewBB.Name = "cmdPreviewBB"
-        Me.cmdPreviewBB.Size = New System.Drawing.Size(85, 34)
+        Me.cmdPreviewBB.Size = New System.Drawing.Size(103, 34)
         Me.cmdPreviewBB.TabIndex = 171
-        Me.cmdPreviewBB.Text = "&Preview"
+        Me.cmdPreviewBB.Text = "&Buku Besar"
         Me.cmdPreviewBB.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.cmdPreviewBB.UseVisualStyleBackColor = False
         '
@@ -350,7 +350,7 @@ Partial Class frmJurnalUmum
         Me.cmdPreviewNS.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdPreviewNS.Image = CType(resources.GetObject("cmdPreviewNS.Image"), System.Drawing.Image)
         Me.cmdPreviewNS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdPreviewNS.Location = New System.Drawing.Point(386, 448)
+        Me.cmdPreviewNS.Location = New System.Drawing.Point(368, 448)
         Me.cmdPreviewNS.Name = "cmdPreviewNS"
         Me.cmdPreviewNS.Size = New System.Drawing.Size(85, 34)
         Me.cmdPreviewNS.TabIndex = 172
@@ -362,7 +362,7 @@ Partial Class frmJurnalUmum
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(779, 482)
+        Me.ClientSize = New System.Drawing.Size(775, 503)
         Me.ControlBox = False
         Me.Controls.Add(Me.cmdPreviewNS)
         Me.Controls.Add(Me.cmdPreviewBB)
