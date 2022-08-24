@@ -105,17 +105,28 @@ Public Class clsJurnalUmum
         End Try
     End Sub
 
-    Public Sub BukuBesar()
+    Public Sub InsertNeracaSaldo()
         mPeriode = frmJurnalUmum.lblPeriode.Text
-        If dsData.Tables(0).Rows.Count = 0 Then
-            InsertBukuBesar()
-        Else
-            KoneksiKeAccess()
-            Dim edit As String = "UPDATE BukuBesar SET NoTransaksi ='" & mNoTransaksi & "',TglTransaksi = '" & mTglTransaksi & "',NoPerkiraan = '" & mNoPerkiraan & "',Keterangan = '" & mKeterangan & "',DK = '" & DK & "',Debet = '" & mDebet & "',Kredit = '" & mKredit & "',Status = '" & "UnPosted" & "' WHERE Periode = '" & mPeriode & "'"
-            Command = New OleDbCommand(edit, CONN)
-            Command.ExecuteNonQuery()
-        End If
+        Try
+            Query = "INSERT INTO NeracaSaldo SELECT BukuBesar.Periode, BukuBesar.NoPerkiraan, Sum(BukuBesar.Debet) AS TotalDebet, Sum(BukuBesar.Kredit) AS TotalKredit, IIf([TotalDebet]>[TotalKredit],[TotalDebet]-[TotalKredit],0) AS Saldodebet, IIf([TotalKredit]>[TotalDebet],[TotalKredit]-[TotalDebet],0) AS SaldoKredit FROM(BukuBesar) GROUP BY BukuBesar.Periode, BukuBesar.NoPerkiraan HAVING(((BukuBesar.Periode) = '" & mPeriode & "')) ORDER BY BukuBesar.NoPerkiraan"
+            daData = New OleDbDataAdapter(Query, conn)
+            dsData = New DataSet
+            daData.Fill(dsData)
+        Catch ex As Exception
+        End Try
     End Sub
+
+    'Public Sub BukuBesar()
+    '    'mPeriode = frmJurnalUmum.lblPeriode.Text
+    '    If dsData.Tables(0).Rows.Count = 0 Then
+    '        InsertBukuBesar()
+    '    Else
+    '        KoneksiKeAccess()
+    '        Dim edit As String = "UPDATE BukuBesar SET NoTransaksi ='" & mNoTransaksi & "',TglTransaksi = '" & mTglTransaksi & "',NoPerkiraan = '" & mNoPerkiraan & "',Keterangan = '" & mKeterangan & "',DK = '" & DK & "',Debet = '" & mDebet & "',Kredit = '" & mKredit & "',Status = '" & "UnPosted" & "' WHERE Periode = '" & mPeriode & "'"
+    '        Command = New OleDbCommand(edit, CONN)
+    '        Command.ExecuteNonQuery()
+    '    End If
+    'End Sub
 
     Public Function EditDataHJurnal()
         Try

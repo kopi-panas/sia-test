@@ -815,11 +815,33 @@ Public Class frmJurnalUmum
     'End Sub
 
     Private Sub cmdPreviewBB_Click(sender As Object, e As EventArgs) Handles cmdPreviewBB.Click
+        Dim HapusData As String = "Delete * from BukuBesar WHERE Status = '" & "UnPosted" & "'"
+        Command = New OleDbCommand(HapusData, CONN)
+        Command.ExecuteNonQuery()
         With objJurnal
-            .BukuBesar()
+            .InsertBukuBesar()
+            ' .BukuBesar()
         End With
         Try
             frmRptBukuBesar.CrystalReportViewer1.SelectionFormula = "{BukuBesar.Periode} = '" & lblPeriode.Text & "'"
+            frmRptBukuBesar.CrystalReportViewer1.Dock = DockStyle.Fill
+            frmRptBukuBesar.CrystalReportViewer1.RefreshReport()
+            frmRptBukuBesar.ShowDialog()
+            cmdEdit.Text = "&Edit"
+        Catch ex As Exception
+            MsgBox("Mencetak jurnal gagal")
+        End Try
+    End Sub
+
+    Private Sub cmdPreviewNS_Click(sender As Object, e As EventArgs) Handles cmdPreviewNS.Click
+        Dim HapusData As String = "Delete * from NeracaSaldo WHERE Periode = '" & lblPeriode.Text & "'"
+        Command = New OleDbCommand(HapusData, CONN)
+        Command.ExecuteNonQuery()
+        With objJurnal
+            .InsertNeracaSaldo()
+        End With
+        Try
+            frmRptBukuBesar.CrystalReportViewer1.SelectionFormula = "{NeracaSaldo.Periode} = '" & lblPeriode.Text & "'"
             frmRptBukuBesar.CrystalReportViewer1.Dock = DockStyle.Fill
             frmRptBukuBesar.CrystalReportViewer1.RefreshReport()
             frmRptBukuBesar.ShowDialog()

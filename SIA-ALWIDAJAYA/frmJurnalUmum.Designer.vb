@@ -48,6 +48,7 @@ Partial Class frmJurnalUmum
         Me.cmdPreview = New System.Windows.Forms.Button()
         Me.lblDebet = New System.Windows.Forms.Label()
         Me.cmdPreviewBB = New System.Windows.Forms.Button()
+        Me.cmdPreviewNS = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -188,7 +189,7 @@ Partial Class frmJurnalUmum
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(783, 126)
+        Me.GroupBox1.Size = New System.Drawing.Size(779, 126)
         Me.GroupBox1.TabIndex = 161
         Me.GroupBox1.TabStop = False
         '
@@ -343,12 +344,27 @@ Partial Class frmJurnalUmum
         Me.cmdPreviewBB.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.cmdPreviewBB.UseVisualStyleBackColor = False
         '
+        'cmdPreviewNS
+        '
+        Me.cmdPreviewNS.BackColor = System.Drawing.SystemColors.Control
+        Me.cmdPreviewNS.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdPreviewNS.Image = CType(resources.GetObject("cmdPreviewNS.Image"), System.Drawing.Image)
+        Me.cmdPreviewNS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmdPreviewNS.Location = New System.Drawing.Point(386, 448)
+        Me.cmdPreviewNS.Name = "cmdPreviewNS"
+        Me.cmdPreviewNS.Size = New System.Drawing.Size(85, 34)
+        Me.cmdPreviewNS.TabIndex = 172
+        Me.cmdPreviewNS.Text = "&Preview"
+        Me.cmdPreviewNS.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.cmdPreviewNS.UseVisualStyleBackColor = False
+        '
         'frmJurnalUmum
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(783, 486)
+        Me.ClientSize = New System.Drawing.Size(779, 482)
         Me.ControlBox = False
+        Me.Controls.Add(Me.cmdPreviewNS)
         Me.Controls.Add(Me.cmdPreviewBB)
         Me.Controls.Add(Me.txtKredit)
         Me.Controls.Add(Me.Label6)
@@ -404,4 +420,5 @@ Partial Class frmJurnalUmum
     Friend WithEvents cmdTransaksi As System.Windows.Forms.Button
     Friend WithEvents lblNoTransaksi As System.Windows.Forms.Label
     Friend WithEvents cmdPreviewBB As System.Windows.Forms.Button
+    Friend WithEvents cmdPreviewNS As System.Windows.Forms.Button
 End Class
