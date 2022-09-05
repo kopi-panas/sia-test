@@ -742,7 +742,7 @@ Public Class frmJurnalPenyesuaian
 
     Private Sub cmdPreview_Click(sender As Object, e As EventArgs) Handles cmdPreview.Click
         Try
-            frmRptAJP.CrystalReportViewer1.SelectionFormula = "{hJurnal.Periode} = '" & lblPeriode.Text & "'"
+            frmRptAJP.CrystalReportViewer1.SelectionFormula = "{hJurnalAJP.Periode} = '" & lblPeriode.Text & "'"
             frmRptAJP.CrystalReportViewer1.Dock = DockStyle.Fill
             frmRptAJP.CrystalReportViewer1.RefreshReport()
             frmRptAJP.ShowDialog()
@@ -752,4 +752,22 @@ Public Class frmJurnalPenyesuaian
         End Try
     End Sub
 
+ 
+    Private Sub btnPreviewBB_Click(sender As Object, e As EventArgs) Handles btnPreviewBB.Click
+        Dim HapusData As String = "Delete * from BukuBesar WHERE Status = '" & "UnPosted" & "'"
+        Command = New OleDbCommand(HapusData, CONN)
+        Command.ExecuteNonQuery()
+        With objJurnal
+            .InsertBukuBesar()
+        End With
+        Try
+            frmRptBukuBesar.CrystalReportViewer1.SelectionFormula = "{BukuBesar.Periode} = '" & lblPeriode.Text & "'"
+            frmRptBukuBesar.CrystalReportViewer1.Dock = DockStyle.Fill
+            frmRptBukuBesar.CrystalReportViewer1.RefreshReport()
+            frmRptBukuBesar.ShowDialog()
+            cmdEdit.Text = "&Edit"
+        Catch ex As Exception
+            MsgBox("Mencetak jurnal gagal")
+        End Try
+    End Sub
 End Class
