@@ -335,26 +335,6 @@ Public Class frmTransaksiSaldoBlnLalu
         txtKodeRekening.Enabled = False
     End Sub
 
-    'Private Sub cmdEdit_Click(sender As Object, e As EventArgs) Handles cmdEdit.Click
-    '    Dim A As String
-
-    '    A = MsgBox("Benar akan di-Edit", MsgBoxStyle.Question + MsgBoxStyle.OkCancel, "Informasi")
-    '    Select Case A
-    '        Case vbCancel
-    '            BersihkanIsian()
-    '            txtKodeRekening.Focus()
-    '            Exit Sub
-    '        Case vbOK
-    '            Try
-    '                With objSaldoBlnLalu
-    '                    .EditData()
-    '                End With
-    '                IsiList()
-    '            Catch ex As Exception
-    '            End Try
-    '    End Select
-    'End Sub
-
     Private Sub cmdCetak_Click(sender As Object, e As EventArgs) Handles cmdCetak.Click
         If lblDebet.Text <> lblKredit.Text Then
             MsgBox("Jumlah debet dan kredit tidak seimbang, silahkan periksa!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "")
