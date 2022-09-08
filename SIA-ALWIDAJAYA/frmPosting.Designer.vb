@@ -55,7 +55,7 @@ Partial Class frmPosting
         Me.GroupBox1.ForeColor = System.Drawing.Color.Black
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(343, 108)
+        Me.GroupBox1.Size = New System.Drawing.Size(339, 108)
         Me.GroupBox1.TabIndex = 131
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Pilih periode:"
@@ -64,7 +64,7 @@ Partial Class frmPosting
         '
         Me.lblPeriodeBerikutnya.BackColor = System.Drawing.SystemColors.Control
         Me.lblPeriodeBerikutnya.ForeColor = System.Drawing.SystemColors.Control
-        Me.lblPeriodeBerikutnya.Location = New System.Drawing.Point(215, 77)
+        Me.lblPeriodeBerikutnya.Location = New System.Drawing.Point(212, 73)
         Me.lblPeriodeBerikutnya.Name = "lblPeriodeBerikutnya"
         Me.lblPeriodeBerikutnya.Size = New System.Drawing.Size(87, 20)
         Me.lblPeriodeBerikutnya.TabIndex = 4
@@ -75,7 +75,7 @@ Partial Class frmPosting
         Me.Label2.BackColor = System.Drawing.SystemColors.Control
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label2.Location = New System.Drawing.Point(43, 77)
+        Me.Label2.Location = New System.Drawing.Point(48, 73)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(156, 13)
         Me.Label2.TabIndex = 3
@@ -134,7 +134,7 @@ Partial Class frmPosting
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(343, 211)
+        Me.ClientSize = New System.Drawing.Size(339, 207)
         Me.ControlBox = False
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.GroupBox1)

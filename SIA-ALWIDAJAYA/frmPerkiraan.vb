@@ -299,4 +299,13 @@ Public Class frmPerkiraan
         End If
     End Sub
 
+    Private Sub cmdPreview_Click(sender As Object, e As EventArgs) Handles cmdPreview.Click
+        Try
+            'frmRptCetakAkun.CrystalReportViewer1.SelectionFormula = "{tmpSaldoBlnLalu.Periode} = '" & cboPeriode.Text & "'"
+            frmRptCetakAkun.CrystalReportViewer1.Dock = DockStyle.Fill
+            frmRptCetakAkun.CrystalReportViewer1.RefreshReport()
+            frmRptCetakAkun.ShowDialog()
+        Catch ex As Exception
+        End Try
+    End Sub
 End Class

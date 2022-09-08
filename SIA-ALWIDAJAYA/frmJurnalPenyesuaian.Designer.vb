@@ -217,7 +217,7 @@ Partial Class frmJurnalPenyesuaian
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(762, 125)
+        Me.GroupBox1.Size = New System.Drawing.Size(754, 125)
         Me.GroupBox1.TabIndex = 178
         Me.GroupBox1.TabStop = False
         '
@@ -335,11 +335,11 @@ Partial Class frmJurnalPenyesuaian
         Me.btnPreviewBB.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPreviewBB.Image = CType(resources.GetObject("btnPreviewBB.Image"), System.Drawing.Image)
         Me.btnPreviewBB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnPreviewBB.Location = New System.Drawing.Point(483, 450)
+        Me.btnPreviewBB.Location = New System.Drawing.Point(473, 450)
         Me.btnPreviewBB.Name = "btnPreviewBB"
-        Me.btnPreviewBB.Size = New System.Drawing.Size(87, 30)
+        Me.btnPreviewBB.Size = New System.Drawing.Size(97, 30)
         Me.btnPreviewBB.TabIndex = 188
-        Me.btnPreviewBB.Text = "&Preview"
+        Me.btnPreviewBB.Text = "&BukuBesar"
         Me.btnPreviewBB.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnPreviewBB.UseVisualStyleBackColor = False
         '
@@ -347,7 +347,7 @@ Partial Class frmJurnalPenyesuaian
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(762, 488)
+        Me.ClientSize = New System.Drawing.Size(754, 496)
         Me.ControlBox = False
         Me.Controls.Add(Me.btnPreviewBB)
         Me.Controls.Add(Me.cmdKeluar)

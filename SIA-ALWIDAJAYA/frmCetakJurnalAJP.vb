@@ -102,21 +102,6 @@ Public Class frmCetakJurnalAJP
         End If
     End Sub
 
-    Private Sub cmdCetakNS_Click(sender As Object, e As EventArgs)
-        If Len(cboPeriodeNS.Text) = 0 Then
-            MsgBox("Pilih periode yang akan dicetak", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Pesan")
-            cboPeriodeNS.Focus()
-        Else
-            Try
-                frmRptNeracaSaldoAJP.CrystalReportViewer1.SelectionFormula = "{tblAJP.Periode} = '" & Mid(cboPeriodeNS.Text, 1, 6) & "'"
-                frmRptNeracaSaldoAJP.CrystalReportViewer1.Dock = DockStyle.Fill
-                frmRptNeracaSaldoAJP.CrystalReportViewer1.RefreshReport()
-                frmRptNeracaSaldoAJP.ShowDialog()
-            Catch ex As Exception
-            End Try
-        End If
-    End Sub
-
     Private Sub cmdCetakBB_Click(sender As Object, e As EventArgs) Handles cmdCetakBB.Click
         If Len(cboPeriodeBB.Text) = 0 Then
             MsgBox("Pilih periode yang akan dicetak", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Pesan")
@@ -159,4 +144,18 @@ Public Class frmCetakJurnalAJP
         bukubesar.Visible = False
     End Sub
 
+    Private Sub cmdCetakNS_Click(sender As Object, e As EventArgs) Handles cmdCetakNS.Click
+        If Len(cboPeriodeNS.Text) = 0 Then
+            MsgBox("Pilih periode yang akan dicetak", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Pesan")
+            cboPeriodeNS.Focus()
+        Else
+            Try
+                frmRptNeracaSaldoAJP.CrystalReportViewer1.SelectionFormula = "{tblAJP.Periode} = '" & Mid(cboPeriodeNS.Text, 1, 6) & "'"
+                frmRptNeracaSaldoAJP.CrystalReportViewer1.Dock = DockStyle.Fill
+                frmRptNeracaSaldoAJP.CrystalReportViewer1.RefreshReport()
+                frmRptNeracaSaldoAJP.ShowDialog()
+            Catch ex As Exception
+            End Try
+        End If
+    End Sub
 End Class

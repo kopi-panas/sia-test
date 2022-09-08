@@ -30,21 +30,6 @@ Public Class clsJurnalUmum
             daData = New OleDbDataAdapter(Query, conn)
             dsData = New DataSet
             daData.Fill(dsData)
-            'InsertBukuBesar()
-            'Query = "SELECT DISTINCT hJurnal.Periode, hJurnal.Status FROM hJurnal WHERE (((hJurnal.Periode)='" & mPeriode & "') AND ((hJurnal.Status)='" & "UnPosted" & "'))"
-            'daData = New OleDbDataAdapter(Query, CONN)
-            'dsData = New DataSet
-            'daData.Fill(dsData)
-
-            'If dsData.Tables(0).Rows.Count = 0 Then
-            '    InsertSaldoBulanlalu()
-            'Else
-            '    InsertSaldoBulanlalu()
-            '    Query = "INSERT INTO BukuBesar SELECT hJurnal.Periode, hJurnal.NoTransaksi, hJurnal.TglTransaksi, dJurnal.NoPerkiraan, hJurnal.Keterangan, dJurnal.DK, dJurnal.Debet, dJurnal.Kredit, hJurnal.Status FROM (dJurnal LEFT JOIN hJurnal ON dJurnal.NoTransaksi = hJurnal.NoTransaksi) LEFT JOIN tblMasterPerkiraan ON dJurnal.NoPerkiraan = tblMasterPerkiraan.NoPerkiraan WHERE (((hJurnal.Periode)='" & mPeriode & "') AND ((hJurnal.Status)= '" & "UnPosted" & "'))"
-            '    daData = New OleDbDataAdapter(Query, CONN)
-            '    dsData = New DataSet
-            '    daData.Fill(dsData)
-            'End If
             Return Query
         Catch ex As Exception
             Return Query
@@ -64,7 +49,6 @@ Public Class clsJurnalUmum
             dsData = New DataSet
             daData.Fill(dsData)
             frmPerkiraan.IsiList()
-            'InsertBukuBesar()
             Return Query
         Catch ex As Exception
             MsgBox("Data tidak bisa tersimpan karena NoAkun sudah ada!", MsgBoxStyle.Exclamation, "Error")
@@ -96,12 +80,12 @@ Public Class clsJurnalUmum
                 InsertSaldoBulanlalu()
             Else
                 InsertSaldoBulanlalu()
-                Query = "INSERT INTO BukuBesar SELECT hJurnal.Periode, hJurnal.NoTransaksi, hJurnal.TglTransaksi, dJurnal.NoPerkiraan, hJurnal.Keterangan, dJurnal.DK, dJurnal.Debet, dJurnal.Kredit, hJurnal.Status FROM (dJurnal LEFT JOIN hJurnal ON dJurnal.NoTransaksi = hJurnal.NoTransaksi) LEFT JOIN tblMasterPerkiraan ON dJurnal.NoPerkiraan = tblMasterPerkiraan.NoPerkiraan WHERE (((hJurnal.Periode)='" & mPeriode & "') AND ((hJurnal.Status)= '" & "UnPosted" & "'))"
-                daData = New OleDbDataAdapter(Query, conn)
+                Query = "INSERT INTO BukuBesarTotal SELECT hJurnal.Periode, hJurnal.NoTransaksi, hJurnal.TglTransaksi, dJurnal.NoPerkiraan, hJurnal.Keterangan, dJurnal.DK, dJurnal.Debet, dJurnal.Kredit, hJurnal.Status FROM (dJurnal LEFT JOIN hJurnal ON dJurnal.NoTransaksi = hJurnal.NoTransaksi) LEFT JOIN tblMasterPerkiraan ON dJurnal.NoPerkiraan = tblMasterPerkiraan.NoPerkiraan WHERE (((hJurnal.Periode)='" & mPeriode & "') AND ((hJurnal.Status)= '" & "UnPosted" & "'))"
+                daData = New OleDbDataAdapter(Query, CONN)
                 dsData = New DataSet
                 daData.Fill(dsData)
 
-                Query = "INSERT INTO BukuBesar SELECT hJurnalAJP.Periode, hJurnalAJP.NoTransaksi, hJurnalAJP.TglTransaksi, dJurnalAJP.NoPerkiraan, hJurnalAJP.Keterangan, dJurnalAJP.DK, dJurnalAJP.Debet, dJurnalAJP.Kredit, hJurnalAJP.Status FROM (dJurnalAJP LEFT JOIN hJurnalAJP ON dJurnalAJP.NoTransaksi = hJurnalAJP.NoTransaksi) LEFT JOIN tblMasterPerkiraan ON dJurnalAJP.NoPerkiraan = tblMasterPerkiraan.NoPerkiraan WHERE (((hJurnalAJP.Periode) = '" & mPeriode & "') AND ((hJurnalAJP.Status)= '" & "UnPosted" & "'))"
+                Query = "INSERT INTO BukuBesarTotal SELECT hJurnalAJP.Periode, hJurnalAJP.NoTransaksi, hJurnalAJP.TglTransaksi, dJurnalAJP.NoPerkiraan, hJurnalAJP.Keterangan, dJurnalAJP.DK, dJurnalAJP.Debet, dJurnalAJP.Kredit, hJurnalAJP.Status FROM (dJurnalAJP LEFT JOIN hJurnalAJP ON dJurnalAJP.NoTransaksi = hJurnalAJP.NoTransaksi) LEFT JOIN tblMasterPerkiraan ON dJurnalAJP.NoPerkiraan = tblMasterPerkiraan.NoPerkiraan WHERE (((hJurnalAJP.Periode) = '" & mPeriode & "') AND ((hJurnalAJP.Status)= '" & "UnPosted" & "'))"
                 daData = New OleDbDataAdapter(Query, CONN)
                 dsData = New DataSet
                 daData.Fill(dsData)
@@ -109,40 +93,6 @@ Public Class clsJurnalUmum
         Catch ex As Exception
         End Try
     End Sub
-
-    Public Sub InsertBukuBesarAJP()
-        mPeriode = frmJurnalPenyesuaian.lblPeriode.Text
-        Try
-            Query = "INSERT INTO BukuBesar SELECT hJurnalAJP.Periode, hJurnalAJP.NoTransaksi, hJurnalAJP.TglTransaksi, dJurnalAJP.NoPerkiraan, hJurnalAJP.Keterangan, dJurnalAJP.DK, dJurnalAJP.Debet, dJurnalAJP.Kredit, hJurnalAJP.Status FROM (dJurnalAJP LEFT JOIN hJurnalAJP ON dJurnalAJP.NoTransaksi = hJurnalAJP.NoTransaksi) LEFT JOIN tblMasterPerkiraan ON dJurnalAJP.NoPerkiraan = tblMasterPerkiraan.NoPerkiraan WHERE (((hJurnalAJP.Periode) = '" & mPeriode & "') AND ((hJurnalAJP.Status)= '" & "UnPosted" & "'))"
-            daData = New OleDbDataAdapter(Query, conn)
-            dsData = New DataSet
-            daData.Fill(dsData)
-        Catch ex As Exception
-        End Try
-    End Sub
-
-    Public Sub InsertNeracaSaldo()
-        mPeriode = frmJurnalUmum.lblPeriode.Text
-        Try
-            Query = "INSERT INTO NeracaSaldo SELECT BukuBesar.Periode, BukuBesar.NoPerkiraan, Sum(BukuBesar.Debet) AS TotalDebet, Sum(BukuBesar.Kredit) AS TotalKredit, IIf([TotalDebet]>[TotalKredit],[TotalDebet]-[TotalKredit],0) AS Saldodebet, IIf([TotalKredit]>[TotalDebet],[TotalKredit]-[TotalDebet],0) AS SaldoKredit FROM(BukuBesar) GROUP BY BukuBesar.Periode, BukuBesar.NoPerkiraan HAVING(((BukuBesar.Periode) = '" & mPeriode & "')) ORDER BY BukuBesar.NoPerkiraan"
-            daData = New OleDbDataAdapter(Query, conn)
-            dsData = New DataSet
-            daData.Fill(dsData)
-        Catch ex As Exception
-        End Try
-    End Sub
-
-    'Public Sub BukuBesar()
-    '    'mPeriode = frmJurnalUmum.lblPeriode.Text
-    '    If dsData.Tables(0).Rows.Count = 0 Then
-    '        InsertBukuBesar()
-    '    Else
-    '        KoneksiKeAccess()
-    '        Dim edit As String = "UPDATE BukuBesar SET NoTransaksi ='" & mNoTransaksi & "',TglTransaksi = '" & mTglTransaksi & "',NoPerkiraan = '" & mNoPerkiraan & "',Keterangan = '" & mKeterangan & "',DK = '" & DK & "',Debet = '" & mDebet & "',Kredit = '" & mKredit & "',Status = '" & "UnPosted" & "' WHERE Periode = '" & mPeriode & "'"
-    '        Command = New OleDbCommand(edit, CONN)
-    '        Command.ExecuteNonQuery()
-    '    End If
-    'End Sub
 
     Public Function EditDataHJurnal()
         Try

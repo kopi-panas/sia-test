@@ -99,6 +99,18 @@
     <Compile Include="frmRptBukubesarAJP.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmRptBukuBesarTotal.Designer.vb">
+      <DependentUpon>frmRptBukuBesarTotal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRptBukuBesarTotal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRptCetakAkun.Designer.vb">
+      <DependentUpon>frmRptCetakAkun.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRptCetakAkun.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmRptJurnalUmum.Designer.vb">
       <DependentUpon>frmRptJurnalUmum.vb</DependentUpon>
     </Compile>
@@ -147,10 +159,22 @@
     <Compile Include="frmRptRugiLaba.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="RptAkunPerkiraan.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptAkunPerkiraan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="RptBukuBesar.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RptBukuBesar.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptBukuBesarTotal.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptBukuBesarTotal.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="RptJurnalPenyesuaian.vb">
@@ -372,6 +396,12 @@
     <EmbeddedResource Include="frmRptBukubesarAJP.resx">
       <DependentUpon>frmRptBukubesarAJP.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRptBukuBesarTotal.resx">
+      <DependentUpon>frmRptBukuBesarTotal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRptCetakAkun.resx">
+      <DependentUpon>frmRptCetakAkun.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRptJurnalUmum.resx">
       <DependentUpon>frmRptJurnalUmum.vb</DependentUpon>
     </EmbeddedResource>
@@ -396,9 +426,17 @@
     <EmbeddedResource Include="frmRptRugiLaba.resx">
       <DependentUpon>frmRptRugiLaba.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RptAkunPerkiraan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptAkunPerkiraan.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="RptBukuBesar.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RptBukuBesar.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptBukuBesarTotal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptBukuBesarTotal.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="RptJurnalPenyesuaian.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

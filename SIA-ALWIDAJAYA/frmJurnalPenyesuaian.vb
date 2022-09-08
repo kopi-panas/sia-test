@@ -752,19 +752,18 @@ Public Class frmJurnalPenyesuaian
         End Try
     End Sub
 
- 
     Private Sub btnPreviewBB_Click(sender As Object, e As EventArgs) Handles btnPreviewBB.Click
-        Dim HapusData As String = "Delete * from BukuBesar WHERE Status = '" & "UnPosted" & "'"
+        Dim HapusData As String = "Delete * from BukuBesarTotal WHERE Status = '" & "UnPosted" & "'"
         Command = New OleDbCommand(HapusData, CONN)
         Command.ExecuteNonQuery()
         With objJurnal
             .InsertBukuBesar()
         End With
         Try
-            frmRptBukuBesar.CrystalReportViewer1.SelectionFormula = "{BukuBesar.Periode} = '" & lblPeriode.Text & "'"
-            frmRptBukuBesar.CrystalReportViewer1.Dock = DockStyle.Fill
-            frmRptBukuBesar.CrystalReportViewer1.RefreshReport()
-            frmRptBukuBesar.ShowDialog()
+            frmRptBukuBesarTotal.CrystalReportViewer1.SelectionFormula = "{BukuBesarTotal.Periode} = '" & lblPeriode.Text & "'"
+            frmRptBukuBesarTotal.CrystalReportViewer1.Dock = DockStyle.Fill
+            frmRptBukuBesarTotal.CrystalReportViewer1.RefreshReport()
+            frmRptBukuBesarTotal.ShowDialog()
             cmdEdit.Text = "&Edit"
         Catch ex As Exception
             MsgBox("Mencetak jurnal gagal")

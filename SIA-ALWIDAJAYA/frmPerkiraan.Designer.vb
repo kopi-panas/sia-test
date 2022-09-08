@@ -38,6 +38,7 @@ Partial Class frmPerkiraan
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmdSimpan = New System.Windows.Forms.Button()
         Me.ListView = New System.Windows.Forms.ListView()
+        Me.cmdPreview = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -61,7 +62,7 @@ Partial Class frmPerkiraan
         Me.cmdTambah.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdTambah.Image = CType(resources.GetObject("cmdTambah.Image"), System.Drawing.Image)
         Me.cmdTambah.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdTambah.Location = New System.Drawing.Point(83, 147)
+        Me.cmdTambah.Location = New System.Drawing.Point(55, 147)
         Me.cmdTambah.Name = "cmdTambah"
         Me.cmdTambah.Size = New System.Drawing.Size(80, 29)
         Me.cmdTambah.TabIndex = 114
@@ -75,7 +76,7 @@ Partial Class frmPerkiraan
         Me.cmdEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdEdit.Image = CType(resources.GetObject("cmdEdit.Image"), System.Drawing.Image)
         Me.cmdEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdEdit.Location = New System.Drawing.Point(253, 147)
+        Me.cmdEdit.Location = New System.Drawing.Point(225, 147)
         Me.cmdEdit.Name = "cmdEdit"
         Me.cmdEdit.Size = New System.Drawing.Size(78, 29)
         Me.cmdEdit.TabIndex = 116
@@ -89,7 +90,7 @@ Partial Class frmPerkiraan
         Me.cmdHapus.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdHapus.Image = CType(resources.GetObject("cmdHapus.Image"), System.Drawing.Image)
         Me.cmdHapus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdHapus.Location = New System.Drawing.Point(337, 147)
+        Me.cmdHapus.Location = New System.Drawing.Point(309, 147)
         Me.cmdHapus.Name = "cmdHapus"
         Me.cmdHapus.Size = New System.Drawing.Size(78, 29)
         Me.cmdHapus.TabIndex = 117
@@ -110,7 +111,7 @@ Partial Class frmPerkiraan
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(644, 141)
+        Me.GroupBox1.Size = New System.Drawing.Size(640, 141)
         Me.GroupBox1.TabIndex = 119
         Me.GroupBox1.TabStop = False
         '
@@ -198,7 +199,7 @@ Partial Class frmPerkiraan
         Me.cmdSimpan.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdSimpan.Image = CType(resources.GetObject("cmdSimpan.Image"), System.Drawing.Image)
         Me.cmdSimpan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdSimpan.Location = New System.Drawing.Point(169, 147)
+        Me.cmdSimpan.Location = New System.Drawing.Point(141, 147)
         Me.cmdSimpan.Name = "cmdSimpan"
         Me.cmdSimpan.Size = New System.Drawing.Size(78, 29)
         Me.cmdSimpan.TabIndex = 115
@@ -220,12 +221,27 @@ Partial Class frmPerkiraan
         Me.ListView.UseCompatibleStateImageBehavior = False
         Me.ListView.View = System.Windows.Forms.View.Details
         '
+        'cmdPreview
+        '
+        Me.cmdPreview.BackColor = System.Drawing.SystemColors.Control
+        Me.cmdPreview.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdPreview.Image = CType(resources.GetObject("cmdPreview.Image"), System.Drawing.Image)
+        Me.cmdPreview.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmdPreview.Location = New System.Drawing.Point(391, 147)
+        Me.cmdPreview.Name = "cmdPreview"
+        Me.cmdPreview.Size = New System.Drawing.Size(73, 29)
+        Me.cmdPreview.TabIndex = 170
+        Me.cmdPreview.Text = "&Cetak"
+        Me.cmdPreview.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.cmdPreview.UseVisualStyleBackColor = False
+        '
         'frmPerkiraan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(644, 438)
+        Me.ClientSize = New System.Drawing.Size(640, 434)
         Me.ControlBox = False
+        Me.Controls.Add(Me.cmdPreview)
         Me.Controls.Add(Me.cmdKeluar)
         Me.Controls.Add(Me.cmdTambah)
         Me.Controls.Add(Me.cmdEdit)
@@ -261,5 +277,6 @@ Partial Class frmPerkiraan
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents cmdSimpan As System.Windows.Forms.Button
     Friend WithEvents ListView As System.Windows.Forms.ListView
+    Friend WithEvents cmdPreview As System.Windows.Forms.Button
 
 End Class

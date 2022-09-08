@@ -54,6 +54,28 @@ Public Class clsPosting
         End Try
     End Sub
 
+    'Memasukkan data ke buku besar total
+    Public Sub InsertBukuBesarTotal()
+        mPeriode = frmJurnalUmum.lblPeriode.Text
+        Try
+            Query = "SELECT DISTINCT hJurnal.Periode, hJurnal.Status FROM hJurnal WHERE (((hJurnal.Periode)='" & mPeriode & "') AND ((hJurnal.Status)='" & "UnPosted" & "'))"
+            daData = New OleDbDataAdapter(Query, CONN)
+            dsData = New DataSet
+            daData.Fill(dsData)
+
+            If dsData.Tables(0).Rows.Count = 0 Then
+                InsertSaldoBulanlalu()
+            Else
+                InsertSaldoBulanlalu()
+                Query = "INSERT INTO BukuBesarTotal SELECT hJurnal.Periode, hJurnal.NoTransaksi, hJurnal.TglTransaksi, dJurnal.NoPerkiraan, hJurnal.Keterangan, dJurnal.DK, dJurnal.Debet, dJurnal.Kredit, hJurnal.Status FROM (dJurnal LEFT JOIN hJurnal ON dJurnal.NoTransaksi = hJurnal.NoTransaksi) LEFT JOIN tblMasterPerkiraan ON dJurnal.NoPerkiraan = tblMasterPerkiraan.NoPerkiraan WHERE (((hJurnal.Periode)='" & mPeriode & "') AND ((hJurnal.Status)= '" & "UnPosted" & "'))"
+                daData = New OleDbDataAdapter(Query, CONN)
+                dsData = New DataSet
+                daData.Fill(dsData)
+            End If
+        Catch ex As Exception
+        End Try
+    End Sub
+
     'Memasukkan saldo-saldo dari buku besar ke neraca saldo
     Public Sub InsertNeracaSaldo()
         mPeriode = frmPosting.cboPeriode.Text
@@ -117,7 +139,6 @@ Public Class clsPosting
                 dsData = New DataSet
                 daData.Fill(dsData)
             Else
-                'Query = "INSERT INTO tblRugiLaba SELECT NeracaLajur.Periode, NeracaLajur.NoPerkiraan, IIf(Left(NeracaLajur.NoPerkiraan,1)= '" & "4" & "','" & "Pendapatan" & "',IIf(Left(NeracaLajur.NoPerkiraan,1)='" & "6" & "','" & "Biaya-Biaya" & "','" & " " & "')) AS Keterangan, NeracaLajur.DebetRL AS Debet, NeracaLajur.KreditRL AS Kredit FROM NeracaLajur LEFT JOIN tblMasterPerkiraan ON NeracaLajur.NoPerkiraan = tblMasterPerkiraan.NoPerkiraan WHERE(((NeracaLajur.Periode) ='" & mPeriode & "') And ((NeracaLajur.NoPerkiraan) Like '" & "4" & "%" & "' Or (NeracaLajur.NoPerkiraan) Like '" & "6 " & "%" & "'))"
                 Query = "INSERT INTO tblRugiLaba SELECT NeracaLajur.Periode, NeracaLajur.NoPerkiraan, IIf(Left(NeracaLajur.NoPerkiraan,1)= '" & "4" & "','" & "Pendapatan" & "',IIf(Left(NeracaLajur.NoPerkiraan,1)='" & "6" & "','" & "Biaya-Biaya" & "',IIF(Left(NeracaLajur.NoPerkiraan,1)='" & "5" & "','" & "HPP" & "','" & " " & "'))) AS Keterangan, NeracaLajur.DebetRL AS Debet, NeracaLajur.KreditRL AS Kredit FROM NeracaLajur LEFT JOIN tblMasterPerkiraan ON NeracaLajur.NoPerkiraan = tblMasterPerkiraan.NoPerkiraan WHERE(((NeracaLajur.Periode) ='" & mPeriode & "') And ((NeracaLajur.NoPerkiraan) Like '" & "4" & "%" & "' Or (NeracaLajur.NoPerkiraan) Like '" & "5" & "%" & "' Or (NeracaLajur.NoPerkiraan) Like '" & "6" & "%" & "'))"
                 daData = New OleDbDataAdapter(Query, CONN)
                 dsData = New DataSet
@@ -125,37 +146,6 @@ Public Class clsPosting
             End If
         Catch ex As Exception
         End Try
-        'mPeriode = frmPosting.cboPeriode.Text
-        'Try
-        '    'Periksa data rugi / laba ada apa tidak
-        '    Query = "SELECT NeracaLajur.Periode, NeracaLajur.NoPerkiraan, IIf(Left(NeracaLajur.NoPerkiraan,1)= '" & "4" & "','" & "Pendapatan" & "',IIf(Left(NeracaLajur.NoPerkiraan,1)= '" & "5" & "','" & "Harga Pokok Penjualan" & "',IIf(Left(NeracaLajur.NoPerkiraan,1)='" & "6" & "','" & "Biaya-Biaya" & "','" & " " & "')) AS Keterangan, NeracaLajur.DebetRL AS Debet, NeracaLajur.KreditRL AS Kredit FROM NeracaLajur LEFT JOIN tblMasterPerkiraan ON NeracaLajur.NoPerkiraan = tblMasterPerkiraan.NoPerkiraan WHERE(((NeracaLajur.Periode) ='" & mPeriode & "') And ((NeracaLajur.NoPerkiraan) Like '" & "4" & "%" & "' Or (NeracaLajur.NoPerkiraan) Like '" & "5" & "%" & "' Or (NeracaLajur.NoPerkiraan) Like '" & "6" & "%" & "'))"
-        '    daData = New OleDbDataAdapter(Query, conn)
-        '    dsData = New DataSet
-        '    daData.Fill(dsData)
-
-        '    If dsData.Tables(0).Rows.Count = 0 Then
-        '        Query = "INSERT INTO tblRugiLaba Values('" & mPeriode & "', '" & "41001" & "' , '" & "Pendapatan" & "', '" & 0 & "', '" & 0 & "')"
-        '        daData = New OleDbDataAdapter(Query, conn)
-        '        dsData = New DataSet
-        '        daData.Fill(dsData)
-
-        '        Query = "INSERT INTO tblRugiLaba Values('" & mPeriode & "', '" & "51001" & "' , '" & "Harga Pokok Penjualan" & "', '" & 0 & "', '" & 0 & "')"
-        '        daData = New OleDbDataAdapter(Query, CONN)
-        '        dsData = New DataSet
-        '        daData.Fill(dsData)
-
-        '        Query = "INSERT INTO tblRugiLaba Values('" & mPeriode & "', '" & "61001" & "' , '" & "Biaya-Biaya" & "', '" & 0 & "', '" & 0 & "')"
-        '        daData = New OleDbDataAdapter(Query, conn)
-        '        dsData = New DataSet
-        '        daData.Fill(dsData)
-        '    Else
-        '        Query = "INSERT INTO tblRugiLaba SELECT NeracaLajur.Periode, NeracaLajur.NoPerkiraan, IIf(Left(NeracaLajur.NoPerkiraan,1)= '" & "4" & "','" & "Pendapatan" & "',IIf(Left(NeracaLajur.NoPerkiraan,1)= '" & "5" & "','" & "Harga Pokok Penjualan" & "',IIf(Left(NeracaLajur.NoPerkiraan,1)='" & "6" & "','" & "Biaya-Biaya" & "','" & " " & "')) AS Keterangan, NeracaLajur.DebetRL AS Debet, NeracaLajur.KreditRL AS Kredit FROM NeracaLajur LEFT JOIN tblMasterPerkiraan ON NeracaLajur.NoPerkiraan = tblMasterPerkiraan.NoPerkiraan WHERE(((NeracaLajur.Periode) ='" & mPeriode & "') And ((NeracaLajur.NoPerkiraan) Like '" & "4" & "%" & "' Or (NeracaLajur.NoPerkiraan) Like '" & "5" & "%" & "' Or (NeracaLajur.NoPerkiraan) Like '" & "6" & "%" & "'))"
-        '        daData = New OleDbDataAdapter(Query, conn)
-        '        dsData = New DataSet
-        '        daData.Fill(dsData)
-        '    End If
-        'Catch ex As Exception
-        'End Try
     End Sub
 
     'Perubahan Modal
@@ -229,7 +219,6 @@ Public Class clsPosting
         Catch ex As Exception
         End Try
     End Sub
-
 
     'UpDate Modal di Tabel perubahan modal dari neraca
     Public Sub UpdateModal()
@@ -368,6 +357,11 @@ Public Class clsPosting
 
             Query = "UPDATE BukuBesarAJP SET Status = '" & "Posted" & "' WHERE Periode = '" & mPeriode & "'"
             daData = New OleDbDataAdapter(Query, conn)
+            dsData = New DataSet
+            daData.Fill(dsData)
+
+            Query = "UPDATE BukuBesarTotal SET Status = '" & "Posted" & "' WHERE Periode = '" & mPeriode & "'"
+            daData = New OleDbDataAdapter(Query, CONN)
             dsData = New DataSet
             daData.Fill(dsData)
 

@@ -35,6 +35,7 @@ Public Class frmPosting
                 With objPosting
                     .InsertBukuBesar()
                     .InsertBukuBesarAJP()
+                    .InsertBukuBesarTotal()
                     .InsertNeracaSaldo()
                     .InsertNeracaSaldoAJP()
                     .InsertNeracaLajur()
@@ -51,7 +52,7 @@ Public Class frmPosting
                     MsgBox("Proses posting sudah selesai!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Pesan proses posting")
                 End With
             Else
-                MsgBox("Maaf... periode ini sudah diposting", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Pesan proses posting")
+                MsgBox("Periode ini sudah diposting!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Pesan proses posting")
             End If
         End If
     End Sub
