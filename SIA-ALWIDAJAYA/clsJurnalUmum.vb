@@ -64,6 +64,11 @@ Public Class clsJurnalUmum
             daData = New OleDbDataAdapter(Query, conn)
             dsData = New DataSet
             daData.Fill(dsData)
+
+            Query = "INSERT INTO BukuBesarTotal SELECT tmpSaldoBlnLalu.Periode, '" & "SBL-" & "' & [Periode] AS NoTransaksi, tmpSaldoBlnLalu.TglTransaksi, tmpSaldoBlnLalu.NoPerkiraan, tmpSaldoBlnLalu.Keterangan, tmpSaldoBlnLalu.DK, tmpSaldoBlnLalu.Debet, tmpSaldoBlnLalu.Kredit, tmpSaldoBlnLalu.Status FROM(tmpSaldoBlnLalu) WHERE(((tmpSaldoBlnLalu.Periode) = '" & mPeriode & "') And ((tmpSaldoBlnLalu.Status) = '" & "UnPosted" & "'))"
+            daData = New OleDbDataAdapter(Query, CONN)
+            dsData = New DataSet
+            daData.Fill(dsData)
         Catch ex As Exception
         End Try
     End Sub

@@ -63,7 +63,8 @@ Public Class FormMenuUtama
                 DJurnalAJP()
                 HapusSaldoBulanlalu()
                 HapusBukuBesar()
-                HapustBukuBesarAJP()
+                HapusBukuBesarAJP()
+                HapusBukuBesarTotal()
                 HapusNeracaSaldo()
                 HapusNeracaSaldoAJP()
                 HapusNeracaLajur()
@@ -139,10 +140,21 @@ Public Class FormMenuUtama
         End Try
     End Sub
 
-    Public Sub HapustBukuBesarAJP()
+    Public Sub HapusBukuBesarTotal()
+        Try
+            Query = "DELETE FROM  BukuBesarTotal"
+            daData = New OleDbDataAdapter(Query, CONN)
+            dsData = New DataSet
+            daData.Fill(dsData)
+
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Public Sub HapusBukuBesarAJP()
         Try
             Query = "DELETE FROM  BukuBesarAJP"
-            daData = New OleDbDataAdapter(Query, conn)
+            daData = New OleDbDataAdapter(Query, CONN)
             dsData = New DataSet
             daData.Fill(dsData)
         Catch ex As Exception

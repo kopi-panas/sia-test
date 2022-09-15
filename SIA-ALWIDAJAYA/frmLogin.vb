@@ -19,7 +19,7 @@ Public Class frmLogin
                 If Rd.HasRows Then
                     Me.Hide()
                     FormMenuUtama.Show()
-                    FormMenuUtama.txtName.Text = Rd.Item("NamaUser")
+                    'FormMenuUtama.txtName.Text = Rd.Item("NamaUser")
                 Else
                     MsgBox("Kode Admin atau Password Salah!", MsgBoxStyle.Information, "")
                 End If

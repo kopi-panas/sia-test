@@ -353,4 +353,5 @@ Public Class frmTransaksiSaldoBlnLalu
             End If
         End If
     End Sub
+
 End Class

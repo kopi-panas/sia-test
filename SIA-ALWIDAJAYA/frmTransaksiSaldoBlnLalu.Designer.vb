@@ -301,7 +301,7 @@ Partial Class frmTransaksiSaldoBlnLalu
         Me.cmdTambah.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.cmdTambah.UseVisualStyleBackColor = False
         '
-        'frmTransaksiSaloBlnLalu
+        'frmTransaksiSaldoBlnLalu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -320,7 +320,7 @@ Partial Class frmTransaksiSaldoBlnLalu
         Me.Controls.Add(Me.GroupBox1)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "frmTransaksiSaloBlnLalu"
+        Me.Name = "frmTransaksiSaldoBlnLalu"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

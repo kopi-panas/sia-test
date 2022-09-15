@@ -237,7 +237,7 @@ Partial Class FormMenuUtama
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(3, 87)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(883, 19)
+        Me.Label2.Size = New System.Drawing.Size(901, 19)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Alamat: Jalan Monginsidi Desa Pacul RT 14 RW 02, Bojonegoro, Jawa Timur"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -247,7 +247,7 @@ Partial Class FormMenuUtama
         Me.Label1.Font = New System.Drawing.Font("Bell MT", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(6, 18)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(880, 58)
+        Me.Label1.Size = New System.Drawing.Size(898, 58)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "SISTEM INFORMASI AKUNTANSI LAPORAN KEUANGAN" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "UD AL-WIDA JAYA" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -275,7 +275,7 @@ Partial Class FormMenuUtama
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Times New Roman", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(13, 18)
+        Me.Label4.Location = New System.Drawing.Point(30, 50)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(181, 26)
         Me.Label4.TabIndex = 0

@@ -217,7 +217,7 @@ Partial Class frmJurnalPenyesuaian
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(754, 125)
+        Me.GroupBox1.Size = New System.Drawing.Size(782, 125)
         Me.GroupBox1.TabIndex = 178
         Me.GroupBox1.TabStop = False
         '
@@ -347,7 +347,7 @@ Partial Class frmJurnalPenyesuaian
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(754, 496)
+        Me.ClientSize = New System.Drawing.Size(782, 504)
         Me.ControlBox = False
         Me.Controls.Add(Me.btnPreviewBB)
         Me.Controls.Add(Me.cmdKeluar)

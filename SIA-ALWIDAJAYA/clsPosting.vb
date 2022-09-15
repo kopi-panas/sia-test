@@ -16,6 +16,11 @@ Public Class clsPosting
             daData = New OleDbDataAdapter(Query, conn)
             dsData = New DataSet
             daData.Fill(dsData)
+
+            Query = "INSERT INTO BukuBesarTotal SELECT tmpSaldoBlnLalu.Periode, '" & "SBL-" & "' & [Periode] AS NoTransaksi, tmpSaldoBlnLalu.TglTransaksi, tmpSaldoBlnLalu.NoPerkiraan, tmpSaldoBlnLalu.Keterangan, tmpSaldoBlnLalu.DK, tmpSaldoBlnLalu.Debet, tmpSaldoBlnLalu.Kredit, tmpSaldoBlnLalu.Status FROM(tmpSaldoBlnLalu) WHERE(((tmpSaldoBlnLalu.Periode) = '" & mPeriode & "') And ((tmpSaldoBlnLalu.Status) = '" & "UnPosted" & "'))"
+            daData = New OleDbDataAdapter(Query, CONN)
+            dsData = New DataSet
+            daData.Fill(dsData)
         Catch ex As Exception
         End Try
     End Sub
@@ -46,8 +51,8 @@ Public Class clsPosting
     Public Sub InsertBukuBesarAJP()
         mPeriode = frmPosting.cboPeriode.Text
         Try
-            Query = "INSERT INTO BukuBesarAJP SELECT hJurnalAJP.Periode, hJurnalAJP.NoTransaksi, hJurnalAJP.TglTransaksi, dJurnalAJP.NoPerkiraan, hJurnalAJP.Keterangan, dJurnalAJP.DK, dJurnalAJP.Debet, dJurnalAJP.Kredit, hJurnalAJP.Status FROM (dJurnalAJP LEFT JOIN hJurnalAJP ON dJurnalAJP.NoTransaksi = hJurnalAJP.NoTransaksi) LEFT JOIN tblMasterPerkiraan ON dJurnalAJP.NoPerkiraan = tblMasterPerkiraan.NoPerkiraan WHERE (((hJurnalAJP.Periode) = '" & mPeriode & "') AND ((hJurnalAJP.Status)= '" & "UnPosted" & "'))"
-            daData = New OleDbDataAdapter(Query, conn)
+            Query = "INSERT INTO BukuBesarAJP SELECT hJurnalAJP.Periode, hJurnalAJP.NoTransaksi, hJurnalAJP.TglTransaksi, dJurnalAJP.NoPerkiraan, hJurnalAJP.Keterangan, dJurnalAJP.DK, dJurnalAJP.Debet, dJurnalAJP.Kredit, hJurnalAJP.Status FROM (dJurnalAJP LEFT JOIN hJurnalAJP ON dJurnalAJP.NoTransaksi = hJurnalAJP.NoTransaksi) LEFT JOIN tblMasterPerkiraan ON dJurnalAJP.NoPerkiraan = tblMasterPerkiraan.NoPerkiraan WHERE (((hJurnalAJP.Periode)='" & mPeriode & "') AND ((hJurnalAJP.Status)= '" & "UnPosted" & "'))"
+            daData = New OleDbDataAdapter(Query, CONN)
             dsData = New DataSet
             daData.Fill(dsData)
         Catch ex As Exception
@@ -68,6 +73,11 @@ Public Class clsPosting
             Else
                 InsertSaldoBulanlalu()
                 Query = "INSERT INTO BukuBesarTotal SELECT hJurnal.Periode, hJurnal.NoTransaksi, hJurnal.TglTransaksi, dJurnal.NoPerkiraan, hJurnal.Keterangan, dJurnal.DK, dJurnal.Debet, dJurnal.Kredit, hJurnal.Status FROM (dJurnal LEFT JOIN hJurnal ON dJurnal.NoTransaksi = hJurnal.NoTransaksi) LEFT JOIN tblMasterPerkiraan ON dJurnal.NoPerkiraan = tblMasterPerkiraan.NoPerkiraan WHERE (((hJurnal.Periode)='" & mPeriode & "') AND ((hJurnal.Status)= '" & "UnPosted" & "'))"
+                daData = New OleDbDataAdapter(Query, CONN)
+                dsData = New DataSet
+                daData.Fill(dsData)
+
+                Query = "INSERT INTO BukuBesarTotal SELECT hJurnalAJP.Periode, hJurnalAJP.NoTransaksi, hJurnalAJP.TglTransaksi, dJurnalAJP.NoPerkiraan, hJurnalAJP.Keterangan, dJurnalAJP.DK, dJurnalAJP.Debet, dJurnalAJP.Kredit, hJurnalAJP.Status FROM (dJurnalAJP LEFT JOIN hJurnalAJP ON dJurnalAJP.NoTransaksi = hJurnalAJP.NoTransaksi) LEFT JOIN tblMasterPerkiraan ON dJurnalAJP.NoPerkiraan = tblMasterPerkiraan.NoPerkiraan WHERE (((hJurnalAJP.Periode) = '" & mPeriode & "') AND ((hJurnalAJP.Status)= '" & "UnPosted" & "'))"
                 daData = New OleDbDataAdapter(Query, CONN)
                 dsData = New DataSet
                 daData.Fill(dsData)
@@ -104,8 +114,9 @@ Public Class clsPosting
     Public Sub InsertNeracaLajur()
         mPeriode = frmPosting.cboPeriode.Text
         Try
-            Query = "INSERT INTO NeracaLajur SELECT NeracaSaldo.Periode, NeracaSaldo.NoPerkiraan, NeracaSaldo.SaldoDebet AS DebetNS, NeracaSaldo.SaldoKredit AS KreditNS, IIf([tblAJP].[TotalDebet]>0,[tblAJP].[TotalDebet],0) AS DebetAJP, IIf([tblAJP].[TotalKredit]>0,[tblAJP].[TotalKredit],0) AS KreditAJP, IIf(([DebetNS]+[DebetAJP])-[KreditAJP]>0,(([DebetNS]+[DebetAJP])-([KreditNS]+[KreditAJP])),0) AS DebetNSD, IIf(([KreditNS]+[KreditAJP])-[DebetNS]+[DebetAJP]>0,(([KreditNS]+[KreditAJP])-([DebetNS]+[DebetAJP])),0) AS KreditNSD, IIf(Left(NeracaSaldo.NoPerkiraan,1)= '" & "4" & "' Or Left(NeracaSaldo.NoPerkiraan,1)= '" & "5" & "' Or Left(NeracaSaldo.NoPerkiraan,1)= '" & "6" & "',[DebetNSD],0) AS DebetRL, IIf(Left(NeracaSaldo.NoPerkiraan,1)= '" & "4" & "' Or Left(NeracaSaldo.NoPerkiraan,1)= '" & "5" & "' Or Left(NeracaSaldo.NoPerkiraan,1)= '" & "6" & "',[KreditNSD],0) AS KreditRL, IIf(Left([NeracaSaldo].[NoPerkiraan],1)= '" & "1" & "' Or Left([NeracaSaldo].[NoPerkiraan],1)= '" & "2" & "' Or Left([NeracaSaldo].[NoPerkiraan],1)= '" & "3" & "',[DebetNSD],0) AS DebetNeraca, IIf(Left([NeracaSaldo].[NoPerkiraan],1)= '" & "1" & "' Or Left([NeracaSaldo].[NoPerkiraan],1)= '" & "2" & "' Or Left([NeracaSaldo].[NoPerkiraan],1)= '" & "3" & "',[KreditNSD],0) AS KreditNeraca FROM (NeracaSaldo LEFT JOIN tblMasterPerkiraan ON NeracaSaldo.NoPerkiraan = tblMasterPerkiraan.NoPerkiraan) LEFT JOIN tblAJP ON tblMasterPerkiraan.NoPerkiraan = tblAJP.NoPerkiraan WHERE(((NeracaSaldo.Periode) = '" & mPeriode & "')) ORDER BY NeracaSaldo.NoPerkiraan"
-            daData = New OleDbDataAdapter(Query, conn)
+            'Query = "INSERT INTO NeracaLajur SELECT NeracaSaldo.Periode, NeracaSaldo.NoPerkiraan, NeracaSaldo.SaldoDebet AS DebetNS, NeracaSaldo.SaldoKredit AS KreditNS, IIf([tblAJP].[TotalDebet]>0,[tblAJP].[TotalDebet],0) AS DebetAJP, IIf([tblAJP].[TotalKredit]>0,[tblAJP].[TotalKredit],0) AS KreditAJP, IIf(([DebetNS]+[DebetAJP])-[KreditAJP]>0,(([DebetNS]+[DebetAJP])-([KreditNS]+[KreditAJP])),0) AS DebetNSD, IIf(([KreditNS]+[KreditAJP])-[DebetNS]+[DebetAJP]>0,(([KreditNS]+[KreditAJP])-([DebetNS]+[DebetAJP])),0) AS KreditNSD, IIf(Left(NeracaSaldo.NoPerkiraan,1)= '" & "4" & "' Or Left(NeracaSaldo.NoPerkiraan,1)= '" & "5" & "' Or Left(NeracaSaldo.NoPerkiraan,1)= '" & "6" & "',[DebetNSD],0) AS DebetRL, IIf(Left(NeracaSaldo.NoPerkiraan,1)= '" & "4" & "' Or Left(NeracaSaldo.NoPerkiraan,1)= '" & "5" & "' Or Left(NeracaSaldo.NoPerkiraan,1)= '" & "6" & "',[KreditNSD],0) AS KreditRL, IIf(Left([NeracaSaldo].[NoPerkiraan],1)= '" & "1" & "' Or Left([NeracaSaldo].[NoPerkiraan],1)= '" & "2" & "' Or Left([NeracaSaldo].[NoPerkiraan],1)= '" & "3" & "',[DebetNSD],0) AS DebetNeraca, IIf(Left([NeracaSaldo].[NoPerkiraan],1)= '" & "1" & "' Or Left([NeracaSaldo].[NoPerkiraan],1)= '" & "2" & "' Or Left([NeracaSaldo].[NoPerkiraan],1)= '" & "3" & "',[KreditNSD],0) AS KreditNeraca FROM (NeracaSaldo LEFT JOIN tblMasterPerkiraan ON NeracaSaldo.NoPerkiraan = tblMasterPerkiraan.NoPerkiraan) LEFT JOIN tblAJP ON tblMasterPerkiraan.NoPerkiraan = tblAJP.NoPerkiraan WHERE(((NeracaSaldo.Periode) = '" & mPeriode & "')) ORDER BY NeracaSaldo.NoPerkiraan"
+            Query = "INSERT INTO NeracaLajur SELECT NeracaSaldo.Periode, NeracaSaldo.NoPerkiraan, NeracaSaldo.SaldoDebet AS DebetNS, NeracaSaldo.SaldoKredit AS KreditNS, tblAJP.NoPerkiraan, tblAJP.mSaldoDebet AS DebetAJP, tblAJP.mSaldoKredit AS KreditAJP, IIf(([DebetNS]+[DebetAJP])-[KreditAJP]>0,(([DebetNS]+[DebetAJP])-([KreditNS]+[KreditAJP])),0) AS DebetNSD, IIf(([KreditNS]+[KreditAJP])-[DebetNS]+[DebetAJP]>0,(([KreditNS]+[KreditAJP])-([DebetNS]+[DebetAJP])),0) AS KreditNSD, IIf(Left(NeracaSaldo.NoPerkiraan,1)= '" & "4" & "' Or Left(NeracaSaldo.NoPerkiraan,1)= '" & "5" & "' Or Left(NeracaSaldo.NoPerkiraan,1)= '" & "6" & "',[DebetNSD],0) AS DebetRL, IIf(Left(NeracaSaldo.NoPerkiraan,1)= '" & "4" & "' Or Left(NeracaSaldo.NoPerkiraan,1)= '" & "5" & "' Or Left(NeracaSaldo.NoPerkiraan,1)= '" & "6" & "',[KreditNSD],0) AS KreditRL, IIf(Left([NeracaSaldo].[NoPerkiraan],1)= '" & "1" & "' Or Left([NeracaSaldo].[NoPerkiraan],1)= '" & "2" & "' Or Left([NeracaSaldo].[NoPerkiraan],1)= '" & "3" & "',[DebetNSD],0) AS DebetNeraca, IIf(Left([NeracaSaldo].[NoPerkiraan],1)= '" & "1" & "' Or Left([NeracaSaldo].[NoPerkiraan],1)= '" & "2" & "' Or Left([NeracaSaldo].[NoPerkiraan],1)= '" & "3" & "',[KreditNSD],0) AS KreditNeraca FROM (NeracaSaldo LEFT JOIN tblMasterPerkiraan ON NeracaSaldo.NoPerkiraan = tblMasterPerkiraan.NoPerkiraan) LEFT JOIN tblAJP ON tblMasterPerkiraan.NoPerkiraan = tblAJP.NoPerkiraan WHERE(((NeracaSaldo.Periode) = '" & mPeriode & "')) ORDER BY NeracaSaldo.NoPerkiraan"
+            daData = New OleDbDataAdapter(Query, CONN)
             dsData = New DataSet
             daData.Fill(dsData)
         Catch ex As Exception

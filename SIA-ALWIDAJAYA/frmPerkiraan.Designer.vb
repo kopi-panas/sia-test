@@ -39,6 +39,7 @@ Partial Class frmPerkiraan
         Me.cmdSimpan = New System.Windows.Forms.Button()
         Me.ListView = New System.Windows.Forms.ListView()
         Me.cmdPreview = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -100,6 +101,7 @@ Partial Class frmPerkiraan
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.cboGroup)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.cboKeterangan)
@@ -111,7 +113,7 @@ Partial Class frmPerkiraan
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(640, 141)
+        Me.GroupBox1.Size = New System.Drawing.Size(632, 141)
         Me.GroupBox1.TabIndex = 119
         Me.GroupBox1.TabStop = False
         '
@@ -137,18 +139,20 @@ Partial Class frmPerkiraan
         '
         'cboKeterangan
         '
+        Me.cboKeterangan.BackColor = System.Drawing.SystemColors.Control
+        Me.cboKeterangan.ForeColor = System.Drawing.SystemColors.Control
         Me.cboKeterangan.FormattingEnabled = True
         Me.cboKeterangan.Items.AddRange(New Object() {"-", "Ya"})
         Me.cboKeterangan.Location = New System.Drawing.Point(500, 93)
         Me.cboKeterangan.Name = "cboKeterangan"
         Me.cboKeterangan.Size = New System.Drawing.Size(36, 21)
         Me.cboKeterangan.TabIndex = 5
-        Me.cboKeterangan.Text = "-"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.Control
         Me.Label3.Location = New System.Drawing.Point(388, 94)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(106, 16)
@@ -161,7 +165,7 @@ Partial Class frmPerkiraan
         Me.txtNamaPerkiraan.Location = New System.Drawing.Point(100, 94)
         Me.txtNamaPerkiraan.MaxLength = 40
         Me.txtNamaPerkiraan.Name = "txtNamaPerkiraan"
-        Me.txtNamaPerkiraan.Size = New System.Drawing.Size(282, 20)
+        Me.txtNamaPerkiraan.Size = New System.Drawing.Size(287, 20)
         Me.txtNamaPerkiraan.TabIndex = 1
         '
         'txtNoPerkiraan
@@ -216,7 +220,7 @@ Partial Class frmPerkiraan
         Me.ListView.Location = New System.Drawing.Point(51, 192)
         Me.ListView.MultiSelect = False
         Me.ListView.Name = "ListView"
-        Me.ListView.Size = New System.Drawing.Size(548, 230)
+        Me.ListView.Size = New System.Drawing.Size(548, 270)
         Me.ListView.TabIndex = 120
         Me.ListView.UseCompatibleStateImageBehavior = False
         Me.ListView.View = System.Windows.Forms.View.Details
@@ -235,11 +239,18 @@ Partial Class frmPerkiraan
         Me.cmdPreview.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.cmdPreview.UseVisualStyleBackColor = False
         '
+        'Label5
+        '
+        Me.Label5.Location = New System.Drawing.Point(492, 85)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(54, 37)
+        Me.Label5.TabIndex = 8
+        '
         'frmPerkiraan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(640, 434)
+        Me.ClientSize = New System.Drawing.Size(632, 482)
         Me.ControlBox = False
         Me.Controls.Add(Me.cmdPreview)
         Me.Controls.Add(Me.cmdKeluar)
@@ -278,5 +289,6 @@ Partial Class frmPerkiraan
     Friend WithEvents cmdSimpan As System.Windows.Forms.Button
     Friend WithEvents ListView As System.Windows.Forms.ListView
     Friend WithEvents cmdPreview As System.Windows.Forms.Button
+    Friend WithEvents Label5 As System.Windows.Forms.Label
 
 End Class

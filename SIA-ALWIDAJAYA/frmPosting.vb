@@ -35,7 +35,6 @@ Public Class frmPosting
                 With objPosting
                     .InsertBukuBesar()
                     .InsertBukuBesarAJP()
-                    .InsertBukuBesarTotal()
                     .InsertNeracaSaldo()
                     .InsertNeracaSaldoAJP()
                     .InsertNeracaLajur()
@@ -48,6 +47,7 @@ Public Class frmPosting
                     .InsertLabaTakDibagi()
                     .UpDateSaldoAwal()
                     .SaldoBulanLalu()
+                    .InsertBukuBesarTotal()
                     .InsertKeteranganSaldoAwal() 'Menerangkan bahwa setup saldo awal sudah diPosted
                     MsgBox("Proses posting sudah selesai!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Pesan proses posting")
                 End With

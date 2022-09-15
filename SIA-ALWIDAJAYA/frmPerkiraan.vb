@@ -32,9 +32,9 @@ Public Class frmPerkiraan
     Public Sub PosisiList()
         With ListView.Columns
             .Add("Kode", 60)
-            .Add("Nama Perkiraan", 310)
-            .Add("Group", 120)
-            .Add("Ket", 50)
+            .Add("Nama Perkiraan", 330)
+            .Add("Group", 130)
+            .Add("Ket", 0)
         End With
     End Sub
 
@@ -245,14 +245,14 @@ Public Class frmPerkiraan
         cmdKeluar.Text = "Batal"
     End Sub
 
-    Private Sub ListView_DoubleClick(sender As Object, e As EventArgs) Handles ListView.DoubleClick
-        Try
-            frmAktivaTetap.lblNama.Text = ListView.SelectedItems.Item(0).SubItems(0).Text & " : " & ListView.SelectedItems.Item(0).SubItems(1).Text
-            frmAktivaTetap.CariData()
-            frmAktivaTetap.ShowDialog()
-        Catch ex As Exception
-        End Try
-    End Sub
+    'Private Sub ListView_DoubleClick(sender As Object, e As EventArgs) Handles ListView.DoubleClick
+    '    Try
+    '        frmAktivaTetap.lblNama.Text = ListView.SelectedItems.Item(0).SubItems(0).Text & " : " & ListView.SelectedItems.Item(0).SubItems(1).Text
+    '        frmAktivaTetap.CariData()
+    '        frmAktivaTetap.ShowDialog()
+    '    Catch ex As Exception
+    '    End Try
+    'End Sub
 
     Private Sub ListView_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ListView.KeyPress
         If e.KeyChar = Chr(13) Then
